@@ -29,9 +29,11 @@ data/training/mendeley_2023.jsonl
 # hand-written bootstrap the workbook import is measured against.
 data/training/workbook_2024.jsonl
 
-# Environment
+# Environment. `.env.example` is a template of placeholders, not a secret, and
+# the deployment tests read it; keep it tracked.
 .env
 .env.*
+!.env.example
 
 # Local run artefacts
 server.log

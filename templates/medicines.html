@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Medicines — Dr. Aishu{% endblock %}
+{% block content %}
+<section class="card">
+  <h2 data-i18n="medicines.title">Medicine catalogue</h2>
+  <p class="muted" data-i18n="medicines.note">
+    Curated medicines with dose, frequency and safety notes, plus the full Indian pharmacy
+    product catalogue for brand, pack and price lookup. Brand and product data is
+    presentation only — it never decides which medicine is suggested.
+  </p>
+  <div class="med-stats">
+    <div class="learn-stat"><strong id="med-curated">—</strong><span data-i18n="medicines.curated">curated medicines</span></div>
+    <div class="learn-stat"><strong id="med-generics">—</strong><span data-i18n="medicines.molecules">molecules indexed</span></div>
+    <div class="learn-stat"><strong id="med-brands">—</strong><span data-i18n="medicines.products">products indexed</span></div>
+  </div>
+  <input type="search" id="med-search" class="library-search"
+         data-i18n-placeholder="medicines.search" placeholder="Search by generic, brand or use…">
+
+  <h3 class="section-heading" data-i18n="medicines.curated_heading">Curated guidance</h3>
+  <p class="muted" data-i18n="medicines.curated_note">The medicines Dr. Aishu can safely suggest, with dose and safety notes.</p>
+  <p class="muted" id="med-count"></p>
+  <div id="med-list" class="med-list"></div>
+
+  <h3 class="section-heading" data-i18n="medicines.catalogue_heading">Full product catalogue</h3>
+  <p class="muted" data-i18n="medicines.catalogue_note">
+    Every product in the source catalogue, for looking up what a name is, who makes it and
+    what it costs. A hit here is not a recommendation — only the curated list above is.
+  </p>
+  <p class="muted" id="catalogue-count"></p>
+  <div id="catalogue-results" class="med-list"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/medicines.js"></script>
+{% endblock %}

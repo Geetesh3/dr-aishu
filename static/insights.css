@@ -1,0 +1,93 @@
+/* Search-insights dashboard. Extends style.css tokens. */
+
+.hero { padding: 2.5rem 0 1.25rem; }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: .09em; font-size: .72rem;
+  font-weight: 600; color: var(--accent); margin: 0 0 .5rem;
+}
+.hero h1 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); margin: 0 0 .6rem; letter-spacing: -.02em; }
+.lede { color: var(--ink-soft); max-width: 62ch; margin: 0 0 1.5rem; }
+
+/* ---- controls ---- */
+.controls {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: .75rem;
+  margin-bottom: .75rem;
+}
+.field { display: flex; flex-direction: column; gap: .3rem; }
+.field-label { font-size: .78rem; font-weight: 600; color: var(--ink-soft); }
+.field select {
+  font: inherit; padding: .5rem .7rem; border: 1px solid var(--line);
+  border-radius: 9px; background: var(--surface); color: var(--ink);
+}
+.field.checkbox {
+  flex-direction: row; align-items: center; gap: .45rem;
+  font-size: .85rem; color: var(--ink-soft); padding-bottom: .55rem;
+}
+.field.checkbox input { width: 15px; height: 15px; accent-color: var(--accent); }
+
+.btn-primary, .btn-ghost {
+  font: inherit; font-weight: 600; font-size: .875rem; padding: .55rem 1rem;
+  border-radius: 9px; cursor: pointer; border: 1px solid transparent;
+  transition: background .15s, border-color .15s, opacity .15s;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #0c5a45; }
+.btn-ghost { background: var(--surface); color: var(--ink-soft); border-color: var(--line); }
+.btn-ghost:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn-primary:disabled, .btn-ghost:disabled { opacity: .55; cursor: progress; }
+
+.status { font-size: .82rem; color: var(--muted); min-height: 1.2rem; margin: 0 0 .5rem; }
+.status.error { color: var(--red); }
+.status.ok { color: var(--green); }
+
+/* ---- stat tiles ---- */
+.stat-grid {
+  display: grid; gap: .85rem; margin: 1.25rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.stat-grid.compact { margin: .85rem 0; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.stat {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: .9rem 1rem; box-shadow: var(--shadow);
+}
+.stat .value { font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; }
+.stat .label { font-size: .78rem; color: var(--muted); margin-top: .2rem; }
+
+/* ---- charts ---- */
+.chart-grid {
+  display: grid; gap: 1rem; margin: 1.25rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+.chart-card h2 { font-size: 1rem; margin: 0 0 .2rem; }
+.chart-card .muted, .muted { color: var(--muted); font-size: .82rem; margin: 0 0 .9rem; }
+.chart-card.wide { grid-column: 1 / -1; }
+.chart { width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .empty { color: var(--muted); font-size: .85rem; padding: 1.5rem 0; text-align: center; }
+
+/* bar labels */
+.bar-label { font-size: .74rem; fill: var(--ink-soft); }
+.bar-value { font-size: .74rem; font-weight: 600; fill: var(--ink); }
+.axis-label { font-size: .68rem; fill: var(--muted); }
+.grid-line { stroke: var(--line); stroke-width: 1; }
+
+/* ---- table ---- */
+.table-wrap { overflow-x: auto; margin-top: .5rem; }
+.data-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.data-table th {
+  text-align: left; font-weight: 600; color: var(--ink-soft);
+  border-bottom: 1px solid var(--line); padding: .5rem .6rem;
+}
+.data-table td { padding: .45rem .6rem; border-bottom: 1px solid #eef2ef; }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 640px) {
+  .controls { align-items: stretch; }
+  .btn-primary, .btn-ghost { width: 100%; }
+}

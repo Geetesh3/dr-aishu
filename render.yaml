@@ -1,0 +1,29 @@
+# Render Blueprint — free-tier deployment for Dr. Aishu.
+#
+# Render's free web service is enough to run this app. Two caveats worth knowing:
+#   * Free instances sleep after ~15 minutes idle and take ~50s to wake.
+#   * Free instances have an ephemeral filesystem, so the SQLite case database
+#     and API keys reset on every deploy/restart. Attach a disk (paid) or set
+#     DR_AISHU_BOOTSTRAP_KEY if you need a stable key across restarts.
+#
+# Deploy: push this repo to GitHub, then in Render choose
+# "New +" -> "Blueprint" and point at the repository.
+
+services:
+  - type: web
+    name: dr-aishu
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DR_AISHU_DATA_DIR
+        value: /data
+      - key: DR_AISHU_REQUIRE_KEY
+        value: "0"
+      # Pin a stable API key so you always have admin access, even after the
+      # ephemeral filesystem is wiped. Generate one with:
+      #   python -c "import secrets; print('dra_' + secrets.token_urlsafe(32))"
+      - key: DR_AISHU_BOOTSTRAP_KEY
+        generateValue: true

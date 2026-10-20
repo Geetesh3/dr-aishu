@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Library — Dr. Aishu{% endblock %}
+{% block content %}
+<section class="card library-card">
+  <h2 data-i18n="library.title">Condition library</h2>
+  <p class="muted" data-i18n="library.note">Browse every condition in the knowledge base, with its symptoms, self-care and red flags.</p>
+  <input type="search" id="library-search" class="library-search"
+         data-i18n-placeholder="library.search" placeholder="Search conditions, symptoms or categories…">
+  <p class="muted" id="library-count"></p>
+  <div id="library-list" class="library-list"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/library.js"></script>
+{% endblock %}

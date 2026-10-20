@@ -1,0 +1,129 @@
+/* Developer portal — extends the main stylesheet with code, tier and table styles. */
+
+:root { --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 .5rem;
+}
+
+/* ---- tier cards ---- */
+.tier-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+.tier-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+.tier-card.is-featured { border-color: var(--accent); }
+.tier-name { font-weight: 700; font-size: 1.02rem; display: flex; align-items: center; gap: .5rem; }
+.tier-price { color: var(--accent); font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+.tier-desc { color: var(--muted); font-size: .88rem; margin: .45rem 0 .75rem; }
+.tier-limits { list-style: none; margin: 0; padding: 0; font-size: .86rem; }
+.tier-limits li { display: flex; justify-content: space-between; padding: .28rem 0; border-bottom: 1px dashed var(--line); }
+.tier-limits li:last-child { border-bottom: none; }
+.tier-limits b { font-weight: 600; }
+
+/* ---- signup ---- */
+.signup-grid, .usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; }
+.signup-grid .field { margin-bottom: 0; }
+input[type="email"] {
+  width: 100%; padding: .7rem .85rem; border: 1px solid var(--line);
+  border-radius: 10px; font: inherit; font-size: .95rem; background: var(--surface); color: var(--ink);
+}
+input[type="email"]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+.actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.25rem; }
+.actions .btn-ghost, .actions .btn-primary { text-decoration: none; display: inline-flex; align-items: center; }
+
+/* ---- key reveal ---- */
+.key-reveal {
+  margin-top: 1.5rem; padding: 1.1rem 1.25rem; border-radius: var(--radius);
+  background: var(--accent-soft); border: 1px solid #bfe0d4;
+}
+.key-reveal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: .7rem; }
+.pill { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: .18rem .55rem; border-radius: 999px; }
+.pill-warn { background: #fff4e5; color: #7a4a06; border: 1px solid #f2d8b3; }
+.key-line { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+.key-line code {
+  flex: 1 1 320px; font-family: var(--mono); font-size: .85rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+  padding: .6rem .75rem; word-break: break-all; color: var(--ink);
+}
+.key-reveal .muted { margin: .7rem 0 0; }
+
+/* ---- usage ---- */
+.usage-panel { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.usage-stat {
+  border: 1px solid var(--line); border-radius: 10px; padding: .8rem .9rem; background: var(--surface);
+}
+.usage-stat strong { display: block; font-size: 1.25rem; font-weight: 700; color: var(--accent); }
+.usage-stat span { font-size: .78rem; color: var(--muted); }
+
+/* ---- lookup ---- */
+.lookup { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.lookup-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .6rem; }
+.lookup-row input { flex: 1 1 260px; }
+.key-row {
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+  padding: .65rem .8rem; border: 1px solid var(--line); border-radius: 10px;
+  margin-top: .6rem; background: var(--surface); flex-wrap: wrap;
+}
+.key-row code { font-family: var(--mono); font-size: .82rem; }
+.key-row .meta { font-size: .78rem; color: var(--muted); }
+.key-row.is-revoked { opacity: .55; }
+.pill-revoked { background: #fdeceb; color: var(--red); border: 1px solid #f5c9c6; }
+.pill-ok { background: var(--accent-soft); color: var(--accent); border: 1px solid #bfe0d4; }
+
+/* ---- code blocks ---- */
+.code-block { margin: 1.1rem 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #0f1a17; }
+.code-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .45rem .85rem; background: #16241f; color: #9fb5ac;
+  font-size: .76rem; text-transform: uppercase; letter-spacing: .07em; font-weight: 600;
+}
+.copy-btn {
+  background: transparent; border: 1px solid #2f4a41; color: #b9cdc5;
+  font: inherit; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
+  padding: .22rem .6rem; border-radius: 6px; cursor: pointer;
+}
+.copy-btn:hover { border-color: #4d7a6b; color: #fff; }
+.code-block pre { margin: 0; padding: 1rem 1.1rem; overflow-x: auto; }
+.code-block code {
+  font-family: var(--mono); font-size: .82rem;
+  line-height: 1.65; color: #d6e6e0; white-space: pre;
+}
+
+/* ---- reference table ---- */
+.table-scroll { overflow-x: auto; margin-top: 1rem; }
+.ref-table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 620px; }
+.ref-table th {
+  text-align: left; font-size: .74rem; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); padding: .5rem .7rem; border-bottom: 1px solid var(--line);
+}
+.ref-table td { padding: .55rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.ref-table tr:last-child td { border-bottom: none; }
+.ref-table code { font-family: var(--mono); font-size: .82rem; }
+.method { font-size: .68rem; font-weight: 700; padding: .14rem .45rem; border-radius: 5px; letter-spacing: .04em; }
+.method.get { background: var(--accent-soft); color: var(--accent); }
+.method.post { background: #e8eefc; color: #26418f; }
+
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
+.about-grid h3 { margin-top: 0; }
+.limits { margin: .5rem 0 0; padding-left: 1.1rem; color: var(--ink-soft); font-size: .9rem; }
+.limits li { margin-bottom: .45rem; }
+.limits code { font-family: var(--mono); font-size: .84rem; }
+
+@media (max-width: 640px) {
+  .key-line code { flex: 1 1 100%; }
+}

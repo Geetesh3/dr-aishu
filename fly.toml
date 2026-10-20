@@ -1,0 +1,48 @@
+# Fly.io configuration — free-allowance deployment for Dr. Aishu.
+#
+# Deploy:
+#   fly launch --no-deploy --copy-config   # accept the name, pick a nearby region
+#   fly volumes create dr_aishu_data --size 1
+#   fly secrets set DR_AISHU_BOOTSTRAP_KEY="dra_$(openssl rand -hex 24)"
+#   fly deploy
+#
+# Fly's free allowance covers a single small shared-cpu machine. The volume keeps
+# the case database and API keys across restarts.
+
+app = "dr-aishu"
+primary_region = "sin"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8000"
+  DR_AISHU_DATA_DIR = "/data"
+  DR_AISHU_REQUIRE_KEY = "0"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 20
+    hard_limit = 40
+
+[[http_service.checks]]
+  interval = "30s"
+  timeout = "5s"
+  grace_period = "20s"
+  method = "GET"
+  path = "/api/health"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
+
+[[mounts]]
+  source = "dr_aishu_data"
+  destination = "/data"

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Dr. Aishu — Search Insights{% endblock %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/insights.css">
+{% endblock %}
+{% block content %}
+  <section class="hero">
+    <p class="eyebrow">Search insights</p>
+    <h1>What people ask Dr. Aishu</h1>
+    <p class="lede">
+      Every analysis is recorded as a structured event — symptoms, diagnosis,
+      severity, triage and duration. Free text is stored only when the user ticks
+      the consent box, so these charts are built from clinical signals, never from
+      what anyone typed.
+    </p>
+
+    <div class="controls">
+      <label class="field">
+        <span class="field-label">Window</span>
+        <select id="days">
+          <option value="7">Last 7 days</option>
+          <option value="30" selected>Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="365">Last year</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label">API key <em>(from <a href="/developers">Developers</a>)</em></span>
+        <input type="password" id="api-key" placeholder="dr_live_…" autocomplete="off">
+      </label>
+      <label class="field checkbox">
+        <input type="checkbox" id="include-demo" checked>
+        <span>Include demo data</span>
+      </label>
+      <button type="button" class="btn-primary" id="demo-btn">Start demo charts</button>
+      <button type="button" class="btn-ghost" id="purge-btn">Clear demo data</button>
+      <button type="button" class="btn-ghost" id="refresh-btn">Refresh</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+  </section>
+
+  <section class="stat-grid" id="stat-grid"></section>
+
+  <section class="chart-grid">
+    <article class="card chart-card wide">
+      <h2>Searches per day</h2>
+      <p class="muted">Volume across the selected window.</p>
+      <div id="chart-timeline" class="chart"></div>
+    </article>
+
+    <article class="card chart-card">
+      <h2>Top symptoms</h2>
+      <p class="muted">Most frequently reported.</p>
+      <div id="chart-symptoms" class="chart"></div>
+    </article>
+
+    <article class="card chart-card">
+      <h2>Leading diagnoses</h2>
+      <p class="muted">Share of all analyses.</p>
+      <div id="chart-diagnoses" class="chart"></div>
+    </article>
+
+    <article class="card chart-card">
+      <h2>Triage mix</h2>
+      <p class="muted">How urgent the presentations were.</p>
+      <div id="chart-triage" class="chart"></div>
+    </article>
+
+    <article class="card chart-card">
+      <h2>Severity distribution</h2>
+      <p class="muted">Severity score 0–10 across all analyses.</p>
+      <div id="chart-severity" class="chart"></div>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>Indian brand catalogue</h2>
+    <p class="muted" id="brand-note"></p>
+    <div class="stat-grid compact" id="brand-stats"></div>
+    <div class="table-wrap">
+      <table class="data-table" id="brand-table">
+        <thead>
+          <tr><th>Medicine</th><th>Brands</th><th>Cheapest pack</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/insights.js"></script>
+{% endblock %}

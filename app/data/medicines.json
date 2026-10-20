@@ -1,0 +1,4851 @@
+{
+  "medicines": [
+    {
+      "id": "paracetamol",
+      "name": "Paracetamol (Acetaminophen)",
+      "generic": "paracetamol",
+      "drug_class": "Analgesic / Antipyretic",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "fever",
+        "mild to moderate pain",
+        "headache",
+        "body ache"
+      ],
+      "dose_adult": "500-1000 mg",
+      "dose_child": "10-15 mg/kg",
+      "max_daily_adult": "4000 mg",
+      "max_daily_child": "60 mg/kg",
+      "frequency": "6-8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 3,
+      "age_min": 0.25,
+      "pregnancy": "safe",
+      "contraindications": [
+        "severe liver disease",
+        "known paracetamol allergy"
+      ],
+      "side_effects": [
+        "nausea",
+        "rash (rare)",
+        "liver injury on overdose"
+      ],
+      "warnings": [
+        "Do not exceed 4 g in 24 hours",
+        "Avoid combining with other paracetamol products",
+        "Avoid alcohol"
+      ],
+      "interacts_with": [
+        "warfarin"
+      ],
+      "tags": [
+        "fever",
+        "pain"
+      ]
+    },
+    {
+      "id": "ibuprofen",
+      "name": "Ibuprofen",
+      "generic": "ibuprofen",
+      "drug_class": "NSAID",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "pain",
+        "fever",
+        "inflammation",
+        "joint pain",
+        "muscle ache"
+      ],
+      "dose_adult": "200-400 mg",
+      "dose_child": "5-10 mg/kg",
+      "max_daily_adult": "1200 mg (OTC)",
+      "max_daily_child": "30 mg/kg",
+      "frequency": "6-8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 3,
+      "age_min": 6,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "active peptic ulcer",
+        "severe kidney disease",
+        "aspirin-sensitive asthma",
+        "third trimester pregnancy",
+        "heart failure"
+      ],
+      "side_effects": [
+        "stomach upset",
+        "heartburn",
+        "dizziness",
+        "raised blood pressure"
+      ],
+      "warnings": [
+        "Take with or after food",
+        "Avoid in dengue or suspected bleeding",
+        "Avoid with other NSAIDs"
+      ],
+      "interacts_with": [
+        "aspirin",
+        "warfarin",
+        "ramipril",
+        "losartan",
+        "furosemide",
+        "prednisolone",
+        "methotrexate",
+        "spironolactone"
+      ],
+      "tags": [
+        "pain",
+        "fever",
+        "inflammation"
+      ]
+    },
+    {
+      "id": "aspirin",
+      "name": "Aspirin (Acetylsalicylic acid)",
+      "generic": "aspirin",
+      "drug_class": "NSAID / Antiplatelet",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "heart attack",
+        "antiplatelet therapy",
+        "pain"
+      ],
+      "dose_adult": "75-300 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "4000 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 16,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "children under 16",
+        "active bleeding",
+        "peptic ulcer",
+        "aspirin allergy",
+        "severe asthma"
+      ],
+      "side_effects": [
+        "stomach irritation",
+        "bleeding",
+        "bruising"
+      ],
+      "warnings": [
+        "Never give to children with fever (Reye's syndrome)",
+        "Avoid in dengue"
+      ],
+      "interacts_with": [
+        "ibuprofen",
+        "warfarin"
+      ],
+      "tags": [
+        "cardiac",
+        "pain"
+      ]
+    },
+    {
+      "id": "diclofenac",
+      "name": "Diclofenac",
+      "generic": "diclofenac",
+      "drug_class": "NSAID",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "severe pain",
+        "renal colic",
+        "inflammatory arthritis"
+      ],
+      "dose_adult": "50 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "150 mg",
+      "max_daily_child": "n/a",
+      "frequency": "8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 5,
+      "age_min": 14,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "peptic ulcer",
+        "kidney disease",
+        "heart failure",
+        "third trimester"
+      ],
+      "side_effects": [
+        "stomach pain",
+        "nausea",
+        "raised blood pressure"
+      ],
+      "warnings": [
+        "Take after food",
+        "Lowest effective dose for shortest time"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "ramipril",
+        "furosemide",
+        "prednisolone"
+      ],
+      "tags": [
+        "pain",
+        "inflammation"
+      ]
+    },
+    {
+      "id": "indomethacin",
+      "name": "Indomethacin",
+      "generic": "indomethacin",
+      "drug_class": "NSAID",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "gout",
+        "inflammatory arthritis"
+      ],
+      "dose_adult": "25-50 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "200 mg",
+      "max_daily_child": "n/a",
+      "frequency": "8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 5,
+      "age_min": 14,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "peptic ulcer",
+        "kidney disease",
+        "heart failure"
+      ],
+      "side_effects": [
+        "stomach upset",
+        "headache",
+        "dizziness"
+      ],
+      "warnings": [
+        "Take after food",
+        "Short courses only"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "aspirin"
+      ],
+      "tags": [
+        "pain",
+        "gout"
+      ]
+    },
+    {
+      "id": "prednisolone",
+      "name": "Prednisolone",
+      "generic": "prednisolone",
+      "drug_class": "Corticosteroid",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "severe inflammation",
+        "asthma flare",
+        "autoimmune flare",
+        "allergy"
+      ],
+      "dose_adult": "5-40 mg",
+      "dose_child": "1-2 mg/kg",
+      "max_daily_adult": "60 mg",
+      "max_daily_child": "60 mg",
+      "frequency": "once daily (morning)",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": 7,
+      "age_min": 1,
+      "pregnancy": "caution",
+      "contraindications": [
+        "untreated infection",
+        "live vaccines",
+        "active peptic ulcer"
+      ],
+      "side_effects": [
+        "increased appetite",
+        "mood change",
+        "raised blood sugar",
+        "fluid retention"
+      ],
+      "warnings": [
+        "Take in the morning after food",
+        "Do not stop abruptly after long courses",
+        "Monitor blood sugar"
+      ],
+      "interacts_with": [
+        "ibuprofen",
+        "diclofenac",
+        "aspirin",
+        "metformin"
+      ],
+      "tags": [
+        "inflammation",
+        "allergy"
+      ]
+    },
+    {
+      "id": "cetirizine",
+      "name": "Cetirizine",
+      "generic": "cetirizine",
+      "drug_class": "Antihistamine (2nd generation)",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "allergic rhinitis",
+        "urticaria",
+        "itching",
+        "sneezing",
+        "watery eyes"
+      ],
+      "dose_adult": "10 mg",
+      "dose_child": "2.5-5 mg",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "5 mg",
+      "frequency": "once daily at night",
+      "times": [
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 2,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe kidney disease",
+        "known cetirizine allergy"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "dry mouth",
+        "headache",
+        "fatigue"
+      ],
+      "warnings": [
+        "May cause drowsiness - avoid driving until you know how it affects you"
+      ],
+      "interacts_with": [
+        "alcohol",
+        "amitriptyline",
+        "pregabalin"
+      ],
+      "tags": [
+        "allergy",
+        "itch"
+      ]
+    },
+    {
+      "id": "loratadine",
+      "name": "Loratadine",
+      "generic": "loratadine",
+      "drug_class": "Antihistamine (2nd generation)",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "allergic rhinitis",
+        "urticaria",
+        "itching"
+      ],
+      "dose_adult": "10 mg",
+      "dose_child": "5 mg",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "10 mg",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 2,
+      "pregnancy": "safe",
+      "contraindications": [
+        "known loratadine allergy",
+        "severe liver disease"
+      ],
+      "side_effects": [
+        "headache",
+        "dry mouth",
+        "fatigue"
+      ],
+      "warnings": [
+        "Less sedating than cetirizine - good for daytime use"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "allergy",
+        "itch"
+      ]
+    },
+    {
+      "id": "chlorpheniramine",
+      "name": "Chlorpheniramine",
+      "generic": "chlorpheniramine",
+      "drug_class": "Antihistamine (1st generation)",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "allergic reaction",
+        "urticaria",
+        "itching",
+        "runny nose"
+      ],
+      "dose_adult": "4 mg",
+      "dose_child": "1-2 mg",
+      "max_daily_adult": "24 mg",
+      "max_daily_child": "6 mg",
+      "frequency": "6 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 7,
+      "age_min": 2,
+      "pregnancy": "caution",
+      "contraindications": [
+        "narrow-angle glaucoma",
+        "prostate enlargement",
+        "severe asthma"
+      ],
+      "side_effects": [
+        "marked drowsiness",
+        "dry mouth",
+        "blurred vision",
+        "urinary retention"
+      ],
+      "warnings": [
+        "Strongly sedating - do not drive or operate machinery"
+      ],
+      "interacts_with": [
+        "alcohol",
+        "amitriptyline",
+        "duloxetine",
+        "pregabalin"
+      ],
+      "tags": [
+        "allergy",
+        "itch"
+      ]
+    },
+    {
+      "id": "hydroxyzine",
+      "name": "Hydroxyzine",
+      "generic": "hydroxyzine",
+      "drug_class": "Antihistamine (1st generation)",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "anxiety",
+        "itching",
+        "urticaria",
+        "sedation"
+      ],
+      "dose_adult": "10-25 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "100 mg",
+      "max_daily_child": "n/a",
+      "frequency": "at night",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "prolonged QT interval",
+        "narrow-angle glaucoma"
+      ],
+      "side_effects": [
+        "sedation",
+        "dry mouth",
+        "dizziness"
+      ],
+      "warnings": [
+        "Do not drive",
+        "Avoid alcohol"
+      ],
+      "interacts_with": [
+        "alcohol",
+        "chlorpheniramine",
+        "amitriptyline"
+      ],
+      "tags": [
+        "anxiety",
+        "itch"
+      ]
+    },
+    {
+      "id": "dextromethorphan",
+      "name": "Dextromethorphan",
+      "generic": "dextromethorphan",
+      "drug_class": "Cough suppressant",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "dry irritating cough"
+      ],
+      "dose_adult": "10-20 mg",
+      "dose_child": "5-7.5 mg",
+      "max_daily_adult": "120 mg",
+      "max_daily_child": "30 mg",
+      "frequency": "6-8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 7,
+      "age_min": 6,
+      "pregnancy": "caution",
+      "contraindications": [
+        "productive cough with excess phlegm",
+        "MAOI use",
+        "respiratory depression"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "dizziness",
+        "nausea"
+      ],
+      "warnings": [
+        "Not for cough with lots of phlegm",
+        "Do not combine with other cough syrups containing it"
+      ],
+      "interacts_with": [
+        "fluoxetine",
+        "sertraline"
+      ],
+      "tags": [
+        "cough"
+      ]
+    },
+    {
+      "id": "guaifenesin",
+      "name": "Guaifenesin",
+      "generic": "guaifenesin",
+      "drug_class": "Expectorant",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "chesty cough",
+        "thick phlegm"
+      ],
+      "dose_adult": "200-400 mg",
+      "dose_child": "100 mg",
+      "max_daily_adult": "2400 mg",
+      "max_daily_child": "600 mg",
+      "frequency": "4-6 hourly",
+      "times": [
+        "08:00",
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 7,
+      "age_min": 4,
+      "pregnancy": "caution",
+      "contraindications": [
+        "known allergy"
+      ],
+      "side_effects": [
+        "nausea",
+        "vomiting",
+        "dizziness"
+      ],
+      "warnings": [
+        "Drink plenty of water while taking it"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "cough"
+      ]
+    },
+    {
+      "id": "salbutamol",
+      "name": "Salbutamol (Albuterol) inhaler",
+      "generic": "salbutamol",
+      "drug_class": "Short-acting beta-2 agonist",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "asthma",
+        "wheezing",
+        "bronchospasm",
+        "breathlessness"
+      ],
+      "dose_adult": "100-200 mcg (1-2 puffs)",
+      "dose_child": "100 mcg (1 puff)",
+      "max_daily_adult": "8 puffs reliever",
+      "max_daily_child": "8 puffs",
+      "frequency": "as needed / 4-6 hourly",
+      "times": [
+        "as needed"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 2,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity to salbutamol"
+      ],
+      "side_effects": [
+        "tremor",
+        "fast heartbeat",
+        "headache",
+        "muscle cramps"
+      ],
+      "warnings": [
+        "Reliever inhaler - if needed more than 3 times a week, review preventer therapy",
+        "Seek emergency care if no relief"
+      ],
+      "interacts_with": [
+        "propranolol",
+        "bisoprolol"
+      ],
+      "tags": [
+        "asthma",
+        "respiratory"
+      ]
+    },
+    {
+      "id": "budesonide",
+      "name": "Budesonide inhaler",
+      "generic": "budesonide",
+      "drug_class": "Inhaled corticosteroid",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "asthma preventer",
+        "airway inflammation"
+      ],
+      "dose_adult": "100-400 mcg",
+      "dose_child": "50-200 mcg",
+      "max_daily_adult": "800 mcg",
+      "max_daily_child": "400 mcg",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 5,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "oral thrush",
+        "hoarse voice",
+        "throat irritation"
+      ],
+      "warnings": [
+        "Rinse mouth after each dose",
+        "Preventer - use regularly even when well"
+      ],
+      "interacts_with": [
+        "ketoconazole"
+      ],
+      "tags": [
+        "asthma",
+        "respiratory"
+      ]
+    },
+    {
+      "id": "xylometazoline",
+      "name": "Xylometazoline nasal spray",
+      "generic": "xylometazoline",
+      "drug_class": "Topical nasal decongestant",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "blocked nose",
+        "nasal congestion"
+      ],
+      "dose_adult": "1 spray per nostril",
+      "dose_child": "not under 6 years",
+      "max_daily_adult": "3 sprays per nostril",
+      "max_daily_child": "n/a",
+      "frequency": "8-10 hourly",
+      "times": [
+        "08:00",
+        "18:00"
+      ],
+      "with_food": "any",
+      "max_days": 5,
+      "age_min": 6,
+      "pregnancy": "caution",
+      "contraindications": [
+        "recent nasal surgery",
+        "narrow-angle glaucoma",
+        "severe hypertension"
+      ],
+      "side_effects": [
+        "nasal dryness",
+        "rebound congestion",
+        "burning"
+      ],
+      "warnings": [
+        "Do not use for more than 5 days (rebound congestion)",
+        "One spray per nostril only"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "congestion",
+        "respiratory"
+      ]
+    },
+    {
+      "id": "fluticasone_nasal",
+      "name": "Fluticasone nasal spray",
+      "generic": "fluticasone",
+      "drug_class": "Intranasal corticosteroid",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "allergic rhinitis",
+        "chronic nasal congestion",
+        "hay fever"
+      ],
+      "dose_adult": "1-2 sprays per nostril",
+      "dose_child": "1 spray per nostril",
+      "max_daily_adult": "4 sprays per nostril",
+      "max_daily_child": "2 sprays",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": 90,
+      "age_min": 4,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity",
+        "recent nasal surgery"
+      ],
+      "side_effects": [
+        "nasal irritation",
+        "nosebleed",
+        "headache"
+      ],
+      "warnings": [
+        "Takes a few days to work fully",
+        "Aim away from the nasal septum"
+      ],
+      "interacts_with": [
+        "ketoconazole",
+        "ritonavir"
+      ],
+      "tags": [
+        "allergy",
+        "congestion"
+      ]
+    },
+    {
+      "id": "oseltamivir",
+      "name": "Oseltamivir (Tamiflu)",
+      "generic": "oseltamivir",
+      "drug_class": "Antiviral (neuraminidase inhibitor)",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "influenza A and B",
+        "influenza prophylaxis"
+      ],
+      "dose_adult": "75 mg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "150 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 5,
+      "age_min": 1,
+      "pregnancy": "caution",
+      "contraindications": [
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "nausea",
+        "vomiting",
+        "headache"
+      ],
+      "warnings": [
+        "Most effective within 48 hours of symptom onset",
+        "Take with food to reduce nausea"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "antiviral",
+        "influenza"
+      ]
+    },
+    {
+      "id": "omeprazole",
+      "name": "Omeprazole",
+      "generic": "omeprazole",
+      "drug_class": "Proton pump inhibitor",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "GERD",
+        "acid reflux",
+        "peptic ulcer",
+        "gastritis"
+      ],
+      "dose_adult": "20-40 mg",
+      "dose_child": "10-20 mg",
+      "max_daily_adult": "40 mg",
+      "max_daily_child": "20 mg",
+      "frequency": "once daily",
+      "times": [
+        "07:30"
+      ],
+      "with_food": "before food",
+      "max_days": 14,
+      "age_min": 1,
+      "pregnancy": "caution",
+      "contraindications": [
+        "hypersensitivity to PPIs"
+      ],
+      "side_effects": [
+        "headache",
+        "diarrhoea",
+        "abdominal pain",
+        "flatulence"
+      ],
+      "warnings": [
+        "Take 30-60 minutes before breakfast",
+        "Long-term use may reduce B12 and magnesium"
+      ],
+      "interacts_with": [
+        "clopidogrel",
+        "ketoconazole"
+      ],
+      "tags": [
+        "acidity",
+        "gi"
+      ]
+    },
+    {
+      "id": "ranitidine",
+      "name": "Ranitidine (H2 blocker)",
+      "generic": "ranitidine",
+      "drug_class": "H2 receptor antagonist",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "heartburn",
+        "acid reflux",
+        "gastritis"
+      ],
+      "dose_adult": "150 mg",
+      "dose_child": "2-4 mg/kg",
+      "max_daily_adult": "300 mg",
+      "max_daily_child": "150 mg",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 1,
+      "pregnancy": "caution",
+      "contraindications": [
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "headache",
+        "dizziness",
+        "constipation"
+      ],
+      "warnings": [
+        "Use the shortest duration that controls symptoms"
+      ],
+      "interacts_with": [
+        "ketoconazole"
+      ],
+      "tags": [
+        "acidity",
+        "gi"
+      ]
+    },
+    {
+      "id": "antacid",
+      "name": "Antacid (aluminium/magnesium hydroxide)",
+      "generic": "antacid",
+      "drug_class": "Antacid",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "heartburn",
+        "indigestion",
+        "acid reflux"
+      ],
+      "dose_adult": "10-20 mL",
+      "dose_child": "5-10 mL",
+      "max_daily_adult": "80 mL",
+      "max_daily_child": "30 mL",
+      "frequency": "after meals and at bedtime",
+      "times": [
+        "09:00",
+        "14:00",
+        "21:00"
+      ],
+      "with_food": "after food",
+      "max_days": 14,
+      "age_min": 6,
+      "pregnancy": "safe",
+      "contraindications": [
+        "severe kidney disease",
+        "hypophosphataemia"
+      ],
+      "side_effects": [
+        "constipation (aluminium)",
+        "diarrhoea (magnesium)",
+        "chalky taste"
+      ],
+      "warnings": [
+        "Separate from other medicines by 2 hours",
+        "Short-term symptom relief only"
+      ],
+      "interacts_with": [
+        "omeprazole",
+        "ciprofloxacin",
+        "nitrofurantoin",
+        "levothyroxine"
+      ],
+      "tags": [
+        "acidity",
+        "gi"
+      ]
+    },
+    {
+      "id": "domperidone",
+      "name": "Domperidone",
+      "generic": "domperidone",
+      "drug_class": "Prokinetic / antiemetic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "nausea",
+        "bloating",
+        "gastric emptying delay"
+      ],
+      "dose_adult": "10 mg",
+      "dose_child": "0.25 mg/kg",
+      "max_daily_adult": "30 mg",
+      "max_daily_child": "30 mg",
+      "frequency": "three times daily",
+      "times": [
+        "07:30",
+        "13:30",
+        "19:30"
+      ],
+      "with_food": "before food",
+      "max_days": 7,
+      "age_min": 12,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "prolonged QT",
+        "cardiac disease",
+        "liver impairment",
+        "prolactinoma"
+      ],
+      "side_effects": [
+        "dry mouth",
+        "headache",
+        "cramps"
+      ],
+      "warnings": [
+        "Take 15-30 minutes before meals",
+        "Short courses only due to cardiac risk"
+      ],
+      "interacts_with": [
+        "clarithromycin",
+        "ketoconazole",
+        "fluconazole"
+      ],
+      "tags": [
+        "nausea",
+        "gi"
+      ]
+    },
+    {
+      "id": "metoclopramide",
+      "name": "Metoclopramide",
+      "generic": "metoclopramide",
+      "drug_class": "Antiemetic / prokinetic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "nausea",
+        "vomiting",
+        "migraine-associated nausea"
+      ],
+      "dose_adult": "10 mg",
+      "dose_child": "0.1-0.15 mg/kg",
+      "max_daily_adult": "30 mg",
+      "max_daily_child": "0.5 mg/kg",
+      "frequency": "three times daily",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": 5,
+      "age_min": 1,
+      "pregnancy": "caution",
+      "contraindications": [
+        "bowel obstruction",
+        "parkinsonism",
+        "epilepsy",
+        "pheochromocytoma"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "restlessness",
+        "muscle spasm",
+        "diarrhoea"
+      ],
+      "warnings": [
+        "Maximum 5 days",
+        "Avoid in young children"
+      ],
+      "interacts_with": [
+        "sertraline",
+        "fluoxetine",
+        "escitalopram"
+      ],
+      "tags": [
+        "nausea",
+        "migraine"
+      ]
+    },
+    {
+      "id": "ors",
+      "name": "Oral Rehydration Solution (ORS)",
+      "generic": "oral rehydration salts",
+      "drug_class": "Rehydration therapy",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "diarrhoea",
+        "vomiting",
+        "dehydration",
+        "fever with fluid loss"
+      ],
+      "dose_adult": "200-400 mL after each loose stool",
+      "dose_child": "50-100 mL after each loose stool",
+      "max_daily_adult": "as needed (3 L/day typical)",
+      "max_daily_child": "as needed",
+      "frequency": "after every loose stool",
+      "times": [
+        "as needed"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "severe dehydration with shock (needs IV fluids)",
+        "bowel obstruction"
+      ],
+      "side_effects": [
+        "vomiting if drunk too fast",
+        "bloating"
+      ],
+      "warnings": [
+        "Use correct dilution - too concentrated makes diarrhoea worse",
+        "Use clean or boiled water"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "rehydration",
+        "gi"
+      ]
+    },
+    {
+      "id": "loperamide",
+      "name": "Loperamide",
+      "generic": "loperamide",
+      "drug_class": "Antimotility / antidiarrhoeal",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "non-infectious diarrhoea",
+        "travellers diarrhoea"
+      ],
+      "dose_adult": "4 mg then 2 mg",
+      "dose_child": "not under 12 years",
+      "max_daily_adult": "16 mg",
+      "max_daily_child": "n/a",
+      "frequency": "after each loose stool",
+      "times": [
+        "as needed"
+      ],
+      "with_food": "any",
+      "max_days": 2,
+      "age_min": 12,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "bloody diarrhoea",
+        "fever with diarrhoea",
+        "suspected invasive infection",
+        "ulcerative colitis"
+      ],
+      "side_effects": [
+        "constipation",
+        "abdominal cramps",
+        "bloating",
+        "drowsiness"
+      ],
+      "warnings": [
+        "Do NOT use with bloody or febrile diarrhoea",
+        "Stop if symptoms persist beyond 48 hours"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "diarrhoea",
+        "gi"
+      ]
+    },
+    {
+      "id": "bisacodyl",
+      "name": "Bisacodyl",
+      "generic": "bisacodyl",
+      "drug_class": "Stimulant laxative",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "constipation"
+      ],
+      "dose_adult": "5-10 mg",
+      "dose_child": "5 mg",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "5 mg",
+      "frequency": "once daily",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "before food",
+      "max_days": 7,
+      "age_min": 4,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "bowel obstruction",
+        "acute abdominal pain",
+        "dehydration"
+      ],
+      "side_effects": [
+        "abdominal cramps",
+        "diarrhoea",
+        "nausea"
+      ],
+      "warnings": [
+        "Do not use for more than 7 days",
+        "Expect effect in 6-12 hours"
+      ],
+      "interacts_with": [
+        "antacid"
+      ],
+      "tags": [
+        "constipation",
+        "gi"
+      ]
+    },
+    {
+      "id": "lactulose",
+      "name": "Lactulose",
+      "generic": "lactulose",
+      "drug_class": "Osmotic laxative",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "constipation",
+        "hepatic encephalopathy"
+      ],
+      "dose_adult": "15-30 mL",
+      "dose_child": "5-10 mL",
+      "max_daily_adult": "45 mL",
+      "max_daily_child": "20 mL",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": 30,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "galactosaemia",
+        "bowel obstruction"
+      ],
+      "side_effects": [
+        "bloating",
+        "wind",
+        "cramps"
+      ],
+      "warnings": [
+        "Takes 2-3 days for full effect",
+        "Drink plenty of water"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "constipation",
+        "gi"
+      ]
+    },
+    {
+      "id": "ispaghula",
+      "name": "Ispaghula husk (Psyllium)",
+      "generic": "ispaghula husk",
+      "drug_class": "Bulk-forming laxative",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "constipation",
+        "irritable bowel syndrome"
+      ],
+      "dose_adult": "1 sachet (3.5 g)",
+      "dose_child": "half sachet",
+      "max_daily_adult": "3 sachets",
+      "max_daily_child": "1 sachet",
+      "frequency": "once to three times daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 6,
+      "pregnancy": "safe",
+      "contraindications": [
+        "bowel obstruction",
+        "difficulty swallowing"
+      ],
+      "side_effects": [
+        "bloating",
+        "wind",
+        "abdominal fullness"
+      ],
+      "warnings": [
+        "Always take with a full glass of water",
+        "Do not take dry"
+      ],
+      "interacts_with": [
+        "levothyroxine",
+        "carbimazole",
+        "ferrous_sulfate"
+      ],
+      "tags": [
+        "constipation",
+        "gi"
+      ]
+    },
+    {
+      "id": "probiotics",
+      "name": "Probiotics (Lactobacillus / Saccharomyces)",
+      "generic": "probiotic",
+      "drug_class": "Probiotic supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "antibiotic-associated diarrhoea",
+        "gastroenteritis recovery",
+        "gut health"
+      ],
+      "dose_adult": "1 capsule/sachet",
+      "dose_child": "1 sachet",
+      "max_daily_adult": "2 doses",
+      "max_daily_child": "2 doses",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 30,
+      "age_min": 1,
+      "pregnancy": "safe",
+      "contraindications": [
+        "severely immunocompromised",
+        "central venous line"
+      ],
+      "side_effects": [
+        "mild bloating",
+        "wind"
+      ],
+      "warnings": [
+        "Separate from antibiotics by 2 hours",
+        "Refrigerate if product requires it"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "gi",
+        "gut health"
+      ]
+    },
+    {
+      "id": "zinc",
+      "name": "Zinc supplement",
+      "generic": "zinc sulfate/gluconate",
+      "drug_class": "Mineral supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "diarrhoea in children",
+        "immune support",
+        "cold duration reduction"
+      ],
+      "dose_adult": "15-30 mg elemental",
+      "dose_child": "10-20 mg elemental",
+      "max_daily_adult": "40 mg",
+      "max_daily_child": "20 mg",
+      "frequency": "once daily",
+      "times": [
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 14,
+      "age_min": 0.5,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "nausea",
+        "metallic taste",
+        "abdominal pain"
+      ],
+      "warnings": [
+        "Take with food to reduce nausea",
+        "Long-term high dose causes copper deficiency"
+      ],
+      "interacts_with": [
+        "ciprofloxacin",
+        "penicillamine",
+        "ferrous_sulfate"
+      ],
+      "tags": [
+        "supplement",
+        "gi"
+      ]
+    },
+    {
+      "id": "amoxicillin",
+      "name": "Amoxicillin",
+      "generic": "amoxicillin",
+      "drug_class": "Penicillin antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "pneumonia",
+        "sinusitis",
+        "otitis media",
+        "strep throat",
+        "cellulitis",
+        "H. pylori"
+      ],
+      "dose_adult": "500 mg",
+      "dose_child": "20-40 mg/kg/day divided",
+      "max_daily_adult": "3000 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "three times daily",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 7,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "penicillin allergy",
+        "previous anaphylaxis to beta-lactams",
+        "infectious mononucleosis"
+      ],
+      "side_effects": [
+        "diarrhoea",
+        "nausea",
+        "rash",
+        "oral thrush"
+      ],
+      "warnings": [
+        "Complete the full prescribed course",
+        "Stop and seek help for rash or swelling",
+        "Antibiotics do not work on viral illness"
+      ],
+      "interacts_with": [
+        "methotrexate",
+        "warfarin",
+        "allopurinol"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "penicillin_v",
+      "name": "Penicillin V",
+      "generic": "phenoxymethylpenicillin",
+      "drug_class": "Penicillin antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "strep throat",
+        "tonsillitis",
+        "dental infection"
+      ],
+      "dose_adult": "500 mg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "2000 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "four times daily",
+      "times": [
+        "08:00",
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": 10,
+      "age_min": 1,
+      "pregnancy": "safe",
+      "contraindications": [
+        "penicillin allergy",
+        "previous anaphylaxis"
+      ],
+      "side_effects": [
+        "diarrhoea",
+        "nausea",
+        "rash",
+        "thrush"
+      ],
+      "warnings": [
+        "Complete the full 10-day course for strep throat",
+        "Best taken on an empty stomach"
+      ],
+      "interacts_with": [
+        "methotrexate",
+        "warfarin"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "azithromycin",
+      "name": "Azithromycin",
+      "generic": "azithromycin",
+      "drug_class": "Macrolide antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "atypical pneumonia",
+        "bronchitis",
+        "sinusitis",
+        "typhoid",
+        "chlamydia"
+      ],
+      "dose_adult": "500 mg day 1 then 250 mg",
+      "dose_child": "10 mg/kg",
+      "max_daily_adult": "500 mg",
+      "max_daily_child": "500 mg",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": 5,
+      "age_min": 0.5,
+      "pregnancy": "caution",
+      "contraindications": [
+        "macrolide allergy",
+        "severe liver disease",
+        "prolonged QT"
+      ],
+      "side_effects": [
+        "nausea",
+        "diarrhoea",
+        "abdominal pain",
+        "headache"
+      ],
+      "warnings": [
+        "Complete the prescribed course",
+        "Can prolong the QT interval"
+      ],
+      "interacts_with": [
+        "domperidone",
+        "warfarin",
+        "antacid"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "clarithromycin",
+      "name": "Clarithromycin",
+      "generic": "clarithromycin",
+      "drug_class": "Macrolide antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "H. pylori eradication",
+        "respiratory infection",
+        "skin infection"
+      ],
+      "dose_adult": "250-500 mg",
+      "dose_child": "7.5 mg/kg",
+      "max_daily_adult": "1000 mg",
+      "max_daily_child": "500 mg",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 0.5,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "macrolide allergy",
+        "prolonged QT",
+        "severe liver disease",
+        "concurrent ergot or statin use"
+      ],
+      "side_effects": [
+        "taste disturbance",
+        "nausea",
+        "diarrhoea",
+        "headache"
+      ],
+      "warnings": [
+        "Many drug interactions - review all medicines",
+        "Complete the course"
+      ],
+      "interacts_with": [
+        "domperidone",
+        "atorvastatin",
+        "colchicine",
+        "warfarin",
+        "fluconazole"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "ciprofloxacin",
+      "name": "Ciprofloxacin",
+      "generic": "ciprofloxacin",
+      "drug_class": "Fluoroquinolone antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "typhoid",
+        "complicated UTI",
+        "gastrointestinal infection"
+      ],
+      "dose_adult": "500 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "1500 mg",
+      "max_daily_child": "n/a",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 10,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "tendon disorders",
+        "myasthenia gravis",
+        "prolonged QT",
+        "under 18 years"
+      ],
+      "side_effects": [
+        "nausea",
+        "tendon pain",
+        "dizziness",
+        "photosensitivity"
+      ],
+      "warnings": [
+        "Stop and seek help for tendon pain",
+        "Avoid dairy and antacids within 2 hours",
+        "Stay out of strong sun"
+      ],
+      "interacts_with": [
+        "antacid",
+        "zinc",
+        "ferrous_sulfate",
+        "warfarin",
+        "ibuprofen"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "nitrofurantoin",
+      "name": "Nitrofurantoin",
+      "generic": "nitrofurantoin",
+      "drug_class": "Urinary antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "uncomplicated UTI",
+        "bladder infection"
+      ],
+      "dose_adult": "100 mg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "400 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 7,
+      "age_min": 3,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe kidney disease",
+        "G6PD deficiency",
+        "late pregnancy",
+        "under 3 months"
+      ],
+      "side_effects": [
+        "nausea",
+        "headache",
+        "dark urine",
+        "rash"
+      ],
+      "warnings": [
+        "Take with food to reduce nausea",
+        "Urine may turn dark yellow-brown (harmless)"
+      ],
+      "interacts_with": [
+        "antacid"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "trimethoprim",
+      "name": "Trimethoprim",
+      "generic": "trimethoprim",
+      "drug_class": "Antibiotic",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "uncomplicated UTI",
+        "respiratory infection"
+      ],
+      "dose_adult": "200 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "400 mg",
+      "max_daily_child": "n/a",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 7,
+      "age_min": 12,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "severe kidney disease",
+        "folate deficiency",
+        "blood dyscrasias"
+      ],
+      "side_effects": [
+        "rash",
+        "nausea",
+        "itching",
+        "blood changes"
+      ],
+      "warnings": [
+        "Avoid in pregnancy",
+        "Report any rash immediately"
+      ],
+      "interacts_with": [
+        "methotrexate",
+        "warfarin",
+        "phenytoin"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "cloxacillin",
+      "name": "Cloxacillin (Flucloxacillin)",
+      "generic": "cloxacillin",
+      "drug_class": "Penicillinase-resistant penicillin",
+      "otc": false,
+      "prescription_note": "Antibiotic - only with a prescription",
+      "uses": [
+        "skin and soft tissue infection",
+        "cellulitis",
+        "infected wound"
+      ],
+      "dose_adult": "500 mg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "4000 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "four times daily",
+      "times": [
+        "08:00",
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": 7,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "penicillin allergy",
+        "previous cholestatic jaundice with this drug"
+      ],
+      "side_effects": [
+        "diarrhoea",
+        "nausea",
+        "rash",
+        "liver enzyme rise"
+      ],
+      "warnings": [
+        "Take on an empty stomach",
+        "Report jaundice or dark urine"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "methotrexate"
+      ],
+      "tags": [
+        "antibiotic"
+      ]
+    },
+    {
+      "id": "artemether_lumefantrine",
+      "name": "Artemether / Lumefantrine",
+      "generic": "artemether-lumefantrine",
+      "drug_class": "Antimalarial",
+      "otc": false,
+      "prescription_note": "Antimalarial - only with a prescription",
+      "uses": [
+        "uncomplicated falciparum malaria"
+      ],
+      "dose_adult": "4 tablets (20/120 mg)",
+      "dose_child": "weight-based",
+      "max_daily_adult": "as per regimen",
+      "max_daily_child": "weight-based",
+      "frequency": "twice daily for 3 days",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food (fatty meal)",
+      "max_days": 3,
+      "age_min": 0.25,
+      "pregnancy": "caution",
+      "contraindications": [
+        "hypersensitivity",
+        "severe malaria (needs IV therapy)",
+        "prolonged QT"
+      ],
+      "side_effects": [
+        "headache",
+        "dizziness",
+        "nausea",
+        "palpitations"
+      ],
+      "warnings": [
+        "Take with milk or a fatty meal for absorption",
+        "Complete the full 3-day course"
+      ],
+      "interacts_with": [
+        "clarithromycin",
+        "domperidone",
+        "fluconazole"
+      ],
+      "tags": [
+        "antimalarial"
+      ]
+    },
+    {
+      "id": "fluconazole",
+      "name": "Fluconazole",
+      "generic": "fluconazole",
+      "drug_class": "Antifungal (azole)",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "candidiasis",
+        "fungal skin infection",
+        "tinea"
+      ],
+      "dose_adult": "150 mg",
+      "dose_child": "3-6 mg/kg",
+      "max_daily_adult": "400 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "once weekly or daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 0,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "azole allergy",
+        "prolonged QT",
+        "severe liver disease"
+      ],
+      "side_effects": [
+        "nausea",
+        "abdominal pain",
+        "headache",
+        "rash"
+      ],
+      "warnings": [
+        "Many interactions - review all medicines",
+        "Avoid in pregnancy"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "clarithromycin",
+        "domperidone",
+        "atorvastatin"
+      ],
+      "tags": [
+        "antifungal"
+      ]
+    },
+    {
+      "id": "clotrimazole",
+      "name": "Clotrimazole cream",
+      "generic": "clotrimazole",
+      "drug_class": "Topical antifungal",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "tinea",
+        "ringworm",
+        "athlete's foot",
+        "candidal skin infection"
+      ],
+      "dose_adult": "thin layer",
+      "dose_child": "thin layer",
+      "max_daily_adult": "3 applications",
+      "max_daily_child": "3 applications",
+      "frequency": "two to three times daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "topical",
+      "max_days": 28,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "local burning",
+        "itching",
+        "redness"
+      ],
+      "warnings": [
+        "Apply to clean dry skin and include a margin around the rash",
+        "Continue for 1-2 weeks after clearing"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "antifungal",
+        "topical"
+      ]
+    },
+    {
+      "id": "terbinafine",
+      "name": "Terbinafine",
+      "generic": "terbinafine",
+      "drug_class": "Antifungal (allylamine)",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "tinea",
+        "athlete's foot",
+        "nail fungal infection"
+      ],
+      "dose_adult": "250 mg or 1% cream",
+      "dose_child": "not routine",
+      "max_daily_adult": "250 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 42,
+      "age_min": 12,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "severe liver disease",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "headache",
+        "nausea",
+        "taste disturbance",
+        "rash"
+      ],
+      "warnings": [
+        "Report jaundice, dark urine or loss of taste",
+        "Oral course needs liver monitoring"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "amitriptyline"
+      ],
+      "tags": [
+        "antifungal"
+      ]
+    },
+    {
+      "id": "ketoconazole_shampoo",
+      "name": "Ketoconazole shampoo 2%",
+      "generic": "ketoconazole",
+      "drug_class": "Topical antifungal",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "dandruff",
+        "seborrhoeic dermatitis",
+        "scalp fungal infection"
+      ],
+      "dose_adult": "apply to wet scalp",
+      "dose_child": "apply to wet scalp",
+      "max_daily_adult": "1 application",
+      "max_daily_child": "1 application",
+      "frequency": "twice weekly",
+      "times": [
+        "19:00"
+      ],
+      "with_food": "topical",
+      "max_days": 56,
+      "age_min": 12,
+      "pregnancy": "caution",
+      "contraindications": [
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "scalp dryness",
+        "itching",
+        "hair texture change"
+      ],
+      "warnings": [
+        "Leave on the scalp 3-5 minutes before rinsing",
+        "Avoid contact with eyes"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "antifungal",
+        "topical"
+      ]
+    },
+    {
+      "id": "amlodipine",
+      "name": "Amlodipine",
+      "generic": "amlodipine",
+      "drug_class": "Calcium channel blocker",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "hypertension",
+        "angina"
+      ],
+      "dose_adult": "5 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe aortic stenosis",
+        "cardiogenic shock",
+        "unstable angina"
+      ],
+      "side_effects": [
+        "ankle swelling",
+        "flushing",
+        "headache",
+        "dizziness"
+      ],
+      "warnings": [
+        "Take at the same time each day",
+        "Rise slowly to avoid dizziness",
+        "Do not stop suddenly"
+      ],
+      "interacts_with": [
+        "clarithromycin",
+        "simvastatin"
+      ],
+      "tags": [
+        "cardiac",
+        "hypertension"
+      ]
+    },
+    {
+      "id": "losartan",
+      "name": "Losartan",
+      "generic": "losartan",
+      "drug_class": "Angiotensin receptor blocker",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "hypertension",
+        "heart failure",
+        "kidney protection in diabetes"
+      ],
+      "dose_adult": "50 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "100 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "contraindicated",
+      "contraindications": [
+        "pregnancy",
+        "bilateral renal artery stenosis",
+        "severe liver disease"
+      ],
+      "side_effects": [
+        "dizziness",
+        "fatigue",
+        "raised potassium",
+        "low blood pressure"
+      ],
+      "warnings": [
+        "Do NOT use in pregnancy",
+        "Blood tests for kidney function and potassium",
+        "Avoid potassium supplements"
+      ],
+      "interacts_with": [
+        "ibuprofen",
+        "diclofenac",
+        "spironolactone",
+        "ramipril"
+      ],
+      "tags": [
+        "cardiac",
+        "hypertension"
+      ]
+    },
+    {
+      "id": "ramipril",
+      "name": "Ramipril",
+      "generic": "ramipril",
+      "drug_class": "ACE inhibitor",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "hypertension",
+        "heart failure",
+        "post-heart-attack protection"
+      ],
+      "dose_adult": "2.5-5 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "contraindicated",
+      "contraindications": [
+        "pregnancy",
+        "history of angioedema",
+        "bilateral renal artery stenosis"
+      ],
+      "side_effects": [
+        "dry persistent cough",
+        "dizziness",
+        "raised potassium",
+        "taste change"
+      ],
+      "warnings": [
+        "Do NOT use in pregnancy",
+        "Seek help for facial or tongue swelling",
+        "Monitor kidney function"
+      ],
+      "interacts_with": [
+        "ibuprofen",
+        "diclofenac",
+        "spironolactone",
+        "losartan"
+      ],
+      "tags": [
+        "cardiac",
+        "hypertension"
+      ]
+    },
+    {
+      "id": "hydrochlorothiazide",
+      "name": "Hydrochlorothiazide",
+      "generic": "hydrochlorothiazide",
+      "drug_class": "Thiazide diuretic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "hypertension",
+        "mild fluid overload"
+      ],
+      "dose_adult": "12.5-25 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "50 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily (morning)",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "anuria",
+        "severe kidney disease",
+        "sulfonamide allergy",
+        "gout"
+      ],
+      "side_effects": [
+        "increased urination",
+        "dizziness",
+        "low potassium",
+        "sun sensitivity"
+      ],
+      "warnings": [
+        "Take in the morning to avoid night urination",
+        "Monitor potassium and sodium",
+        "Use sun protection"
+      ],
+      "interacts_with": [
+        "lithium",
+        "ibuprofen",
+        "digoxin"
+      ],
+      "tags": [
+        "cardiac",
+        "hypertension"
+      ]
+    },
+    {
+      "id": "furosemide",
+      "name": "Furosemide (Frusemide)",
+      "generic": "furosemide",
+      "drug_class": "Loop diuretic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "heart failure",
+        "fluid overload",
+        "oedema"
+      ],
+      "dose_adult": "20-40 mg",
+      "dose_child": "1-2 mg/kg",
+      "max_daily_adult": "as prescribed",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily (morning)",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "caution",
+      "contraindications": [
+        "anuria",
+        "severe electrolyte depletion",
+        "hepatic coma"
+      ],
+      "side_effects": [
+        "frequent urination",
+        "dizziness",
+        "low potassium",
+        "cramps"
+      ],
+      "warnings": [
+        "Take in the morning",
+        "Monitor weight and electrolytes daily",
+        "Report rapid weight gain or swelling"
+      ],
+      "interacts_with": [
+        "ibuprofen",
+        "diclofenac",
+        "digoxin",
+        "lithium"
+      ],
+      "tags": [
+        "cardiac",
+        "diuretic"
+      ]
+    },
+    {
+      "id": "spironolactone",
+      "name": "Spironolactone",
+      "generic": "spironolactone",
+      "drug_class": "Potassium-sparing diuretic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "heart failure",
+        "ascites",
+        "resistant hypertension"
+      ],
+      "dose_adult": "25 mg",
+      "dose_child": "1-3 mg/kg",
+      "max_daily_adult": "100 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "hyperkalaemia",
+        "severe kidney disease",
+        "Addison's disease"
+      ],
+      "side_effects": [
+        "raised potassium",
+        "breast tenderness",
+        "dizziness",
+        "irregular periods"
+      ],
+      "warnings": [
+        "Monitor potassium closely",
+        "Avoid potassium supplements and salt substitutes"
+      ],
+      "interacts_with": [
+        "losartan",
+        "ramipril",
+        "ibuprofen",
+        "diclofenac"
+      ],
+      "tags": [
+        "cardiac",
+        "diuretic"
+      ]
+    },
+    {
+      "id": "bisoprolol",
+      "name": "Bisoprolol",
+      "generic": "bisoprolol",
+      "drug_class": "Beta blocker",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "heart failure",
+        "hypertension",
+        "angina",
+        "rate control"
+      ],
+      "dose_adult": "2.5-5 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe asthma",
+        "heart block",
+        "cardiogenic shock",
+        "untreated phaeochromocytoma"
+      ],
+      "side_effects": [
+        "fatigue",
+        "cold hands and feet",
+        "slow pulse",
+        "dizziness"
+      ],
+      "warnings": [
+        "Do not stop suddenly - rebound angina risk",
+        "May mask hypoglycaemia symptoms in diabetes"
+      ],
+      "interacts_with": [
+        "salbutamol",
+        "verapamil",
+        "insulin"
+      ],
+      "tags": [
+        "cardiac"
+      ]
+    },
+    {
+      "id": "atorvastatin",
+      "name": "Atorvastatin",
+      "generic": "atorvastatin",
+      "drug_class": "Statin",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "high cholesterol",
+        "cardiovascular risk reduction"
+      ],
+      "dose_adult": "10-80 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "80 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily at night",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "contraindicated",
+      "contraindications": [
+        "pregnancy",
+        "active liver disease",
+        "breastfeeding"
+      ],
+      "side_effects": [
+        "muscle aches",
+        "headache",
+        "raised liver enzymes",
+        "nausea"
+      ],
+      "warnings": [
+        "Report unexplained muscle pain or weakness",
+        "Avoid grapefruit juice",
+        "Liver function monitoring"
+      ],
+      "interacts_with": [
+        "clarithromycin",
+        "fluconazole",
+        "colchicine"
+      ],
+      "tags": [
+        "cardiac",
+        "cholesterol"
+      ]
+    },
+    {
+      "id": "nitroglycerin",
+      "name": "Nitroglycerin (GTN) sublingual",
+      "generic": "glyceryl trinitrate",
+      "drug_class": "Nitrate vasodilator",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "angina attack",
+        "angina prevention before exertion"
+      ],
+      "dose_adult": "0.4-0.8 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "as needed",
+      "max_daily_child": "n/a",
+      "frequency": "as needed",
+      "times": [
+        "as needed"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe hypotension",
+        "concurrent PDE5 inhibitors",
+        "aortic stenosis"
+      ],
+      "side_effects": [
+        "headache",
+        "flushing",
+        "dizziness",
+        "low blood pressure"
+      ],
+      "warnings": [
+        "Sit down before taking - may cause faintness",
+        "If pain persists after 3 doses over 15 minutes, call emergency services",
+        "Never combine with erectile dysfunction drugs"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "cardiac",
+        "emergency"
+      ]
+    },
+    {
+      "id": "sumatriptan",
+      "name": "Sumatriptan",
+      "generic": "sumatriptan",
+      "drug_class": "Triptan (5-HT1 agonist)",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "acute migraine attack"
+      ],
+      "dose_adult": "50-100 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "300 mg",
+      "max_daily_child": "n/a",
+      "frequency": "at attack onset",
+      "times": [
+        "as needed"
+      ],
+      "with_food": "any",
+      "max_days": 10,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "ischaemic heart disease",
+        "stroke history",
+        "uncontrolled hypertension",
+        "ergotamine use"
+      ],
+      "side_effects": [
+        "chest tightness",
+        "tingling",
+        "dizziness",
+        "drowsiness"
+      ],
+      "warnings": [
+        "Take as early as possible in the attack",
+        "Not for prevention",
+        "Do not use more than 10 days a month"
+      ],
+      "interacts_with": [
+        "sertraline",
+        "fluoxetine",
+        "escitalopram"
+      ],
+      "tags": [
+        "migraine"
+      ]
+    },
+    {
+      "id": "amitriptyline",
+      "name": "Amitriptyline",
+      "generic": "amitriptyline",
+      "drug_class": "Tricyclic antidepressant",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "tension headache prevention",
+        "migraine prevention",
+        "neuropathic pain",
+        "fibromyalgia"
+      ],
+      "dose_adult": "10-25 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "75 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily at night",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "recent heart attack",
+        "arrhythmias",
+        "narrow-angle glaucoma",
+        "prostate enlargement"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "dry mouth",
+        "constipation",
+        "weight gain",
+        "blurred vision"
+      ],
+      "warnings": [
+        "Take at night due to sedation",
+        "Do not stop suddenly",
+        "Avoid alcohol"
+      ],
+      "interacts_with": [
+        "cetirizine",
+        "chlorpheniramine",
+        "tramadol",
+        "terbinafine"
+      ],
+      "tags": [
+        "neuro",
+        "prevention"
+      ]
+    },
+    {
+      "id": "sertraline",
+      "name": "Sertraline",
+      "generic": "sertraline",
+      "drug_class": "SSRI antidepressant",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "depression",
+        "anxiety",
+        "panic disorder",
+        "OCD",
+        "PTSD"
+      ],
+      "dose_adult": "50 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "200 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "MAOI use",
+        "concurrent pimozide",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "nausea",
+        "insomnia",
+        "headache",
+        "sexual dysfunction",
+        "initial anxiety increase"
+      ],
+      "warnings": [
+        "Takes 2-4 weeks to work",
+        "Do not stop abruptly",
+        "Seek help if mood worsens or for any thoughts of self-harm"
+      ],
+      "interacts_with": [
+        "metoclopramide",
+        "sumatriptan",
+        "ibuprofen",
+        "tramadol",
+        "dextromethorphan"
+      ],
+      "tags": [
+        "psych"
+      ]
+    },
+    {
+      "id": "fluoxetine",
+      "name": "Fluoxetine",
+      "generic": "fluoxetine",
+      "drug_class": "SSRI antidepressant",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "depression",
+        "bulimia",
+        "OCD",
+        "panic disorder"
+      ],
+      "dose_adult": "20 mg",
+      "dose_child": "10 mg",
+      "max_daily_adult": "60 mg",
+      "max_daily_child": "20 mg",
+      "frequency": "once daily (morning)",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 8,
+      "pregnancy": "caution",
+      "contraindications": [
+        "MAOI use",
+        "thioridazine use",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "nausea",
+        "insomnia",
+        "headache",
+        "restlessness",
+        "sexual dysfunction"
+      ],
+      "warnings": [
+        "Take in the morning - can be activating",
+        "Do not stop abruptly",
+        "Seek help for any thoughts of self-harm"
+      ],
+      "interacts_with": [
+        "metoclopramide",
+        "dextromethorphan",
+        "ibuprofen",
+        "tramadol"
+      ],
+      "tags": [
+        "psych"
+      ]
+    },
+    {
+      "id": "escitalopram",
+      "name": "Escitalopram",
+      "generic": "escitalopram",
+      "drug_class": "SSRI antidepressant",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "depression",
+        "generalised anxiety",
+        "panic disorder"
+      ],
+      "dose_adult": "10 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "20 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "MAOI use",
+        "prolonged QT",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "nausea",
+        "headache",
+        "sleep disturbance",
+        "sexual dysfunction"
+      ],
+      "warnings": [
+        "Do not stop abruptly",
+        "Avoid with other QT-prolonging drugs",
+        "Seek help for thoughts of self-harm"
+      ],
+      "interacts_with": [
+        "metoclopramide",
+        "sumatriptan",
+        "domperidone",
+        "clarithromycin"
+      ],
+      "tags": [
+        "psych"
+      ]
+    },
+    {
+      "id": "mirtazapine",
+      "name": "Mirtazapine",
+      "generic": "mirtazapine",
+      "drug_class": "Noradrenergic antidepressant",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "depression with insomnia",
+        "depression with poor appetite"
+      ],
+      "dose_adult": "15 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "45 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily at night",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "MAOI use",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "sedation",
+        "increased appetite",
+        "weight gain",
+        "dry mouth"
+      ],
+      "warnings": [
+        "Take at night",
+        "Do not stop abruptly",
+        "Seek help for thoughts of self-harm"
+      ],
+      "interacts_with": [
+        "tramadol",
+        "amitriptyline",
+        "alcohol"
+      ],
+      "tags": [
+        "psych"
+      ]
+    },
+    {
+      "id": "duloxetine",
+      "name": "Duloxetine",
+      "generic": "duloxetine",
+      "drug_class": "SNRI antidepressant",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "fibromyalgia",
+        "neuropathic pain",
+        "depression",
+        "anxiety"
+      ],
+      "dose_adult": "30 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "120 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "MAOI use",
+        "uncontrolled narrow-angle glaucoma",
+        "severe liver disease"
+      ],
+      "side_effects": [
+        "nausea",
+        "dry mouth",
+        "drowsiness",
+        "sweating",
+        "raised blood pressure"
+      ],
+      "warnings": [
+        "Do not stop abruptly",
+        "Monitor blood pressure",
+        "Avoid alcohol"
+      ],
+      "interacts_with": [
+        "chlorpheniramine",
+        "tramadol",
+        "ibuprofen"
+      ],
+      "tags": [
+        "psych",
+        "pain"
+      ]
+    },
+    {
+      "id": "pregabalin",
+      "name": "Pregabalin",
+      "generic": "pregabalin",
+      "drug_class": "Anticonvulsant / neuropathic analgesic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "neuropathic pain",
+        "fibromyalgia",
+        "generalised anxiety",
+        "seizures"
+      ],
+      "dose_adult": "75 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "600 mg",
+      "max_daily_child": "n/a",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "hypersensitivity",
+        "severe heart failure"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "dizziness",
+        "weight gain",
+        "blurred vision",
+        "swelling"
+      ],
+      "warnings": [
+        "May impair driving",
+        "Do not stop suddenly",
+        "Avoid alcohol",
+        "Potential for dependence"
+      ],
+      "interacts_with": [
+        "cetirizine",
+        "chlorpheniramine",
+        "tramadol",
+        "alcohol"
+      ],
+      "tags": [
+        "neuro",
+        "pain"
+      ]
+    },
+    {
+      "id": "propranolol",
+      "name": "Propranolol",
+      "generic": "propranolol",
+      "drug_class": "Beta blocker",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "anxiety with palpitations",
+        "migraine prevention",
+        "tremor",
+        "hyperthyroidism symptoms"
+      ],
+      "dose_adult": "10-40 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "160 mg",
+      "max_daily_child": "n/a",
+      "frequency": "three times daily",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe asthma",
+        "heart block",
+        "cardiogenic shock",
+        "untreated heart failure"
+      ],
+      "side_effects": [
+        "fatigue",
+        "cold extremities",
+        "slow pulse",
+        "dizziness",
+        "sleep disturbance"
+      ],
+      "warnings": [
+        "Do not stop suddenly",
+        "Avoid in asthma",
+        "Can mask hypoglycaemia symptoms"
+      ],
+      "interacts_with": [
+        "salbutamol",
+        "insulin",
+        "verapamil"
+      ],
+      "tags": [
+        "psych",
+        "cardiac"
+      ]
+    },
+    {
+      "id": "levothyroxine",
+      "name": "Levothyroxine",
+      "generic": "levothyroxine",
+      "drug_class": "Thyroid hormone",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "hypothyroidism",
+        "thyroid hormone replacement"
+      ],
+      "dose_adult": "25-100 mcg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "200 mcg",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily",
+      "times": [
+        "07:00"
+      ],
+      "with_food": "before food",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "untreated hyperthyroidism",
+        "untreated adrenal insufficiency",
+        "recent heart attack"
+      ],
+      "side_effects": [
+        "palpitations",
+        "weight loss",
+        "insomnia",
+        "heat intolerance if over-replaced"
+      ],
+      "warnings": [
+        "Take on an empty stomach 30-60 minutes before breakfast",
+        "Separate from iron, calcium and antacids by 4 hours",
+        "Regular thyroid blood tests"
+      ],
+      "interacts_with": [
+        "ferrous_sulfate",
+        "antacid",
+        "ispaghula",
+        "omeprazole"
+      ],
+      "tags": [
+        "endocrine"
+      ]
+    },
+    {
+      "id": "carbimazole",
+      "name": "Carbimazole",
+      "generic": "carbimazole",
+      "drug_class": "Antithyroid agent",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "hyperthyroidism",
+        "Graves' disease"
+      ],
+      "dose_adult": "10-20 mg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "60 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe blood disorders",
+        "previous agranulocytosis with this drug",
+        "severe liver disease"
+      ],
+      "side_effects": [
+        "rash",
+        "nausea",
+        "itching",
+        "reduced white cells (rare)"
+      ],
+      "warnings": [
+        "Report fever or sore throat immediately - may indicate low white cells",
+        "Regular blood tests required"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "ispaghula"
+      ],
+      "tags": [
+        "endocrine"
+      ]
+    },
+    {
+      "id": "metformin",
+      "name": "Metformin",
+      "generic": "metformin",
+      "drug_class": "Biguanide antidiabetic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "type 2 diabetes",
+        "insulin resistance",
+        "PCOS"
+      ],
+      "dose_adult": "500 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "2550 mg",
+      "max_daily_child": "n/a",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 10,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe kidney disease",
+        "lactic acidosis history",
+        "severe liver disease",
+        "acute heart failure"
+      ],
+      "side_effects": [
+        "nausea",
+        "diarrhoea",
+        "abdominal discomfort",
+        "metallic taste"
+      ],
+      "warnings": [
+        "Take with or just after food to reduce stomach upset",
+        "Stop before contrast imaging or surgery",
+        "Report muscle pain or breathlessness"
+      ],
+      "interacts_with": [
+        "prednisolone",
+        "furosemide",
+        "alcohol"
+      ],
+      "tags": [
+        "diabetes"
+      ]
+    },
+    {
+      "id": "glimepiride",
+      "name": "Glimepiride",
+      "generic": "glimepiride",
+      "drug_class": "Sulfonylurea antidiabetic",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "type 2 diabetes"
+      ],
+      "dose_adult": "1-4 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "6 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "07:30"
+      ],
+      "with_food": "before food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "type 1 diabetes",
+        "severe kidney or liver disease",
+        "diabetic ketoacidosis"
+      ],
+      "side_effects": [
+        "hypoglycaemia",
+        "weight gain",
+        "nausea",
+        "rash"
+      ],
+      "warnings": [
+        "Take just before breakfast",
+        "Do not skip meals - hypoglycaemia risk",
+        "Carry glucose for low sugar"
+      ],
+      "interacts_with": [
+        "propranolol",
+        "bisoprolol",
+        "alcohol"
+      ],
+      "tags": [
+        "diabetes"
+      ]
+    },
+    {
+      "id": "insulin",
+      "name": "Insulin",
+      "generic": "insulin",
+      "drug_class": "Antidiabetic hormone",
+      "otc": false,
+      "prescription_note": "Injectable - prescribed and dose-adjusted by a clinician",
+      "uses": [
+        "type 1 diabetes",
+        "type 2 diabetes with poor control",
+        "diabetic emergencies"
+      ],
+      "dose_adult": "individualised",
+      "dose_child": "individualised",
+      "max_daily_adult": "individualised",
+      "max_daily_child": "individualised",
+      "frequency": "as prescribed",
+      "times": [
+        "as prescribed"
+      ],
+      "with_food": "relative to meals",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypoglycaemia",
+        "hypersensitivity to the formulation"
+      ],
+      "side_effects": [
+        "hypoglycaemia",
+        "weight gain",
+        "injection site reactions"
+      ],
+      "warnings": [
+        "Dose is individual - never adjust without advice",
+        "Rotate injection sites",
+        "Recognise and treat hypoglycaemia"
+      ],
+      "interacts_with": [
+        "propranolol",
+        "bisoprolol",
+        "prednisolone"
+      ],
+      "tags": [
+        "diabetes"
+      ]
+    },
+    {
+      "id": "ferrous_sulfate",
+      "name": "Ferrous Sulfate (iron)",
+      "generic": "ferrous sulfate",
+      "drug_class": "Iron supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "iron deficiency anaemia",
+        "iron deficiency"
+      ],
+      "dose_adult": "200 mg (65 mg elemental)",
+      "dose_child": "3-6 mg/kg/day",
+      "max_daily_adult": "600 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "once to twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "iron overload",
+        "haemochromatosis",
+        "repeated blood transfusions",
+        "active peptic ulcer"
+      ],
+      "side_effects": [
+        "constipation",
+        "black stools",
+        "nausea",
+        "abdominal pain"
+      ],
+      "warnings": [
+        "Black stools are expected and harmless",
+        "Take with vitamin C to aid absorption",
+        "Separate from tea, calcium and antacids",
+        "Keep away from children - overdose is dangerous"
+      ],
+      "interacts_with": [
+        "antacid",
+        "levothyroxine",
+        "ciprofloxacin",
+        "zinc",
+        "ispaghula"
+      ],
+      "tags": [
+        "supplement",
+        "anaemia"
+      ]
+    },
+    {
+      "id": "folic_acid",
+      "name": "Folic Acid",
+      "generic": "folic acid",
+      "drug_class": "Vitamin supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "folate deficiency anaemia",
+        "pregnancy supplementation"
+      ],
+      "dose_adult": "400-5000 mcg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "5000 mcg",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "untreated B12 deficiency (can mask it)",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "nausea",
+        "bloating",
+        "bitter taste (rare)"
+      ],
+      "warnings": [
+        "Rule out B12 deficiency before high-dose treatment",
+        "Essential before and in early pregnancy"
+      ],
+      "interacts_with": [
+        "methotrexate",
+        "trimethoprim"
+      ],
+      "tags": [
+        "supplement"
+      ]
+    },
+    {
+      "id": "vitamin_b12",
+      "name": "Vitamin B12 (Cyanocobalamin)",
+      "generic": "cyanocobalamin",
+      "drug_class": "Vitamin supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "B12 deficiency",
+        "pernicious anaemia",
+        "neurological symptoms of deficiency"
+      ],
+      "dose_adult": "1000 mcg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "1000 mcg",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity",
+        "Leber's disease"
+      ],
+      "side_effects": [
+        "nausea",
+        "headache",
+        "injection site pain"
+      ],
+      "warnings": [
+        "Oral absorption is poor in pernicious anaemia - injections may be needed",
+        "Long-term metformin users may need supplementation"
+      ],
+      "interacts_with": [
+        "omeprazole",
+        "metformin"
+      ],
+      "tags": [
+        "supplement"
+      ]
+    },
+    {
+      "id": "vitamin_c",
+      "name": "Vitamin C (Ascorbic Acid)",
+      "generic": "ascorbic acid",
+      "drug_class": "Vitamin supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "immune support",
+        "cold symptom support",
+        "iron absorption"
+      ],
+      "dose_adult": "500-1000 mg",
+      "dose_child": "250 mg",
+      "max_daily_adult": "2000 mg",
+      "max_daily_child": "500 mg",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": 30,
+      "age_min": 1,
+      "pregnancy": "safe",
+      "contraindications": [
+        "kidney stone history (high dose)",
+        "haemochromatosis",
+        "G6PD deficiency (high dose)"
+      ],
+      "side_effects": [
+        "stomach upset",
+        "diarrhoea at high doses"
+      ],
+      "warnings": [
+        "High doses may cause kidney stones in susceptible people",
+        "Take with food"
+      ],
+      "interacts_with": [
+        "ferrous_sulfate",
+        "warfarin"
+      ],
+      "tags": [
+        "supplement"
+      ]
+    },
+    {
+      "id": "vitamin_d",
+      "name": "Vitamin D3 (Cholecalciferol)",
+      "generic": "cholecalciferol",
+      "drug_class": "Vitamin supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "vitamin D deficiency",
+        "bone health",
+        "immune support"
+      ],
+      "dose_adult": "1000-2000 IU",
+      "dose_child": "400-1000 IU",
+      "max_daily_adult": "4000 IU",
+      "max_daily_child": "2000 IU",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypercalcaemia",
+        "sarcoidosis",
+        "hyperparathyroidism"
+      ],
+      "side_effects": [
+        "nausea (overdose)",
+        "raised calcium (overdose)"
+      ],
+      "warnings": [
+        "Take with a meal containing fat for absorption",
+        "Do not exceed the recommended dose"
+      ],
+      "interacts_with": [
+        "hydrochlorothiazide"
+      ],
+      "tags": [
+        "supplement"
+      ]
+    },
+    {
+      "id": "glucosamine",
+      "name": "Glucosamine",
+      "generic": "glucosamine sulfate",
+      "drug_class": "Supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "osteoarthritis symptom support"
+      ],
+      "dose_adult": "500 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "1500 mg",
+      "max_daily_child": "n/a",
+      "frequency": "three times daily",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 90,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "shellfish allergy",
+        "diabetes (monitor glucose)"
+      ],
+      "side_effects": [
+        "stomach upset",
+        "drowsiness",
+        "headache"
+      ],
+      "warnings": [
+        "Evidence for benefit is modest",
+        "May raise blood sugar - monitor in diabetes"
+      ],
+      "interacts_with": [
+        "warfarin"
+      ],
+      "tags": [
+        "supplement",
+        "joint"
+      ]
+    },
+    {
+      "id": "colchicine",
+      "name": "Colchicine",
+      "generic": "colchicine",
+      "drug_class": "Anti-gout agent",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "acute gout attack",
+        "gout prevention"
+      ],
+      "dose_adult": "500 mcg",
+      "dose_child": "not routine",
+      "max_daily_adult": "2500 mcg",
+      "max_daily_child": "n/a",
+      "frequency": "two to four times daily",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 5,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "severe kidney disease",
+        "severe liver disease",
+        "blood dyscrasias",
+        "concurrent clarithromycin"
+      ],
+      "side_effects": [
+        "diarrhoea",
+        "nausea",
+        "vomiting",
+        "abdominal pain"
+      ],
+      "warnings": [
+        "Stop at the first sign of diarrhoea",
+        "Narrow therapeutic index - do not exceed the dose",
+        "Check interactions carefully"
+      ],
+      "interacts_with": [
+        "clarithromycin",
+        "atorvastatin",
+        "fluconazole",
+        "ibuprofen"
+      ],
+      "tags": [
+        "gout"
+      ]
+    },
+    {
+      "id": "allopurinol",
+      "name": "Allopurinol",
+      "generic": "allopurinol",
+      "drug_class": "Xanthine oxidase inhibitor",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "gout prevention",
+        "urate lowering"
+      ],
+      "dose_adult": "100-300 mg",
+      "dose_child": "weight-based",
+      "max_daily_adult": "900 mg",
+      "max_daily_child": "weight-based",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "caution",
+      "contraindications": [
+        "previous allopurinol hypersensitivity",
+        "acute gout attack (start after settling)"
+      ],
+      "side_effects": [
+        "rash",
+        "nausea",
+        "raised liver enzymes",
+        "acute gout flare on starting"
+      ],
+      "warnings": [
+        "Do not start during an acute attack",
+        "Report any rash immediately - stop the drug",
+        "Drink plenty of water"
+      ],
+      "interacts_with": [
+        "amoxicillin",
+        "azathioprine",
+        "warfarin"
+      ],
+      "tags": [
+        "gout"
+      ]
+    },
+    {
+      "id": "tamsulosin",
+      "name": "Tamsulosin",
+      "generic": "tamsulosin",
+      "drug_class": "Alpha blocker",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "kidney stones (expulsion)",
+        "benign prostatic hyperplasia"
+      ],
+      "dose_adult": "0.4 mg",
+      "dose_child": "not routine",
+      "max_daily_adult": "0.8 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 28,
+      "age_min": 18,
+      "pregnancy": "not applicable",
+      "contraindications": [
+        "postural hypotension",
+        "severe liver disease",
+        "cataract surgery planned"
+      ],
+      "side_effects": [
+        "dizziness",
+        "retrograde ejaculation",
+        "headache",
+        "low blood pressure"
+      ],
+      "warnings": [
+        "Take after the same meal each day",
+        "May cause dizziness on standing",
+        "Tell your eye surgeon before cataract surgery"
+      ],
+      "interacts_with": [
+        "amlodipine",
+        "sildenafil"
+      ],
+      "tags": [
+        "urology"
+      ]
+    },
+    {
+      "id": "cranberry",
+      "name": "Cranberry supplement",
+      "generic": "cranberry extract",
+      "drug_class": "Herbal supplement",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "UTI prevention support"
+      ],
+      "dose_adult": "1 capsule or 250 mL juice",
+      "dose_child": "not recommended",
+      "max_daily_adult": "2 doses",
+      "max_daily_child": "n/a",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 90,
+      "age_min": 18,
+      "pregnancy": "safe",
+      "contraindications": [
+        "warfarin use",
+        "kidney stone history (oxalate)"
+      ],
+      "side_effects": [
+        "stomach upset",
+        "diarrhoea"
+      ],
+      "warnings": [
+        "Prevention only - does not treat an active infection",
+        "Interacts with warfarin"
+      ],
+      "interacts_with": [
+        "warfarin"
+      ],
+      "tags": [
+        "supplement",
+        "urinary"
+      ]
+    },
+    {
+      "id": "hydrocortisone",
+      "name": "Hydrocortisone 1% cream",
+      "generic": "hydrocortisone",
+      "drug_class": "Topical corticosteroid (mild)",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "eczema",
+        "mild dermatitis",
+        "insect bite inflammation",
+        "mild allergic skin rash"
+      ],
+      "dose_adult": "thin layer",
+      "dose_child": "thin layer",
+      "max_daily_adult": "2 applications",
+      "max_daily_child": "2 applications",
+      "frequency": "once to twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "topical",
+      "max_days": 7,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "untreated skin infection",
+        "acne",
+        "rosacea",
+        "face unless advised"
+      ],
+      "side_effects": [
+        "skin thinning with prolonged use",
+        "burning",
+        "itching"
+      ],
+      "warnings": [
+        "Apply thinly - do not use on the face for long periods",
+        "Do not use on infected skin",
+        "Maximum 7 days without review"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "topical",
+        "skin"
+      ]
+    },
+    {
+      "id": "emollient",
+      "name": "Emollient (moisturiser)",
+      "generic": "emollient",
+      "drug_class": "Skin barrier agent",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "eczema",
+        "dry skin",
+        "atopic dermatitis"
+      ],
+      "dose_adult": "apply liberally",
+      "dose_child": "apply liberally",
+      "max_daily_adult": "as needed",
+      "max_daily_child": "as needed",
+      "frequency": "at least twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "topical",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity to ingredients"
+      ],
+      "side_effects": [
+        "transient stinging",
+        "greasiness"
+      ],
+      "warnings": [
+        "Apply within 3 minutes of bathing to lock in moisture",
+        "Use plenty - emollients are the foundation of eczema care"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "topical",
+        "skin"
+      ]
+    },
+    {
+      "id": "tacrolimus",
+      "name": "Tacrolimus ointment",
+      "generic": "tacrolimus",
+      "drug_class": "Topical calcineurin inhibitor",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "eczema (moderate to severe)",
+        "atopic dermatitis"
+      ],
+      "dose_adult": "thin layer 0.03-0.1%",
+      "dose_child": "thin layer 0.03%",
+      "max_daily_adult": "2 applications",
+      "max_daily_child": "2 applications",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "topical",
+      "max_days": 42,
+      "age_min": 2,
+      "pregnancy": "caution",
+      "contraindications": [
+        "infected skin",
+        "Netherton syndrome",
+        "hypersensitivity"
+      ],
+      "side_effects": [
+        "burning on application",
+        "itching",
+        "increased sun sensitivity"
+      ],
+      "warnings": [
+        "Avoid direct sunlight",
+        "Do not apply to infected skin",
+        "Use only as prescribed"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "topical",
+        "skin"
+      ]
+    },
+    {
+      "id": "silver_sulfadiazine",
+      "name": "Silver Sulfadiazine cream",
+      "generic": "silver sulfadiazine",
+      "drug_class": "Topical antibacterial (burns)",
+      "otc": false,
+      "prescription_note": null,
+      "uses": [
+        "partial thickness burns",
+        "burn wound infection prevention"
+      ],
+      "dose_adult": "thin layer",
+      "dose_child": "thin layer",
+      "max_daily_adult": "1-2 applications",
+      "max_daily_child": "1-2 applications",
+      "frequency": "once to twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "topical",
+      "max_days": 14,
+      "age_min": 2,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "sulfonamide allergy",
+        "G6PD deficiency",
+        "premature infants",
+        "pregnancy"
+      ],
+      "side_effects": [
+        "burning",
+        "itching",
+        "skin discolouration"
+      ],
+      "warnings": [
+        "For burn wounds only",
+        "Avoid in sulfonamide allergy",
+        "Large burns need hospital care"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "topical",
+        "burn"
+      ]
+    },
+    {
+      "id": "chloramphenicol_eye",
+      "name": "Chloramphenicol eye drops",
+      "generic": "chloramphenicol",
+      "drug_class": "Topical antibiotic (eye)",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "bacterial conjunctivitis",
+        "eye infection"
+      ],
+      "dose_adult": "1 drop",
+      "dose_child": "1 drop",
+      "max_daily_adult": "4 drops",
+      "max_daily_child": "4 drops",
+      "frequency": "four times daily",
+      "times": [
+        "08:00",
+        "12:00",
+        "16:00",
+        "20:00"
+      ],
+      "with_food": "topical",
+      "max_days": 5,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "chloramphenicol allergy",
+        "previous blood disorder with chloramphenicol",
+        "contact lens wear"
+      ],
+      "side_effects": [
+        "stinging",
+        "brief blurred vision",
+        "eye irritation"
+      ],
+      "warnings": [
+        "Do not wear contact lenses during treatment",
+        "Stop if no improvement in 5 days",
+        "Do not share eye drops"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "topical",
+        "eye"
+      ]
+    },
+    {
+      "id": "artificial_tears",
+      "name": "Artificial tears (hypromellose)",
+      "generic": "hypromellose",
+      "drug_class": "Ocular lubricant",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "dry eye",
+        "eye irritation",
+        "conjunctivitis comfort"
+      ],
+      "dose_adult": "1 drop",
+      "dose_child": "1 drop",
+      "max_daily_adult": "as needed",
+      "max_daily_child": "as needed",
+      "frequency": "as needed",
+      "times": [
+        "as needed"
+      ],
+      "with_food": "topical",
+      "max_days": null,
+      "age_min": 0,
+      "pregnancy": "safe",
+      "contraindications": [
+        "hypersensitivity to preservatives"
+      ],
+      "side_effects": [
+        "temporary blurring",
+        "mild stinging"
+      ],
+      "warnings": [
+        "Use preservative-free versions if used more than 4 times daily",
+        "Do not touch the dropper tip to the eye"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "topical",
+        "eye"
+      ]
+    },
+    {
+      "id": "methotrexate",
+      "name": "Methotrexate",
+      "generic": "methotrexate",
+      "drug_class": "DMARD / antimetabolite",
+      "otc": false,
+      "prescription_note": "Disease-modifying drug - specialist supervision and blood monitoring required",
+      "uses": [
+        "rheumatoid arthritis",
+        "psoriatic arthritis",
+        "Crohn's disease"
+      ],
+      "dose_adult": "7.5-25 mg",
+      "dose_child": "specialist dosing",
+      "max_daily_adult": "specialist",
+      "max_daily_child": "specialist",
+      "frequency": "once weekly (NOT daily)",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "contraindicated",
+      "contraindications": [
+        "pregnancy",
+        "breastfeeding",
+        "severe liver disease",
+        "severe kidney disease",
+        "blood dyscrasias",
+        "active infection"
+      ],
+      "side_effects": [
+        "nausea",
+        "mouth ulcers",
+        "fatigue",
+        "liver enzyme rise",
+        "reduced blood counts"
+      ],
+      "warnings": [
+        "WEEKLY dose only - daily dosing is fatal",
+        "Take folic acid as prescribed",
+        "Regular blood tests required",
+        "Avoid alcohol",
+        "Effective contraception required"
+      ],
+      "interacts_with": [
+        "trimethoprim",
+        "ibuprofen",
+        "diclofenac",
+        "amoxicillin",
+        "aspirin"
+      ],
+      "tags": [
+        "dmard",
+        "autoimmune"
+      ]
+    },
+    {
+      "id": "hydroxychloroquine",
+      "name": "Hydroxychloroquine",
+      "generic": "hydroxychloroquine",
+      "drug_class": "DMARD / antimalarial",
+      "otc": false,
+      "prescription_note": "Disease-modifying drug - specialist supervision required",
+      "uses": [
+        "rheumatoid arthritis",
+        "lupus",
+        "malaria prophylaxis"
+      ],
+      "dose_adult": "200-400 mg",
+      "dose_child": "specialist dosing",
+      "max_daily_adult": "400 mg",
+      "max_daily_child": "specialist",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "after food",
+      "max_days": null,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "retinal disease",
+        "G6PD deficiency",
+        "psoriasis",
+        "long-standing liver disease"
+      ],
+      "side_effects": [
+        "nausea",
+        "rash",
+        "headache",
+        "blurred vision",
+        "skin pigmentation"
+      ],
+      "warnings": [
+        "Report any visual disturbance immediately",
+        "Annual eye screening required",
+        "Take with food"
+      ],
+      "interacts_with": [
+        "antacid",
+        "ispaghula"
+      ],
+      "tags": [
+        "dmard",
+        "autoimmune"
+      ]
+    },
+    {
+      "id": "metronidazole",
+      "name": "Metronidazole",
+      "generic": "metronidazole",
+      "drug_class": "Antibiotic / Antiprotozoal",
+      "otc": false,
+      "prescription_note": "Prescription only. Complete the full course.",
+      "uses": [
+        "anaerobic infection",
+        "giardiasis",
+        "amoebiasis",
+        "bacterial vaginosis",
+        "dental abscess"
+      ],
+      "dose_adult": "400 mg",
+      "dose_child": "7.5 mg/kg",
+      "max_daily_adult": "1200 mg",
+      "max_daily_child": "22.5 mg/kg",
+      "frequency": "8 hourly",
+      "times": [
+        "08:00",
+        "16:00",
+        "22:00"
+      ],
+      "with_food": "after food",
+      "max_days": 7,
+      "age_min": 1,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "first trimester pregnancy",
+        "alcohol use",
+        "metronidazole allergy"
+      ],
+      "side_effects": [
+        "metallic taste",
+        "nausea",
+        "dark urine",
+        "headache"
+      ],
+      "warnings": [
+        "Do not drink alcohol during and 48 h after treatment",
+        "Take after food to reduce nausea"
+      ],
+      "interacts_with": [
+        "warfarin",
+        "alcohol"
+      ],
+      "tags": [
+        "infection",
+        "gi",
+        "dental"
+      ]
+    },
+    {
+      "id": "mebeverine",
+      "name": "Mebeverine",
+      "generic": "mebeverine",
+      "drug_class": "Antispasmodic",
+      "otc": false,
+      "prescription_note": "Prescription only.",
+      "uses": [
+        "irritable bowel syndrome",
+        "abdominal cramps",
+        "spasm"
+      ],
+      "dose_adult": "135 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "405 mg",
+      "max_daily_child": "n/a",
+      "frequency": "8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": 14,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "mebeverine allergy",
+        "paralytic ileus"
+      ],
+      "side_effects": [
+        "nausea",
+        "dizziness",
+        "dry mouth"
+      ],
+      "warnings": [
+        "Take 20 minutes before meals",
+        "Swallow whole, do not crush"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "gi",
+        "cramps"
+      ]
+    },
+    {
+      "id": "hyoscine",
+      "name": "Hyoscine Butylbromide",
+      "generic": "hyoscine butylbromide",
+      "drug_class": "Antispasmodic",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "abdominal cramps",
+        "period pain",
+        "spasm",
+        "colic"
+      ],
+      "dose_adult": "10-20 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "120 mg",
+      "max_daily_child": "n/a",
+      "frequency": "6-8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 5,
+      "age_min": 12,
+      "pregnancy": "caution",
+      "contraindications": [
+        "glaucoma",
+        "prostate enlargement",
+        "myasthenia gravis",
+        "paralytic ileus"
+      ],
+      "side_effects": [
+        "dry mouth",
+        "blurred vision",
+        "constipation",
+        "palpitations"
+      ],
+      "warnings": [
+        "Avoid if you have glaucoma or difficulty passing urine"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "cramps",
+        "pain",
+        "gi"
+      ]
+    },
+    {
+      "id": "betahistine",
+      "name": "Betahistine",
+      "generic": "betahistine",
+      "drug_class": "Vestibular antihistamine",
+      "otc": false,
+      "prescription_note": "Prescription only.",
+      "uses": [
+        "vertigo",
+        "Meniere's disease",
+        "balance problems"
+      ],
+      "dose_adult": "8-16 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "48 mg",
+      "max_daily_child": "n/a",
+      "frequency": "8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 14,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "phaeochromocytoma",
+        "betahistine allergy",
+        "active peptic ulcer"
+      ],
+      "side_effects": [
+        "nausea",
+        "indigestion",
+        "headache"
+      ],
+      "warnings": [
+        "Take after food to reduce stomach upset"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "vertigo",
+        "balance"
+      ]
+    },
+    {
+      "id": "prochlorperazine",
+      "name": "Prochlorperazine",
+      "generic": "prochlorperazine",
+      "drug_class": "Antiemetic / Antipsychotic",
+      "otc": false,
+      "prescription_note": "Prescription only. Can cause drowsiness.",
+      "uses": [
+        "vertigo",
+        "nausea",
+        "vomiting",
+        "migraine"
+      ],
+      "dose_adult": "5-10 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "30 mg",
+      "max_daily_child": "n/a",
+      "frequency": "8 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 5,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "parkinsonism",
+        "prostate enlargement",
+        "glaucoma",
+        "bone marrow depression"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "dry mouth",
+        "restlessness",
+        "muscle stiffness"
+      ],
+      "warnings": [
+        "Do not drive until you know how it affects you",
+        "Seek help if neck or eye muscles spasm"
+      ],
+      "interacts_with": [
+        "alcohol",
+        "tramadol"
+      ],
+      "tags": [
+        "vertigo",
+        "nausea"
+      ]
+    },
+    {
+      "id": "diphenhydramine",
+      "name": "Diphenhydramine",
+      "generic": "diphenhydramine",
+      "drug_class": "Sedating antihistamine",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "allergy",
+        "itching",
+        "urticaria",
+        "insect bite",
+        "sleep aid"
+      ],
+      "dose_adult": "25-50 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "300 mg",
+      "max_daily_child": "n/a",
+      "frequency": "6-8 hourly",
+      "times": [
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 5,
+      "age_min": 12,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "glaucoma",
+        "prostate enlargement",
+        "asthma",
+        "diphenhydramine allergy"
+      ],
+      "side_effects": [
+        "marked drowsiness",
+        "dry mouth",
+        "blurred vision",
+        "dizziness"
+      ],
+      "warnings": [
+        "Causes strong drowsiness - do not drive",
+        "Avoid with alcohol"
+      ],
+      "interacts_with": [
+        "alcohol"
+      ],
+      "tags": [
+        "allergy",
+        "itch",
+        "sleep"
+      ]
+    },
+    {
+      "id": "permethrin",
+      "name": "Permethrin 5% Cream",
+      "generic": "permethrin",
+      "drug_class": "Antiparasitic (topical)",
+      "otc": false,
+      "prescription_note": "Prescription only. Treat all household contacts at the same time.",
+      "uses": [
+        "scabies",
+        "head lice"
+      ],
+      "dose_adult": "Apply to whole body",
+      "dose_child": "Apply to whole body",
+      "max_daily_adult": "single application",
+      "max_daily_child": "single application",
+      "frequency": "once, repeat after 7 days",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "n/a",
+      "max_days": 1,
+      "age_min": 0.08,
+      "pregnancy": "caution",
+      "contraindications": [
+        "permethrin allergy",
+        "broken inflamed skin"
+      ],
+      "side_effects": [
+        "mild burning",
+        "itching",
+        "redness"
+      ],
+      "warnings": [
+        "Wash off after 8-12 hours",
+        "Treat all close contacts",
+        "Wash bedding and clothing in hot water"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "skin",
+        "parasite"
+      ]
+    },
+    {
+      "id": "acyclovir",
+      "name": "Acyclovir",
+      "generic": "acyclovir",
+      "drug_class": "Antiviral",
+      "otc": false,
+      "prescription_note": "Prescription only. Works best started within 72 hours.",
+      "uses": [
+        "shingles",
+        "chickenpox",
+        "cold sores",
+        "herpes"
+      ],
+      "dose_adult": "800 mg",
+      "dose_child": "10-20 mg/kg",
+      "max_daily_adult": "4000 mg",
+      "max_daily_child": "80 mg/kg",
+      "frequency": "5 times daily",
+      "times": [
+        "07:00",
+        "11:00",
+        "15:00",
+        "19:00",
+        "23:00"
+      ],
+      "with_food": "any",
+      "max_days": 7,
+      "age_min": 1,
+      "pregnancy": "caution",
+      "contraindications": [
+        "acyclovir allergy",
+        "severe kidney disease"
+      ],
+      "side_effects": [
+        "nausea",
+        "headache",
+        "dizziness"
+      ],
+      "warnings": [
+        "Drink plenty of water",
+        "Start as early as possible for best effect"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "antiviral",
+        "skin"
+      ]
+    },
+    {
+      "id": "calamine",
+      "name": "Calamine Lotion",
+      "generic": "calamine",
+      "drug_class": "Topical antipruritic",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "itching",
+        "insect bite",
+        "chickenpox rash",
+        "heat rash"
+      ],
+      "dose_adult": "Apply thinly as needed",
+      "dose_child": "Apply thinly as needed",
+      "max_daily_adult": "as needed",
+      "max_daily_child": "as needed",
+      "frequency": "3-4 times daily",
+      "times": [
+        "09:00",
+        "15:00",
+        "21:00"
+      ],
+      "with_food": "n/a",
+      "max_days": 7,
+      "age_min": 0.25,
+      "pregnancy": "safe",
+      "contraindications": [
+        "calamine allergy",
+        "broken skin"
+      ],
+      "side_effects": [
+        "dryness",
+        "rare skin irritation"
+      ],
+      "warnings": [
+        "For external use only",
+        "Do not apply to broken skin"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "skin",
+        "itch"
+      ]
+    },
+    {
+      "id": "chlorhexidine_mouthwash",
+      "name": "Chlorhexidine Mouthwash",
+      "generic": "chlorhexidine",
+      "drug_class": "Antiseptic mouthwash",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "mouth ulcers",
+        "gum disease",
+        "oral hygiene",
+        "dental infection"
+      ],
+      "dose_adult": "10 mL rinse",
+      "dose_child": "not recommended",
+      "max_daily_adult": "20 mL",
+      "max_daily_child": "n/a",
+      "frequency": "twice daily",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "n/a",
+      "max_days": 7,
+      "age_min": 12,
+      "pregnancy": "safe",
+      "contraindications": [
+        "chlorhexidine allergy"
+      ],
+      "side_effects": [
+        "tooth staining",
+        "taste disturbance",
+        "mouth irritation"
+      ],
+      "warnings": [
+        "Do not swallow",
+        "Do not use within 30 minutes of toothpaste"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "dental",
+        "mouth"
+      ]
+    },
+    {
+      "id": "benzocaine_gel",
+      "name": "Benzocaine Gel",
+      "generic": "benzocaine",
+      "drug_class": "Topical local anaesthetic",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "toothache",
+        "mouth ulcer",
+        "teething"
+      ],
+      "dose_adult": "Apply a small amount",
+      "dose_child": "not under 2 years",
+      "max_daily_adult": "4 times daily",
+      "max_daily_child": "n/a",
+      "frequency": "up to 4 times daily",
+      "times": [
+        "08:00",
+        "13:00",
+        "18:00",
+        "22:00"
+      ],
+      "with_food": "n/a",
+      "max_days": 3,
+      "age_min": 2,
+      "pregnancy": "caution",
+      "contraindications": [
+        "benzocaine allergy",
+        "children under 2"
+      ],
+      "side_effects": [
+        "numbness",
+        "local irritation",
+        "rare methaemoglobinaemia"
+      ],
+      "warnings": [
+        "Never use in children under 2",
+        "Temporary relief only - see a dentist"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "dental",
+        "pain"
+      ]
+    },
+    {
+      "id": "pantoprazole",
+      "name": "Pantoprazole",
+      "generic": "pantoprazole",
+      "drug_class": "Proton pump inhibitor",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "GERD",
+        "acid reflux",
+        "peptic ulcer",
+        "gastritis"
+      ],
+      "dose_adult": "20-40 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "40 mg",
+      "max_daily_child": "n/a",
+      "frequency": "once daily",
+      "times": [
+        "07:30"
+      ],
+      "with_food": "before food",
+      "max_days": 14,
+      "age_min": 18,
+      "pregnancy": "caution",
+      "contraindications": [
+        "pantoprazole allergy"
+      ],
+      "side_effects": [
+        "headache",
+        "diarrhoea",
+        "nausea",
+        "flatulence"
+      ],
+      "warnings": [
+        "Take 30-60 minutes before breakfast",
+        "Long-term use may reduce B12 and magnesium"
+      ],
+      "interacts_with": [
+        "ketoconazole"
+      ],
+      "tags": [
+        "acidity",
+        "gi"
+      ]
+    },
+    {
+      "id": "dicyclomine",
+      "name": "Dicyclomine",
+      "generic": "dicyclomine",
+      "drug_class": "Antispasmodic",
+      "otc": false,
+      "prescription_note": "Prescription only.",
+      "uses": [
+        "irritable bowel syndrome",
+        "abdominal cramps",
+        "spasm"
+      ],
+      "dose_adult": "10-20 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "80 mg",
+      "max_daily_child": "n/a",
+      "frequency": "6 hourly",
+      "times": [
+        "08:00",
+        "14:00",
+        "20:00"
+      ],
+      "with_food": "before food",
+      "max_days": 7,
+      "age_min": 18,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "glaucoma",
+        "prostate enlargement",
+        "myasthenia gravis",
+        "infants under 6 months"
+      ],
+      "side_effects": [
+        "dry mouth",
+        "blurred vision",
+        "drowsiness",
+        "constipation"
+      ],
+      "warnings": [
+        "Avoid if you have glaucoma or difficulty passing urine"
+      ],
+      "interacts_with": [
+        "alcohol"
+      ],
+      "tags": [
+        "cramps",
+        "gi"
+      ]
+    },
+    {
+      "id": "polyethylene_glycol",
+      "name": "Polyethylene Glycol 3350",
+      "generic": "macrogol",
+      "drug_class": "Osmotic laxative",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "constipation",
+        "faecal impaction"
+      ],
+      "dose_adult": "17 g sachet",
+      "dose_child": "0.4 g/kg",
+      "max_daily_adult": "34 g",
+      "max_daily_child": "1 g/kg",
+      "frequency": "once daily",
+      "times": [
+        "08:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 0.5,
+      "pregnancy": "safe",
+      "contraindications": [
+        "bowel obstruction",
+        "perforation",
+        "toxic megacolon"
+      ],
+      "side_effects": [
+        "bloating",
+        "wind",
+        "abdominal cramps",
+        "diarrhoea"
+      ],
+      "warnings": [
+        "Dissolve in water and drink promptly",
+        "Increase fluid intake"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "constipation",
+        "gi"
+      ]
+    },
+    {
+      "id": "benzoyl_peroxide",
+      "name": "Benzoyl Peroxide 5%",
+      "generic": "benzoyl peroxide",
+      "drug_class": "Topical antibacterial / keratolytic",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "acne",
+        "spots",
+        "folliculitis"
+      ],
+      "dose_adult": "Apply thinly to affected area",
+      "dose_child": "Apply thinly",
+      "max_daily_adult": "twice daily",
+      "max_daily_child": "twice daily",
+      "frequency": "once or twice daily",
+      "times": [
+        "08:00",
+        "21:00"
+      ],
+      "with_food": "n/a",
+      "max_days": 84,
+      "age_min": 12,
+      "pregnancy": "caution",
+      "contraindications": [
+        "benzoyl peroxide allergy"
+      ],
+      "side_effects": [
+        "dryness",
+        "peeling",
+        "redness",
+        "bleaching of fabric"
+      ],
+      "warnings": [
+        "Bleaches towels and clothing",
+        "Start once daily and build up",
+        "Use sunscreen"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "skin",
+        "acne"
+      ]
+    },
+    {
+      "id": "montelukast",
+      "name": "Montelukast",
+      "generic": "montelukast",
+      "drug_class": "Leukotriene receptor antagonist",
+      "otc": false,
+      "prescription_note": "Prescription only.",
+      "uses": [
+        "asthma",
+        "allergic rhinitis",
+        "exercise induced wheeze"
+      ],
+      "dose_adult": "10 mg",
+      "dose_child": "4-5 mg",
+      "max_daily_adult": "10 mg",
+      "max_daily_child": "5 mg",
+      "frequency": "once daily",
+      "times": [
+        "21:00"
+      ],
+      "with_food": "any",
+      "max_days": null,
+      "age_min": 0.5,
+      "pregnancy": "caution",
+      "contraindications": [
+        "montelukast allergy"
+      ],
+      "side_effects": [
+        "headache",
+        "mood changes",
+        "sleep disturbance",
+        "abdominal pain"
+      ],
+      "warnings": [
+        "Report new mood or behaviour changes to your doctor",
+        "Not a reliever for acute attacks"
+      ],
+      "interacts_with": [],
+      "tags": [
+        "asthma",
+        "allergy"
+      ]
+    },
+    {
+      "id": "levocetirizine",
+      "name": "Levocetirizine",
+      "generic": "levocetirizine",
+      "drug_class": "Antihistamine",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "allergic rhinitis",
+        "urticaria",
+        "itching",
+        "hay fever"
+      ],
+      "dose_adult": "5 mg",
+      "dose_child": "2.5 mg",
+      "max_daily_adult": "5 mg",
+      "max_daily_child": "2.5 mg",
+      "frequency": "once daily",
+      "times": [
+        "20:00"
+      ],
+      "with_food": "any",
+      "max_days": 14,
+      "age_min": 6,
+      "pregnancy": "caution",
+      "contraindications": [
+        "severe kidney disease",
+        "levocetirizine allergy"
+      ],
+      "side_effects": [
+        "drowsiness",
+        "dry mouth",
+        "fatigue",
+        "headache"
+      ],
+      "warnings": [
+        "May cause drowsiness",
+        "Avoid alcohol"
+      ],
+      "interacts_with": [
+        "alcohol"
+      ],
+      "tags": [
+        "allergy",
+        "itch"
+      ]
+    },
+    {
+      "id": "naproxen",
+      "name": "Naproxen",
+      "generic": "naproxen",
+      "drug_class": "NSAID",
+      "otc": true,
+      "prescription_note": null,
+      "uses": [
+        "pain",
+        "inflammation",
+        "joint pain",
+        "period pain",
+        "gout"
+      ],
+      "dose_adult": "250-500 mg",
+      "dose_child": "not recommended",
+      "max_daily_adult": "1000 mg (OTC)",
+      "max_daily_child": "n/a",
+      "frequency": "12 hourly",
+      "times": [
+        "08:00",
+        "20:00"
+      ],
+      "with_food": "after food",
+      "max_days": 3,
+      "age_min": 16,
+      "pregnancy": "avoid",
+      "contraindications": [
+        "active peptic ulcer",
+        "severe kidney disease",
+        "aspirin-sensitive asthma",
+        "third trimester pregnancy",
+        "heart failure"
+      ],
+      "side_effects": [
+        "stomach upset",
+        "heartburn",
+        "dizziness",
+        "raised blood pressure"
+      ],
+      "warnings": [
+        "Take with or after food",
+        "Avoid in dengue or suspected bleeding",
+        "Avoid with other NSAIDs"
+      ],
+      "interacts_with": [
+        "aspirin",
+        "warfarin",
+        "ramipril",
+        "losartan",
+        "furosemide",
+        "prednisolone",
+        "methotrexate"
+      ],
+      "tags": [
+        "pain",
+        "inflammation"
+      ]
+    }
+  ]
+}

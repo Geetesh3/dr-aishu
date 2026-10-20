@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Test and tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local case database: holds real user symptom data, never commit it.
+data/dr_aishu.db
+data/*.db
+data/*.db-journal
+data/*.sqlite*
+# Consented image uploads kept for training: patient data, never commit it.
+data/uploads/
+data/models/
+
+# External datasets (hundreds of MB) and anything derived from them. Fetch with
+# scripts/import_symptom_dataset.py rather than committing the raw file.
+data/external/
+data/training/mendeley_2023.jsonl
+# Generated from the workbook by scripts/import_workbook_training.py, so it is
+# reproducible rather than source. `seed.jsonl` stays committed: it is the
+# hand-written bootstrap the workbook import is measured against.
+data/training/workbook_2024.jsonl
+
+# Environment
+.env
+.env.*
+
+# Local run artefacts
+server.log
+*.log
+nohup.out

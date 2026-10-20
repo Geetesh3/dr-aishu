@@ -1,0 +1,269 @@
+{
+  "routines": {
+    "general_wellness": {
+      "name": "General Daily Wellness",
+      "focus": "Balanced baseline routine supporting recovery and energy",
+      "blocks": [
+        {"time": "06:30", "title": "Wake and hydrate", "detail": "Drink 300-500 mL of water to rehydrate after sleep.", "category": "hydration"},
+        {"time": "06:45", "title": "Light stretching", "detail": "10 minutes of gentle full-body mobility work.", "category": "activity"},
+        {"time": "07:30", "title": "Breakfast", "detail": "Balanced plate: protein, whole grains and fruit.", "category": "meal"},
+        {"time": "09:00", "title": "Mid-morning hydration", "detail": "One glass of water.", "category": "hydration"},
+        {"time": "10:00", "title": "Focused work block", "detail": "Screen breaks every 45 minutes with a short walk.", "category": "work"},
+        {"time": "13:00", "title": "Lunch", "detail": "Include vegetables and a protein source.", "category": "meal"},
+        {"time": "14:00", "title": "Short walk", "detail": "15-20 minutes of light activity after eating.", "category": "activity"},
+        {"time": "16:00", "title": "Hydration and stretch", "detail": "Water plus 5 minutes of neck and shoulder release.", "category": "hydration"},
+        {"time": "19:30", "title": "Dinner", "detail": "Lighter meal, finish 2-3 hours before bed.", "category": "meal"},
+        {"time": "21:00", "title": "Wind down", "detail": "Dim screens, relaxation breathing, prepare for sleep.", "category": "rest"},
+        {"time": "22:30", "title": "Sleep", "detail": "Target 7-9 hours in a cool, dark room.", "category": "sleep"}
+      ]
+    },
+    "respiratory_recovery": {
+      "name": "Respiratory Recovery Routine",
+      "focus": "Airway clearance, hydration and rest for cold, flu, COVID or bronchitis",
+      "blocks": [
+        {"time": "07:00", "title": "Wake and warm fluids", "detail": "Warm water with lemon or herbal tea to loosen congestion.", "category": "hydration"},
+        {"time": "07:30", "title": "Steam inhalation", "detail": "10 minutes over a bowl of hot water (towel over head) or in a steamy shower.", "category": "therapy"},
+        {"time": "08:00", "title": "Breakfast", "detail": "Warm, easy-to-eat food such as porridge or eggs.", "category": "meal"},
+        {"time": "09:30", "title": "Salt-water gargle", "detail": "Half a teaspoon of salt in warm water for 30 seconds if throat is sore.", "category": "therapy"},
+        {"time": "10:00", "title": "Rest block", "detail": "Lie down with your head slightly elevated.", "category": "rest"},
+        {"time": "12:30", "title": "Lunch and fluids", "detail": "Warm soup plus at least 300 mL of water.", "category": "meal"},
+        {"time": "14:00", "title": "Chest clearance breathing", "detail": "5 slow deep breaths, then a gentle huff cough. Repeat 3 times.", "category": "therapy"},
+        {"time": "15:00", "title": "Hydration", "detail": "Another 300-500 mL of fluid.", "category": "hydration"},
+        {"time": "17:00", "title": "Second steam inhalation", "detail": "10 minutes to ease evening congestion.", "category": "therapy"},
+        {"time": "18:30", "title": "Dinner", "detail": "Light warm meal; avoid very cold drinks.", "category": "meal"},
+        {"time": "20:30", "title": "Evening medication and temperature check", "detail": "Take scheduled medicines and note your temperature.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep with head elevated", "detail": "Extra pillow to reduce post-nasal drip at night.", "category": "sleep"}
+      ]
+    },
+    "gastro_recovery": {
+      "name": "Gastrointestinal Recovery Routine",
+      "focus": "Rehydration and gut rest for diarrhoea, vomiting or gastroenteritis",
+      "blocks": [
+        {"time": "07:00", "title": "Oral rehydration", "detail": "Sip 200 mL of ORS slowly. Do not gulp.", "category": "hydration"},
+        {"time": "08:00", "title": "Bland breakfast", "detail": "Banana, plain rice or dry toast. Small portion.", "category": "meal"},
+        {"time": "09:30", "title": "Hydration", "detail": "Another 200 mL of ORS or plain water.", "category": "hydration"},
+        {"time": "10:00", "title": "Rest", "detail": "Lie down; keep warm.", "category": "rest"},
+        {"time": "11:30", "title": "Hydration", "detail": "200 mL of fluid, sipped slowly.", "category": "hydration"},
+        {"time": "13:00", "title": "Lunch", "detail": "Plain rice or khichdi with a little salt. Avoid dairy and oil.", "category": "meal"},
+        {"time": "14:30", "title": "Hydration", "detail": "200 mL ORS. Replace losses after every loose stool.", "category": "hydration"},
+        {"time": "16:00", "title": "Rest and monitor", "detail": "Track stool frequency and urine output.", "category": "rest"},
+        {"time": "18:00", "title": "Hydration", "detail": "200 mL fluid.", "category": "hydration"},
+        {"time": "19:00", "title": "Dinner", "detail": "Light, low-fat, low-fibre meal.", "category": "meal"},
+        {"time": "20:30", "title": "Medication", "detail": "Zinc, probiotics and prescribed medicines.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Keep fluids by the bed for night-time rehydration.", "category": "sleep"}
+      ]
+    },
+    "digestive_care": {
+      "name": "Digestive Care Routine",
+      "focus": "Acid control and comfortable digestion for reflux, gastritis or ulcer",
+      "blocks": [
+        {"time": "06:45", "title": "Wake and water", "detail": "200-300 mL of water before anything else.", "category": "hydration"},
+        {"time": "07:00", "title": "Morning walk", "detail": "15 minutes of gentle walking to aid gut motility.", "category": "activity"},
+        {"time": "07:30", "title": "Breakfast (small)", "detail": "Avoid fried, spicy and very acidic foods. Oats or toast work well.", "category": "meal"},
+        {"time": "09:30", "title": "Hydration", "detail": "Sip water between meals rather than during them.", "category": "hydration"},
+        {"time": "10:30", "title": "Upright activity", "detail": "Stay upright for at least 2 hours after eating.", "category": "activity"},
+        {"time": "12:30", "title": "Lunch", "detail": "Small portion; avoid caffeine and carbonated drinks.", "category": "meal"},
+        {"time": "14:30", "title": "Walk, do not lie down", "detail": "20-minute walk helps gastric emptying.", "category": "activity"},
+        {"time": "16:30", "title": "Light snack", "detail": "Small, low-fat snack if hungry. Avoid citrus.", "category": "meal"},
+        {"time": "18:30", "title": "Dinner (early)", "detail": "Finish at least 3 hours before lying down.", "category": "meal"},
+        {"time": "19:30", "title": "Evening walk", "detail": "15 minutes of easy walking.", "category": "activity"},
+        {"time": "21:00", "title": "Medication and head elevation", "detail": "Take acid medication as prescribed; raise the head of the bed 15 cm.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Sleep on your left side to reduce reflux.", "category": "sleep"}
+      ]
+    },
+    "headache_management": {
+      "name": "Headache and Migraine Routine",
+      "focus": "Trigger control, hydration and a steady daily rhythm",
+      "blocks": [
+        {"time": "06:30", "title": "Wake at a consistent time", "detail": "Regular wake times reduce migraine frequency.", "category": "rest"},
+        {"time": "06:45", "title": "Hydration", "detail": "400 mL of water immediately on waking.", "category": "hydration"},
+        {"time": "07:00", "title": "Neck and shoulder stretches", "detail": "10 minutes of slow mobility work.", "category": "activity"},
+        {"time": "07:30", "title": "Breakfast", "detail": "Do not skip meals - missed meals trigger headaches.", "category": "meal"},
+        {"time": "09:00", "title": "Screen break", "detail": "20-20-20 rule: every 20 minutes look 20 feet away for 20 seconds.", "category": "work"},
+        {"time": "10:30", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "12:30", "title": "Lunch", "detail": "Regular meal; note any food triggers in a diary.", "category": "meal"},
+        {"time": "14:00", "title": "Relaxation practice", "detail": "10 minutes of slow breathing or progressive muscle relaxation.", "category": "rest"},
+        {"time": "15:30", "title": "Hydration and light activity", "detail": "Water plus a short walk.", "category": "activity"},
+        {"time": "18:30", "title": "Dinner", "detail": "Limit caffeine and alcohol, common triggers.", "category": "meal"},
+        {"time": "20:30", "title": "Dark, quiet wind-down", "detail": "Dim lights and screens to prevent evening triggers.", "category": "rest"},
+        {"time": "22:00", "title": "Sleep", "detail": "Same bedtime every night, including weekends.", "category": "sleep"}
+      ]
+    },
+    "joint_care": {
+      "name": "Joint and Musculoskeletal Routine",
+      "focus": "Mobility, strength and joint protection for arthritis, gout or fibromyalgia",
+      "blocks": [
+        {"time": "07:00", "title": "Warm shower or bath", "detail": "Warmth reduces morning stiffness.", "category": "therapy"},
+        {"time": "07:20", "title": "Range-of-motion exercises", "detail": "10-15 minutes moving each joint gently through its full range.", "category": "activity"},
+        {"time": "08:00", "title": "Breakfast with anti-inflammatory foods", "detail": "Include omega-3 sources, fruit and whole grains.", "category": "meal"},
+        {"time": "09:30", "title": "Hydration", "detail": "300 mL of water; important for gout (2-3 L per day).", "category": "hydration"},
+        {"time": "10:00", "title": "Strengthening block", "detail": "Low-impact strengthening or physiotherapy exercises.", "category": "activity"},
+        {"time": "12:30", "title": "Lunch", "detail": "Balanced meal; limit red meat and shellfish if you have gout.", "category": "meal"},
+        {"time": "14:00", "title": "Rest with joint support", "detail": "Rest the most affected joint; use a splint if advised.", "category": "rest"},
+        {"time": "15:30", "title": "Swimming or cycling", "detail": "20-30 minutes of low-impact aerobic activity.", "category": "activity"},
+        {"time": "17:00", "title": "Hot or cold pack", "detail": "10-15 minutes on painful joints.", "category": "therapy"},
+        {"time": "18:30", "title": "Dinner", "detail": "Anti-inflammatory plate; stay hydrated.", "category": "meal"},
+        {"time": "20:30", "title": "Medication and gentle stretch", "detail": "Take prescribed medicines and do a light stretch.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Supportive mattress; use pillows to keep joints neutral.", "category": "sleep"}
+      ]
+    },
+    "skin_care": {
+      "name": "Skin Care and Healing Routine",
+      "focus": "Barrier repair, infection control and itch management",
+      "blocks": [
+        {"time": "07:00", "title": "Gentle cleanse", "detail": "Lukewarm water with a soap-free cleanser. Pat dry, do not rub.", "category": "therapy"},
+        {"time": "07:15", "title": "Moisturise", "detail": "Apply emollient generously within 3 minutes of washing.", "category": "therapy"},
+        {"time": "07:30", "title": "Breakfast", "detail": "Include fruit, vegetables and adequate protein for skin repair.", "category": "meal"},
+        {"time": "09:00", "title": "Hydration", "detail": "300 mL of water; keep the skin hydrated from within.", "category": "hydration"},
+        {"time": "10:00", "title": "Medication application", "detail": "Apply prescribed creams in a thin layer to affected areas only.", "category": "medication"},
+        {"time": "12:30", "title": "Lunch", "detail": "Balanced meal; note any food triggers for flares.", "category": "meal"},
+        {"time": "14:00", "title": "Avoid scratching", "detail": "Use a cool compress or tap instead of scratching.", "category": "therapy"},
+        {"time": "15:30", "title": "Hydration and loose clothing", "detail": "Water plus soft cotton clothing to reduce irritation.", "category": "hydration"},
+        {"time": "17:00", "title": "Second moisturise", "detail": "Reapply emollient to dry areas.", "category": "therapy"},
+        {"time": "18:30", "title": "Dinner", "detail": "Avoid known trigger foods during a flare.", "category": "meal"},
+        {"time": "20:30", "title": "Evening medication", "detail": "Night-time cream or antihistamine as prescribed.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Cotton bedding, cool room, nails trimmed short.", "category": "sleep"}
+      ]
+    },
+    "allergy_control": {
+      "name": "Allergy Control Routine",
+      "focus": "Allergen avoidance and symptom prevention for hay fever and rhinitis",
+      "blocks": [
+        {"time": "06:45", "title": "Check pollen forecast", "detail": "Plan outdoor activity around low-pollen times.", "category": "work"},
+        {"time": "07:00", "title": "Saline nasal rinse", "detail": "Rinse each nostril to clear overnight allergens.", "category": "therapy"},
+        {"time": "07:30", "title": "Breakfast and morning antihistamine", "detail": "Take a non-sedating antihistamine with breakfast if prescribed.", "category": "medication"},
+        {"time": "09:00", "title": "Keep windows closed", "detail": "Use air conditioning or a filter on high-pollen days.", "category": "work"},
+        {"time": "10:30", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "12:30", "title": "Lunch indoors", "detail": "Eat indoors to limit pollen exposure.", "category": "meal"},
+        {"time": "14:00", "title": "Shower if outdoors", "detail": "Rinse pollen from skin and hair after being outside.", "category": "therapy"},
+        {"time": "16:00", "title": "Nasal steroid spray", "detail": "Use the nasal steroid spray as prescribed for prevention.", "category": "medication"},
+        {"time": "18:00", "title": "Change clothes", "detail": "Remove outdoor clothes to avoid carrying pollen indoors.", "category": "work"},
+        {"time": "19:30", "title": "Dinner", "detail": "Note any cross-reactive foods in a symptom diary.", "category": "meal"},
+        {"time": "21:00", "title": "Evening rinse", "detail": "Second saline rinse and eye drops if needed.", "category": "therapy"},
+        {"time": "22:00", "title": "Sleep with windows shut", "detail": "Keep the bedroom allergen-reduced.", "category": "sleep"}
+      ]
+    },
+    "urinary_care": {
+      "name": "Urinary Tract Care Routine",
+      "focus": "High fluid intake and bladder hygiene for UTI or kidney stones",
+      "blocks": [
+        {"time": "07:00", "title": "Large glass of water", "detail": "400 mL on waking to start bladder flushing.", "category": "hydration"},
+        {"time": "07:30", "title": "Breakfast", "detail": "Low-salt meal; limit oxalate-rich foods if you have stones.", "category": "meal"},
+        {"time": "09:00", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "10:00", "title": "Do not hold urine", "detail": "Empty the bladder fully and often.", "category": "therapy"},
+        {"time": "11:00", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "12:30", "title": "Lunch", "detail": "Balanced meal; keep salt low.", "category": "meal"},
+        {"time": "13:30", "title": "Warm compress", "detail": "Apply to the lower abdomen for discomfort.", "category": "therapy"},
+        {"time": "15:00", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "17:00", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "18:30", "title": "Dinner", "detail": "Light meal; avoid excess caffeine and alcohol.", "category": "meal"},
+        {"time": "20:30", "title": "Evening medication", "detail": "Take prescribed antibiotics and complete the full course.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Empty the bladder before bed; keep water nearby.", "category": "sleep"}
+      ]
+    },
+    "cardiac_care": {
+      "name": "Heart and Blood Pressure Routine",
+      "focus": "Blood pressure control, low-salt eating and graded activity",
+      "blocks": [
+        {"time": "06:30", "title": "Wake and check blood pressure", "detail": "Sit quietly 5 minutes before measuring. Record the reading.", "category": "therapy"},
+        {"time": "06:45", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "07:00", "title": "Morning medication", "detail": "Take blood pressure or heart medicines at the same time daily.", "category": "medication"},
+        {"time": "07:30", "title": "Breakfast", "detail": "Low-salt, high-fibre plate. Avoid processed meats.", "category": "meal"},
+        {"time": "08:30", "title": "Graded walk", "detail": "20-30 minutes at a pace where you can still talk.", "category": "activity"},
+        {"time": "10:00", "title": "Hydration and rest", "detail": "Water plus a short sit-down.", "category": "hydration"},
+        {"time": "12:30", "title": "Lunch", "detail": "Under 5 g of salt per day in total; include vegetables.", "category": "meal"},
+        {"time": "14:00", "title": "Gentle activity", "detail": "Light stretching or a second short walk.", "category": "activity"},
+        {"time": "16:00", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "18:30", "title": "Dinner (light)", "detail": "Avoid heavy, salty meals in the evening.", "category": "meal"},
+        {"time": "20:30", "title": "Evening medication and weight check", "detail": "Take evening medicines; weigh yourself and record it.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "7-8 hours; report breathlessness when lying flat.", "category": "sleep"}
+      ]
+    },
+    "metabolic_care": {
+      "name": "Metabolic and Blood Sugar Routine",
+      "focus": "Steady glucose, thyroid timing and consistent activity",
+      "blocks": [
+        {"time": "06:45", "title": "Wake and hydrate", "detail": "300 mL of water before breakfast.", "category": "hydration"},
+        {"time": "07:00", "title": "Thyroid medication (if prescribed)", "detail": "Take levothyroxine on an empty stomach, 30-60 minutes before food.", "category": "medication"},
+        {"time": "07:15", "title": "Blood glucose check", "detail": "Test fasting glucose if advised and record it.", "category": "therapy"},
+        {"time": "07:45", "title": "Breakfast", "detail": "Low glycaemic index: whole grains, protein, vegetables.", "category": "meal"},
+        {"time": "09:00", "title": "Post-meal walk", "detail": "15 minutes of walking lowers post-meal glucose.", "category": "activity"},
+        {"time": "10:30", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "12:30", "title": "Lunch", "detail": "Half plate vegetables, quarter protein, quarter whole grains.", "category": "meal"},
+        {"time": "14:00", "title": "Activity block", "detail": "20-30 minutes of moderate exercise, 5 days a week.", "category": "activity"},
+        {"time": "15:30", "title": "Foot check", "detail": "Inspect feet for cuts, blisters or redness. Moisturise but not between toes.", "category": "therapy"},
+        {"time": "16:30", "title": "Small balanced snack", "detail": "Only if needed to prevent a glucose dip.", "category": "meal"},
+        {"time": "18:30", "title": "Dinner (early, light)", "detail": "Avoid refined sugar and heavy late meals.", "category": "meal"},
+        {"time": "20:30", "title": "Evening medication", "detail": "Take diabetes medicines as prescribed with or after food.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Consistent sleep improves insulin sensitivity.", "category": "sleep"}
+      ]
+    },
+    "mental_wellbeing": {
+      "name": "Mental Wellbeing Routine",
+      "focus": "Mood, sleep hygiene and structured daily activity",
+      "blocks": [
+        {"time": "07:00", "title": "Wake at a fixed time", "detail": "Get daylight within 30 minutes of waking.", "category": "rest"},
+        {"time": "07:15", "title": "Hydration and breathing", "detail": "300 mL of water plus 5 minutes of slow breathing.", "category": "hydration"},
+        {"time": "07:45", "title": "Breakfast", "detail": "Regular meals stabilise mood and energy.", "category": "meal"},
+        {"time": "08:30", "title": "Outdoor walk", "detail": "20-30 minutes of daylight and movement.", "category": "activity"},
+        {"time": "10:00", "title": "Structured task block", "detail": "One small, achievable goal written down and completed.", "category": "work"},
+        {"time": "12:30", "title": "Lunch and connection", "detail": "Eat with or message someone supportive.", "category": "meal"},
+        {"time": "14:00", "title": "Pleasant activity", "detail": "Schedule one activity you enjoy, however small.", "category": "rest"},
+        {"time": "15:30", "title": "Hydration and movement", "detail": "Water plus a stretch break.", "category": "hydration"},
+        {"time": "17:00", "title": "Worry time (bounded)", "detail": "Write worries down for 15 minutes, then close the notebook.", "category": "rest"},
+        {"time": "18:30", "title": "Dinner", "detail": "Regular evening meal; limit alcohol and caffeine.", "category": "meal"},
+        {"time": "20:30", "title": "Wind-down without screens", "detail": "Reading, music or gentle stretching.", "category": "rest"},
+        {"time": "22:00", "title": "Sleep", "detail": "Same bedtime nightly. Seek help immediately if you have thoughts of self-harm.", "category": "sleep"}
+      ]
+    },
+    "infectious_fever_care": {
+      "name": "Fever and Infection Care Routine",
+      "focus": "Fever monitoring, hydration and warning-sign surveillance",
+      "blocks": [
+        {"time": "06:30", "title": "Temperature check", "detail": "Record your temperature and how you feel.", "category": "therapy"},
+        {"time": "07:00", "title": "Hydration", "detail": "400 mL of water or ORS.", "category": "hydration"},
+        {"time": "07:30", "title": "Breakfast (light)", "detail": "Easily digestible food such as porridge or fruit.", "category": "meal"},
+        {"time": "09:00", "title": "Medication", "detail": "Paracetamol for fever as directed. Avoid NSAIDs if dengue is suspected.", "category": "medication"},
+        {"time": "10:00", "title": "Rest", "detail": "Lie down in a cool, ventilated room.", "category": "rest"},
+        {"time": "11:30", "title": "Hydration", "detail": "300 mL of fluid.", "category": "hydration"},
+        {"time": "12:30", "title": "Lunch", "detail": "Light, warm meal.", "category": "meal"},
+        {"time": "14:00", "title": "Temperature and warning-sign check", "detail": "Check for bleeding, persistent vomiting, abdominal pain or drowsiness.", "category": "therapy"},
+        {"time": "15:30", "title": "Hydration", "detail": "300 mL of fluid.", "category": "hydration"},
+        {"time": "17:00", "title": "Rest and monitor urine output", "detail": "Aim for pale, regular urine. Report very little urine.", "category": "therapy"},
+        {"time": "18:30", "title": "Dinner (light)", "detail": "Small warm meal.", "category": "meal"},
+        {"time": "20:30", "title": "Evening medication and temperature", "detail": "Take medicines and log the evening temperature.", "category": "medication"},
+        {"time": "22:00", "title": "Sleep", "detail": "Sleep near someone who can check on you overnight.", "category": "sleep"}
+      ]
+    },
+    "eye_care": {
+      "name": "Eye and Ear Care Routine",
+      "focus": "Hygiene, comfort and safe medication use for eye or ear infection",
+      "blocks": [
+        {"time": "07:00", "title": "Warm water face wash", "detail": "Clean eyelids gently from inner to outer corner with cooled boiled water.", "category": "therapy"},
+        {"time": "07:15", "title": "Medication drops", "detail": "Apply prescribed drops; do not touch the eye with the dropper.", "category": "medication"},
+        {"time": "07:45", "title": "Breakfast", "detail": "Balanced meal; hydration supports healing.", "category": "meal"},
+        {"time": "09:30", "title": "Hydration", "detail": "300 mL of water.", "category": "hydration"},
+        {"time": "10:00", "title": "Cool compress", "detail": "5-10 minutes over closed eyes for comfort.", "category": "therapy"},
+        {"time": "12:00", "title": "Medication drops", "detail": "Second scheduled dose of the day.", "category": "medication"},
+        {"time": "12:30", "title": "Lunch", "detail": "Avoid rubbing the eyes; wash hands before eating.", "category": "meal"},
+        {"time": "14:00", "title": "Screen break", "detail": "Reduce screen time during infection; rest the eyes.", "category": "rest"},
+        {"time": "16:00", "title": "Medication drops", "detail": "Third scheduled dose.", "category": "medication"},
+        {"time": "17:00", "title": "Fresh towel", "detail": "Use a separate towel and change it daily to avoid reinfection.", "category": "therapy"},
+        {"time": "18:30", "title": "Dinner", "detail": "Light meal.", "category": "meal"},
+        {"time": "20:00", "title": "Medication drops and sleep", "detail": "Final dose, then sleep with clean bedding.", "category": "sleep"}
+      ]
+    },
+    "emergency_care": {
+      "name": "Emergency Response",
+      "focus": "Immediate escalation to emergency services",
+      "blocks": [
+        {"time": "NOW", "title": "Call emergency services", "detail": "Call your local emergency number immediately. Do not wait to see if symptoms settle.", "category": "emergency"},
+        {"time": "NOW", "title": "Stay with the person", "detail": "Do not leave them alone. Keep them still and calm.", "category": "emergency"},
+        {"time": "NOW", "title": "Note the time symptoms started", "detail": "This is critical for stroke and heart attack treatment decisions.", "category": "emergency"},
+        {"time": "NOW", "title": "Do not give food or drink", "detail": "Especially if there is drowsiness, confusion or difficulty swallowing.", "category": "emergency"},
+        {"time": "NOW", "title": "Follow dispatcher instructions", "detail": "They may guide you on CPR, recovery position or medication.", "category": "emergency"},
+        {"time": "NOW", "title": "Do not drive yourself", "detail": "Wait for the ambulance or have someone else drive.", "category": "emergency"}
+      ]
+    }
+  }
+}

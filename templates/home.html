@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Dr. Aishu — Your symptoms, understood{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1 data-i18n="hero.title">Your symptoms, understood.</h1>
+  <p class="lede" data-i18n="hero.lede">
+    Describe how you feel in your own language, or upload a photo of a rash, wound or report.
+    Dr. Aishu identifies likely conditions, grades severity, checks medicine safety, then
+    builds a timed schedule and a daily routine.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="/assess" data-i18n="hero.cta">Start an assessment</a>
+    <a class="btn-ghost" href="/library" data-i18n="hero.cta_library">Browse conditions</a>
+  </div>
+  <ul class="hero-stats">
+    <li><strong id="stat-diseases">—</strong><span data-i18n="stat.conditions">conditions</span></li>
+    <li><strong id="stat-symptoms">—</strong><span data-i18n="stat.symptoms">symptoms</span></li>
+    <li><strong id="stat-medicines">—</strong><span data-i18n="stat.medicines">medicines</span></li>
+    <li><strong id="stat-languages">—</strong><span data-i18n="stat.languages">languages</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2 data-i18n="home.how">How it works</h2>
+  <ol class="steps">
+    <li><strong data-i18n="home.step1_t">Describe</strong> <span data-i18n="home.step1_d">Type your symptoms in any of 22 Indian languages, or upload a photo. Your language is detected automatically.</span></li>
+    <li><strong data-i18n="home.step2_t">Understand</strong> <span data-i18n="home.step2_d">Likely conditions are ranked with a confidence score, and severity is graded from self-care to emergency.</span></li>
+    <li><strong data-i18n="home.step3_t">Act safely</strong> <span data-i18n="home.step3_d">Medicine suggestions are filtered against your allergies, conditions and anything you already take, then laid out on a timed schedule.</span></li>
+    <li><strong data-i18n="home.step4_t">Plan the day</strong> <span data-i18n="home.step4_d">A daily routine is built around your medicine times, hydration target and sleep need.</span></li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2 data-i18n="home.sections">Sections</h2>
+  <div class="grid-2">
+    <a class="tile" href="/assess">
+      <h3 data-i18n="nav.assess">Assess</h3>
+      <p data-i18n="home.tile_assess">Describe symptoms or upload an image and get a full assessment.</p>
+    </a>
+    <a class="tile" href="/library">
+      <h3 data-i18n="nav.library">Library</h3>
+      <p data-i18n="home.tile_library">Every condition in the knowledge base, with symptoms and red flags.</p>
+    </a>
+    <a class="tile" href="/medicines">
+      <h3 data-i18n="nav.medicines">Medicines</h3>
+      <p data-i18n="home.tile_medicines">Search the medicine catalogue, doses and Indian brand names.</p>
+    </a>
+    <a class="tile" href="/insights">
+      <h3 data-i18n="nav.insights">Insights</h3>
+      <p data-i18n="home.tile_insights">What people ask, and how the model is performing.</p>
+    </a>
+    <a class="tile" href="/about">
+      <h3 data-i18n="nav.about">About</h3>
+      <p data-i18n="home.tile_about">How the analysis works, and its limits.</p>
+    </a>
+    <a class="tile" href="/developers">
+      <h3 data-i18n="nav.developers">Developers</h3>
+      <p data-i18n="home.tile_devs">Get an API key and build Dr. Aishu into your own app.</p>
+    </a>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/home.js"></script>
+{% endblock %}

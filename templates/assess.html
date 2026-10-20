@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Assess — Dr. Aishu{% endblock %}
+{% block content %}
+<section class="card assess-card">
+  <h2 data-i18n="assess.title">Assessment</h2>
+
+  <div class="tabs" role="tablist">
+    <button class="tab is-active" data-tab="text" role="tab" aria-selected="true" data-i18n="assess.tab_text">Describe symptoms</button>
+    <button class="tab" data-tab="image" role="tab" aria-selected="false" data-i18n="assess.tab_image">Upload image</button>
+  </div>
+
+  <form id="assess-form" novalidate>
+    <div class="panel is-active" data-panel="text">
+      <label class="field">
+        <span class="field-label" data-i18n="assess.label_text">How are you feeling?</span>
+        <textarea id="symptom-text" rows="6" data-i18n-placeholder="assess.placeholder"
+          placeholder="Example: I have had a high fever and body aches for 3 days, with a dry cough. Temperature is 39.5C."></textarea>
+      </label>
+      <p class="muted lang-hint" id="lang-hint" hidden></p>
+      <div class="chips" id="example-chips">
+        <span class="chips-label" data-i18n="assess.try">Try:</span>
+        <button type="button" class="chip" data-example="high fever, severe body ache and chills for 3 days, dry cough and headache, temperature 39.5C, age 30" data-i18n="chip.flu">Flu-like illness</button>
+        <button type="button" class="chip" data-example="burning when I pee and needing to go very often for 2 days with lower abdominal pain, no fever" data-i18n="chip.uti">Urinary infection</button>
+        <button type="button" class="chip" data-example="itchy red circular rash on my forearm spreading slowly over 2 weeks" data-i18n="chip.rash">Skin rash</button>
+        <button type="button" class="chip" data-example="throbbing one-sided headache with nausea and sensitivity to light, 6 hours, happens every few weeks" data-i18n="chip.migraine">Migraine</button>
+        <button type="button" class="chip" data-example="watery diarrhoea and vomiting since yesterday with stomach cramps" data-i18n="chip.stomach">Stomach bug</button>
+      </div>
+    </div>
+
+    <div class="panel" data-panel="image">
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="image-input" accept="image/*" hidden>
+        <span class="dropzone-icon" aria-hidden="true">⬆</span>
+        <span class="dropzone-title" data-i18n="assess.image_hint">Drop an image here or click to browse</span>
+        <span class="dropzone-hint" data-i18n="assess.image_hint2">Rash, wound, swelling, or a photo of a printed report. PNG, JPG, WEBP up to 12 MB.</span>
+      </label>
+      <div class="preview" id="preview" hidden>
+        <img id="preview-img" alt="Uploaded image preview">
+        <div class="preview-meta">
+          <span id="preview-name"></span>
+          <button type="button" class="btn-ghost" id="clear-image" data-i18n="assess.remove">Remove</button>
+        </div>
+      </div>
+      <label class="field">
+        <span class="field-label"><span data-i18n="assess.image_type">What is the photo of?</span></span>
+        <select id="image-modality">
+          <option value="" data-i18n="assess.image_type_unknown">Not sure / something else</option>
+          <option value="skin" data-i18n="assess.image_type_skin">Skin</option>
+          <option value="eye" data-i18n="assess.image_type_eye">Eye</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label"><span data-i18n="assess.extra">Anything else to add?</span> <em data-i18n="assess.optional">(optional)</em></span>
+        <textarea id="image-text" rows="3" data-i18n-placeholder="assess.extra_placeholder"
+          placeholder="Example: it started after I touched a stray cat, and it itches a lot."></textarea>
+      </label>
+    </div>
+
+    <details class="context">
+      <summary><span data-i18n="assess.context">Add health context</span> <em data-i18n="assess.context_note">(improves medicine safety checks)</em></summary>
+      <div class="context-grid">
+        <label class="field"><span class="field-label" data-i18n="assess.age">Age (years)</span>
+          <input type="number" id="ctx-age" min="0" max="120" step="1" placeholder="30"></label>
+        <label class="field"><span class="field-label" data-i18n="assess.weight">Weight (kg)</span>
+          <input type="number" id="ctx-weight" min="1" max="400" step="0.1" placeholder="70"></label>
+        <label class="field"><span class="field-label" data-i18n="assess.conditions">Chronic conditions</span>
+          <input type="text" id="ctx-conditions" placeholder="diabetes, asthma"></label>
+        <label class="field"><span class="field-label" data-i18n="assess.allergies">Allergies</span>
+          <input type="text" id="ctx-allergies" placeholder="penicillin, ibuprofen"></label>
+        <label class="field"><span class="field-label" data-i18n="assess.current_meds">Medicines you already take</span>
+          <input type="text" id="ctx-current-meds" placeholder="warfarin, metformin"></label>
+        <label class="checkbox"><input type="checkbox" id="ctx-pregnant"> <span data-i18n="assess.pregnant">Pregnant</span></label>
+        <label class="checkbox"><input type="checkbox" id="ctx-rx" checked> <span data-i18n="assess.include_rx">Include prescription-only options</span></label>
+      </div>
+      <div class="consent">
+        <label class="checkbox">
+          <input type="checkbox" id="ctx-consent">
+          <span>
+            <strong data-i18n="assess.consent_t">Help Dr. Aishu learn.</strong>
+            <span data-i18n="assess.consent">Store an anonymised copy of this case to improve future diagnoses. Direct identifiers are removed automatically before saving.</span>
+          </span>
+        </label>
+      </div>
+    </details>
+
+    <div class="actions">
+      <button type="submit" class="btn-primary" id="submit-btn" data-i18n="assess.submit">Analyse</button>
+      <button type="reset" class="btn-ghost" id="reset-btn" data-i18n="assess.clear">Clear</button>
+    </div>
+  </form>
+</section>
+
+<div id="status" class="status" hidden></div>
+<div id="results" class="results" hidden></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/app.js"></script>
+{% endblock %}

@@ -1,0 +1,39 @@
+# Dr. Aishu - core runtime
+fastapi>=0.110
+uvicorn[standard]>=0.27
+jinja2>=3.1
+python-multipart>=0.0.9
+pydantic>=2.6
+
+# Clinical NLP, vision and the on-device learning loop
+scikit-learn>=1.4
+numpy>=1.26
+joblib>=1.3
+pillow>=10.0
+
+# Optional image decoders. Pillow handles JPEG/PNG/WebP/TIFF/BMP/GIF and more on
+# its own; these add the two formats phones and clinics produce that it does not
+# read natively -- HEIC/HEIF (the iPhone camera default) and PDF (scanned or
+# exported reports). The server degrades gracefully when they are absent: the
+# format is reported as unsupported rather than crashing.
+pillow-heif>=0.16
+pypdfium2>=4.30
+
+# Tests
+pytest>=8.0
+httpx>=0.27
+
+# Notebook / Colab tooling (used by notebooks/, not by the server)
+pandas>=2.0
+matplotlib>=3.8
+
+# Build-time only: writes and reads the consolidated Excel workbook
+# (scripts/build_dataset_workbook.py). Not needed to run the server, which
+# degrades gracefully when it is absent.
+openpyxl>=3.1
+
+# Optional: transformer backend for the learning module (heavier, GPU-friendly).
+# The app runs fine without it and falls back to TF-IDF.
+# transformers>=4.40
+# torch>=2.2
+# sentencepiece>=0.2

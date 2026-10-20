@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}About — Dr. Aishu{% endblock %}
+{% block content %}
+<section class="card about-card">
+  <h2 data-i18n="about.title">About Dr. Aishu</h2>
+  <div class="about-grid">
+    <div>
+      <h3 data-i18n="about.how">How the analysis works</h3>
+      <ol class="steps">
+        <li><strong data-i18n="about.s1_t">Extract.</strong> <span data-i18n="about.s1_d">Plain text is parsed for symptoms, duration, self-reported severity, vitals, age, allergies and chronic conditions. Negations such as "no fever" are detected and respected, and symptoms are recognised in 22 Indian languages.</span></li>
+        <li><strong data-i18n="about.s2_t">Rank.</strong> <span data-i18n="about.s2_d">Each condition is scored on symptom coverage, key-symptom coverage and prevalence, then adjusted for onset and explicit denials to produce a ranked differential. Confidence is capped by how much evidence exists.</span></li>
+        <li><strong data-i18n="about.s3_t">Triage.</strong> <span data-i18n="about.s3_d">Graded red flags, vitals, age, pregnancy and chronic conditions set a severity score and a triage level from self-care through to emergency.</span></li>
+        <li><strong data-i18n="about.s4_t">Prescribe safely.</strong> <span data-i18n="about.s4_d">Medicines are filtered by allergy, age, pregnancy and condition contraindications, checked against the medicines you already take, and de-duplicated by drug class before being laid out on a timed schedule.</span></li>
+        <li><strong data-i18n="about.s5_t">Plan the day.</strong> <span data-i18n="about.s5_d">A routine template for the leading condition is personalised with your medicine times, hydration target and sleep need.</span></li>
+      </ol>
+    </div>
+    <div>
+      <h3 data-i18n="about.image">Image analysis</h3>
+      <p class="muted" data-i18n="about.image_d">Uploaded images are processed two ways. Any text in the image is read with OCR and analysed like typed input. Independently, colour and texture statistics describe visible features such as prominent redness, yellow discharge or darkened tissue. Those observations are low-weight evidence — a photograph alone can never confirm a diagnosis.</p>
+      <h3 data-i18n="about.limits">Limitations</h3>
+      <ul class="limits">
+        <li data-i18n="about.l1">Not a substitute for clinical examination or laboratory tests.</li>
+        <li data-i18n="about.l2">Cannot account for your complete medical history.</li>
+        <li data-i18n="about.l3">Medicine doses are general adult or weight-based references, not a prescription.</li>
+        <li data-i18n="about.l4">Always confirm any medicine with a pharmacist or doctor before taking it.</li>
+      </ul>
+      <h3 data-i18n="about.safety">Safety design</h3>
+      <ul class="limits">
+        <li data-i18n="about.safety1">In an emergency, no medicine is suggested at all — the only correct action is emergency care.</li>
+        <li data-i18n="about.safety2">A suggestion that interacts with a medicine you already take is withheld and explained.</li>
+        <li data-i18n="about.safety3">Two medicines of the same class are never both suggested.</li>
+        <li data-i18n="about.safety4">Emergency advice is translated in every supported language before that language is offered.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

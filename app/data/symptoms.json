@@ -1,0 +1,2171 @@
+{
+  "symptoms": [
+    {
+      "id": "fever",
+      "label": "Fever",
+      "system": "general",
+      "synonyms": [
+        "fever",
+        "high temperature",
+        "temperature",
+        "pyrexia",
+        "febrile",
+        "hot body",
+        "running a temperature",
+        "feverish"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "high_fever",
+      "label": "High fever (>39C / 102F)",
+      "system": "general",
+      "synonyms": [
+        "very high fever",
+        "103 fever",
+        "104 fever",
+        "102 fever",
+        "high grade fever",
+        "burning up"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "chills",
+      "label": "Chills / shivering",
+      "system": "general",
+      "synonyms": [
+        "chills",
+        "shivering",
+        "rigors",
+        "shakes",
+        "cold sweats",
+        "goosebumps"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "fatigue",
+      "label": "Fatigue / weakness",
+      "system": "general",
+      "synonyms": [
+        "fatigue",
+        "tired",
+        "tiredness",
+        "weakness",
+        "weak",
+        "exhausted",
+        "exhaustion",
+        "no energy",
+        "lethargy",
+        "lethargic",
+        "malaise",
+        "run down",
+        "weak and tired"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "night_sweats",
+      "label": "Night sweats",
+      "system": "general",
+      "synonyms": [
+        "night sweats",
+        "sweating at night",
+        "drenched in sweat",
+        "drenched in sweat at night"
+      ],
+      "red_flag": true,
+      "weight": 1.2,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "weight_loss",
+      "label": "Unintentional weight loss",
+      "system": "general",
+      "synonyms": [
+        "weight loss",
+        "losing weight",
+        "lost weight",
+        "losing kilos"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "dehydration",
+      "label": "Dehydration",
+      "system": "general",
+      "synonyms": [
+        "dehydration",
+        "dehydrated",
+        "dry mouth and no urine",
+        "sunken eyes",
+        "no urine output",
+        "not passing any urine",
+        "no urine at all",
+        "dizzy and weak after heat",
+        "not passing much urine in the heat"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "headache",
+      "label": "Headache",
+      "system": "neuro",
+      "synonyms": [
+        "headache",
+        "head ache",
+        "head pain",
+        "pain in head",
+        "head hurts",
+        "cephalgia"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "severe_headache",
+      "label": "Severe / sudden headache",
+      "system": "neuro",
+      "synonyms": [
+        "worst headache",
+        "thunderclap headache",
+        "severe headache",
+        "explosive headache",
+        "sudden severe head pain"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "dizziness",
+      "label": "Dizziness / lightheadedness",
+      "system": "neuro",
+      "synonyms": [
+        "dizzy",
+        "dizziness",
+        "lightheaded",
+        "light headed",
+        "giddy",
+        "vertigo",
+        "spinning",
+        "unsteady"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "fainting",
+      "label": "Fainting / loss of consciousness",
+      "system": "neuro",
+      "synonyms": [
+        "fainted",
+        "fainting",
+        "passed out",
+        "unconscious",
+        "blacked out",
+        "syncope",
+        "collapsed"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "confusion",
+      "label": "Confusion / disorientation",
+      "system": "neuro",
+      "synonyms": [
+        "confused",
+        "confusion",
+        "disoriented",
+        "not making sense",
+        "altered mental state",
+        "delirium"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "neck_stiffness",
+      "label": "Neck stiffness",
+      "system": "neuro",
+      "synonyms": [
+        "stiff neck",
+        "neck stiffness",
+        "cannot bend neck",
+        "neck rigidity"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "numbness",
+      "label": "Numbness / tingling",
+      "system": "neuro",
+      "synonyms": [
+        "numbness",
+        "numb",
+        "tingling",
+        "pins and needles",
+        "paresthesia",
+        "loss of sensation",
+        "weakness on one side",
+        "one sided weakness",
+        "weakness on one side of the body",
+        "hemiparesis",
+        "one side weak",
+        "arm and leg weakness"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "slurred_speech",
+      "label": "Slurred speech",
+      "system": "neuro",
+      "synonyms": [
+        "slurred speech",
+        "cannot speak properly",
+        "slurring",
+        "difficulty speaking"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "sore_throat",
+      "label": "Sore throat",
+      "system": "resp",
+      "synonyms": [
+        "sore throat",
+        "throat pain",
+        "painful swallowing",
+        "scratchy throat",
+        "pharyngitis",
+        "throat hurts",
+        "sore in the mouth",
+        "painful throat"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "cough",
+      "label": "Cough",
+      "system": "resp",
+      "synonyms": [
+        "cough",
+        "coughing",
+        "dry cough",
+        "hacking cough",
+        "coughing fits",
+        "persistent cough"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "productive_cough",
+      "label": "Cough with phlegm",
+      "system": "resp",
+      "synonyms": [
+        "phlegm",
+        "sputum",
+        "mucus",
+        "productive cough",
+        "coughing up phlegm",
+        "wet cough",
+        "green sputum",
+        "yellow sputum"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "blood_in_sputum",
+      "label": "Blood in sputum",
+      "system": "resp",
+      "synonyms": [
+        "blood in phlegm",
+        "coughing blood",
+        "hemoptysis",
+        "blood in sputum",
+        "coughing up blood"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "runny_nose",
+      "label": "Runny / blocked nose",
+      "system": "resp",
+      "synonyms": [
+        "runny nose",
+        "blocked nose",
+        "stuffy nose",
+        "nasal congestion",
+        "congestion",
+        "sneezing",
+        "rhinorrhea",
+        "sniffles"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "shortness_of_breath",
+      "label": "Shortness of breath",
+      "system": "resp",
+      "synonyms": [
+        "shortness of breath",
+        "breathless",
+        "breathlessness",
+        "cannot breathe",
+        "difficulty breathing",
+        "dyspnea",
+        "wheezing",
+        "wheeze",
+        "gasping",
+        "out of breath",
+        "short of breath",
+        "cannot catch my breath"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "chest_tightness",
+      "label": "Chest tightness",
+      "system": "resp",
+      "synonyms": [
+        "chest tightness",
+        "tight chest",
+        "chest pressure",
+        "constricted chest"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "chest_pain",
+      "label": "Chest pain",
+      "system": "cardio",
+      "synonyms": [
+        "chest pain",
+        "chest ache",
+        "pain in chest",
+        "crushing chest pain",
+        "pressure in chest"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "sneezing_fits",
+      "label": "Sneezing fits",
+      "system": "resp",
+      "synonyms": [
+        "sneezing a lot",
+        "sneezing fits",
+        "frequent sneezing"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "loss_of_smell",
+      "label": "Loss of smell / taste",
+      "system": "resp",
+      "synonyms": [
+        "loss of smell",
+        "loss of taste",
+        "cannot smell",
+        "anosmia",
+        "no taste",
+        "ageusia"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "nausea",
+      "label": "Nausea",
+      "system": "gi",
+      "synonyms": [
+        "nausea",
+        "nauseous",
+        "queasy",
+        "feel sick",
+        "feeling sick",
+        "want to vomit"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "vomiting",
+      "label": "Vomiting",
+      "system": "gi",
+      "synonyms": [
+        "vomiting",
+        "vomited",
+        "throwing up",
+        "threw up",
+        "puking",
+        "emesis"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "diarrhea",
+      "label": "Diarrhoea",
+      "system": "gi",
+      "synonyms": [
+        "diarrhea",
+        "diarrhoea",
+        "loose stools",
+        "loose motion",
+        "watery stool",
+        "frequent stools",
+        "upset stomach"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "bloody_stool",
+      "label": "Blood in stool",
+      "system": "gi",
+      "synonyms": [
+        "blood in stool",
+        "bloody stool",
+        "rectal bleeding",
+        "black stool",
+        "melena",
+        "blood in poop"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "abdominal_pain",
+      "label": "Abdominal pain",
+      "system": "gi",
+      "synonyms": [
+        "abdominal pain",
+        "stomach pain",
+        "stomach ache",
+        "belly pain",
+        "tummy ache",
+        "cramps in stomach",
+        "stomach cramps",
+        "abdominal cramps",
+        "lower abdominal pain",
+        "pain in my abdomen",
+        "pain in the abdomen",
+        "lower belly pain",
+        "stomach hurts"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "severe_abdominal_pain",
+      "label": "Severe abdominal pain",
+      "system": "gi",
+      "synonyms": [
+        "severe stomach pain",
+        "unbearable stomach pain",
+        "severe abdominal pain",
+        "rigid abdomen",
+        "agonizing stomach pain"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "heartburn",
+      "label": "Heartburn / acid reflux",
+      "system": "gi",
+      "synonyms": [
+        "heartburn",
+        "acid reflux",
+        "acidity",
+        "sour taste",
+        "burning in chest after eating",
+        "gerd",
+        "regurgitation"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "bloating",
+      "label": "Bloating / gas",
+      "system": "gi",
+      "synonyms": [
+        "bloating",
+        "bloated",
+        "gas",
+        "flatulence",
+        "gassy",
+        "distended abdomen"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "constipation",
+      "label": "Constipation",
+      "system": "gi",
+      "synonyms": [
+        "constipation",
+        "constipated",
+        "cannot pass stool",
+        "hard stools",
+        "infrequent bowel movement"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "loss_of_appetite",
+      "label": "Loss of appetite",
+      "system": "gi",
+      "synonyms": [
+        "loss of appetite",
+        "no appetite",
+        "not hungry",
+        "poor appetite",
+        "anorexia"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "jaundice",
+      "label": "Yellowing of skin / eyes",
+      "system": "gi",
+      "synonyms": [
+        "jaundice",
+        "yellow eyes",
+        "yellow skin",
+        "yellowing of eyes",
+        "icterus"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "joint_pain",
+      "label": "Joint pain",
+      "system": "msk",
+      "synonyms": [
+        "joint pain",
+        "aching joints",
+        "arthralgia",
+        "painful joints",
+        "knee pain",
+        "joint ache",
+        "pain in the big toe",
+        "painful big toe",
+        "pain in my toe",
+        "big toe pain",
+        "painful toe",
+        "pain in the great toe",
+        "toe is painful"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "joint_swelling",
+      "label": "Joint swelling",
+      "system": "msk",
+      "synonyms": [
+        "swollen joints",
+        "joint swelling",
+        "swollen knee",
+        "swollen ankle",
+        "puffy joints",
+        "swollen big toe",
+        "swollen toe",
+        "big toe is swollen",
+        "toe is swollen and red"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "muscle_ache",
+      "label": "Muscle aches",
+      "system": "msk",
+      "synonyms": [
+        "muscle ache",
+        "muscle pain",
+        "myalgia",
+        "aching muscles",
+        "body ache",
+        "body pain",
+        "sore muscles",
+        "aching body"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "back_pain",
+      "label": "Back pain",
+      "system": "msk",
+      "synonyms": [
+        "back pain",
+        "backache",
+        "lower back pain",
+        "back hurts",
+        "lumbago",
+        "pain shooting down my leg",
+        "lower back pain after lifting",
+        "back ache"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "stiffness",
+      "label": "Stiffness",
+      "system": "msk",
+      "synonyms": [
+        "stiffness",
+        "stiff",
+        "difficulty moving",
+        "limited movement"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "rash",
+      "label": "Skin rash",
+      "system": "skin",
+      "synonyms": [
+        "rash",
+        "skin rash",
+        "red spots",
+        "spots",
+        "hives",
+        "urticaria",
+        "eruption",
+        "bumps on skin",
+        "spots on face",
+        "bumpy rash",
+        "rash on the body"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "itching",
+      "label": "Itching",
+      "system": "skin",
+      "synonyms": [
+        "itching",
+        "itchy",
+        "itch",
+        "pruritus",
+        "scratching",
+        "itchy all over",
+        "intense itching at night",
+        "itching worse at night"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "skin_redness",
+      "label": "Skin redness / inflammation",
+      "system": "skin",
+      "synonyms": [
+        "redness",
+        "red skin",
+        "inflamed skin",
+        "erythema",
+        "red patch",
+        "flushed skin",
+        "warm and red",
+        "red warm skin",
+        "redness of the skin"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "skin_swelling",
+      "label": "Localised swelling",
+      "system": "skin",
+      "synonyms": [
+        "swelling",
+        "swollen",
+        "lump",
+        "bump",
+        "puffy area",
+        "swollen area"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "pus_discharge",
+      "label": "Pus / discharge",
+      "system": "skin",
+      "synonyms": [
+        "pus",
+        "discharge",
+        "oozing",
+        "yellow discharge",
+        "weeping wound",
+        "suppuration"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "wound",
+      "label": "Wound / cut / injury",
+      "system": "skin",
+      "synonyms": [
+        "wound",
+        "cut",
+        "injury",
+        "gash",
+        "laceration",
+        "scrape",
+        "abrasion",
+        "sore"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "burn",
+      "label": "Burn",
+      "system": "skin",
+      "synonyms": [
+        "burn",
+        "burned",
+        "scald",
+        "scalded",
+        "blister from heat"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "dark_skin_patch",
+      "label": "Dark / black skin patch",
+      "system": "skin",
+      "synonyms": [
+        "black skin",
+        "dark patch",
+        "blackened area",
+        "necrosis",
+        "tissue turning black",
+        "gangrene"
+      ],
+      "red_flag": true,
+      "weight": 1.5,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "spreading_rash",
+      "label": "Rapidly spreading rash",
+      "system": "skin",
+      "synonyms": [
+        "spreading rash",
+        "rash spreading fast",
+        "rash all over body",
+        "rash everywhere"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "eye_redness",
+      "label": "Red / irritated eye",
+      "system": "eye",
+      "synonyms": [
+        "red eye",
+        "eye redness",
+        "pink eye",
+        "bloodshot eye",
+        "eye irritation"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "eye_discharge",
+      "label": "Eye discharge",
+      "system": "eye",
+      "synonyms": [
+        "eye discharge",
+        "sticky eye",
+        "crusty eye",
+        "pus from eye",
+        "matted eyelashes"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "blurred_vision",
+      "label": "Blurred vision",
+      "system": "eye",
+      "synonyms": [
+        "blurred vision",
+        "blurry vision",
+        "cannot see clearly",
+        "vision loss",
+        "double vision"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "eye_pain",
+      "label": "Eye pain",
+      "system": "eye",
+      "synonyms": [
+        "eye pain",
+        "painful eye",
+        "pain in eye",
+        "sore eye"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "ear_pain",
+      "label": "Ear pain",
+      "system": "ear",
+      "synonyms": [
+        "ear pain",
+        "earache",
+        "ear ache",
+        "painful ear",
+        "ear hurts"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "hearing_loss",
+      "label": "Reduced hearing",
+      "system": "ear",
+      "synonyms": [
+        "hearing loss",
+        "reduced hearing",
+        "cannot hear",
+        "muffled hearing",
+        "deafness"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "ear_discharge",
+      "label": "Ear discharge",
+      "system": "ear",
+      "synonyms": [
+        "ear discharge",
+        "fluid from ear",
+        "pus from ear",
+        "ear leaking"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "painful_urination",
+      "label": "Painful urination",
+      "system": "urinary",
+      "synonyms": [
+        "painful urination",
+        "burning urination",
+        "burning when peeing",
+        "burning when i pee",
+        "burning pee",
+        "burning when i urinate",
+        "pain when peeing",
+        "pain when i pee",
+        "pain passing urine",
+        "painful pee",
+        "peeing hurts",
+        "it hurts to pee",
+        "it burns when i pee",
+        "dysuria",
+        "stinging urine",
+        "stinging when urinating",
+        "burning sensation when urinating"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "frequent_urination",
+      "label": "Frequent urination",
+      "system": "urinary",
+      "synonyms": [
+        "frequent urination",
+        "urinating often",
+        "urinating frequently",
+        "peeing a lot",
+        "peeing often",
+        "need to pee constantly",
+        "need to go often",
+        "need to go very often",
+        "going to the toilet often",
+        "polyuria",
+        "urgency",
+        "urgent need to urinate",
+        "cannot hold urine",
+        "peeing frequently",
+        "passing urine often",
+        "nocturia",
+        "getting up at night to urinate",
+        "passing urine at night",
+        "urinating at night",
+        "waking to pass urine",
+        "peeing a lot at night",
+        "passing urine frequently"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "blood_in_urine",
+      "label": "Blood in urine",
+      "system": "urinary",
+      "synonyms": [
+        "blood in urine",
+        "blood in pee",
+        "hematuria",
+        "red urine",
+        "bloody urine",
+        "pink urine"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "flank_pain",
+      "label": "Flank / side pain",
+      "system": "urinary",
+      "synonyms": [
+        "flank pain",
+        "side pain",
+        "kidney pain",
+        "pain in side",
+        "loin pain",
+        "pain in my side",
+        "lower back and side pain"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "reduced_urine",
+      "label": "Reduced urine output",
+      "system": "urinary",
+      "synonyms": [
+        "not passing urine",
+        "reduced urine",
+        "little urine",
+        "no urine output",
+        "oliguria",
+        "not peeing much",
+        "hardly any urine"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "excessive_thirst",
+      "label": "Excessive thirst",
+      "system": "endocrine",
+      "synonyms": [
+        "excessive thirst",
+        "very thirsty",
+        "polydipsia",
+        "always thirsty",
+        "constant thirst",
+        "feeling thirsty",
+        "drinking a lot of water"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "excessive_hunger",
+      "label": "Excessive hunger",
+      "system": "endocrine",
+      "synonyms": [
+        "always hungry",
+        "excessive hunger",
+        "polyphagia",
+        "constant hunger"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "slow_healing",
+      "label": "Slow-healing wounds",
+      "system": "endocrine",
+      "synonyms": [
+        "slow healing",
+        "wounds not healing",
+        "cuts take long to heal"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "cold_intolerance",
+      "label": "Cold intolerance",
+      "system": "endocrine",
+      "synonyms": [
+        "always cold",
+        "cold intolerance",
+        "cannot tolerate cold",
+        "feeling cold all the time",
+        "always feeling cold",
+        "intolerant to cold"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "heat_intolerance",
+      "label": "Heat intolerance",
+      "system": "endocrine",
+      "synonyms": [
+        "heat intolerance",
+        "cannot tolerate heat",
+        "overheating easily",
+        "intolerant of heat"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "hair_loss",
+      "label": "Hair loss",
+      "system": "endocrine",
+      "synonyms": [
+        "hair loss",
+        "hair falling out",
+        "thinning hair",
+        "alopecia"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "anxiety",
+      "label": "Anxiety / restlessness",
+      "system": "psych",
+      "synonyms": [
+        "anxiety",
+        "anxious",
+        "restless",
+        "restlessness",
+        "panic",
+        "nervous",
+        "on edge",
+        "worried"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "low_mood",
+      "label": "Low mood / sadness",
+      "system": "psych",
+      "synonyms": [
+        "depressed",
+        "depression",
+        "low mood",
+        "sad",
+        "hopeless",
+        "no interest",
+        "loss of interest",
+        "unmotivated"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "insomnia",
+      "label": "Difficulty sleeping",
+      "system": "psych",
+      "synonyms": [
+        "insomnia",
+        "cannot sleep",
+        "trouble sleeping",
+        "sleepless",
+        "poor sleep",
+        "waking at night"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "suicidal_thoughts",
+      "label": "Thoughts of self-harm",
+      "system": "psych",
+      "synonyms": [
+        "suicidal",
+        "suicide",
+        "self harm",
+        "want to die",
+        "end my life",
+        "kill myself"
+      ],
+      "red_flag": true,
+      "weight": 1.6,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "swollen_lymph_nodes",
+      "label": "Swollen lymph nodes",
+      "system": "immune",
+      "synonyms": [
+        "swollen glands",
+        "swollen lymph nodes",
+        "lumps in neck",
+        "tender glands"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "bleeding_gums",
+      "label": "Bleeding gums",
+      "system": "immune",
+      "synonyms": [
+        "bleeding gums",
+        "gums bleed",
+        "gum bleeding"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "easy_bruising",
+      "label": "Easy bruising",
+      "system": "immune",
+      "synonyms": [
+        "easy bruising",
+        "bruise easily",
+        "bruises",
+        "purpura"
+      ],
+      "red_flag": true,
+      "weight": 1.2,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "swollen_face_lips",
+      "label": "Swelling of face / lips / throat",
+      "system": "immune",
+      "synonyms": [
+        "swollen face",
+        "swollen lips",
+        "swollen tongue",
+        "throat closing",
+        "anaphylaxis",
+        "facial swelling"
+      ],
+      "red_flag": true,
+      "weight": 1.6,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "widespread_pain",
+      "label": "Widespread body pain",
+      "system": "msk",
+      "synonyms": [
+        "pain all over",
+        "widespread pain",
+        "whole body hurts",
+        "generalised pain",
+        "everything hurts"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "tender_points",
+      "label": "Tender points / pressure pain",
+      "system": "msk",
+      "synonyms": [
+        "tender points",
+        "tender to touch",
+        "painful to press",
+        "pressure pain"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "brain_fog",
+      "label": "Brain fog / poor concentration",
+      "system": "psych",
+      "synonyms": [
+        "brain fog",
+        "poor concentration",
+        "cannot focus",
+        "forgetful",
+        "memory problems",
+        "foggy thinking"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "loss_of_taste",
+      "label": "Loss of taste",
+      "system": "resp",
+      "synonyms": [
+        "loss of taste",
+        "no taste",
+        "cannot taste",
+        "ageusia",
+        "food tastes of nothing",
+        "bad taste in mouth",
+        "bad taste",
+        "metallic taste",
+        "taste is off"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "wheezing",
+      "label": "Wheezing",
+      "system": "resp",
+      "synonyms": [
+        "wheezing",
+        "wheeze",
+        "whistling breath",
+        "noisy breathing"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "rapid_breathing",
+      "label": "Rapid breathing",
+      "system": "resp",
+      "synonyms": [
+        "rapid breathing",
+        "breathing fast",
+        "tachypnea",
+        "fast breathing"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "facial_pain",
+      "label": "Facial pain / pressure",
+      "system": "resp",
+      "synonyms": [
+        "facial pain",
+        "face pain",
+        "pressure around eyes",
+        "cheek pain",
+        "sinus pressure"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "light_sensitivity",
+      "label": "Sensitivity to light",
+      "system": "neuro",
+      "synonyms": [
+        "light sensitivity",
+        "sensitive to light",
+        "photophobia",
+        "light hurts eyes"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "facial_droop",
+      "label": "Facial droop / weakness",
+      "system": "neuro",
+      "synonyms": [
+        "facial droop",
+        "face drooping",
+        "one side of face drooping",
+        "facial weakness",
+        "crooked smile"
+      ],
+      "red_flag": true,
+      "weight": 1.6,
+      "red_flag_level": "emergency"
+    },
+    {
+      "id": "palpitations",
+      "label": "Palpitations / racing heart",
+      "system": "cardio",
+      "synonyms": [
+        "palpitations",
+        "heart racing",
+        "racing heart",
+        "fast heartbeat",
+        "pounding heart",
+        "irregular heartbeat",
+        "heart fluttering"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "pain",
+      "label": "Pain (localised)",
+      "system": "general",
+      "synonyms": [
+        "pain",
+        "painful",
+        "hurts",
+        "sore",
+        "aching",
+        "tender"
+      ],
+      "red_flag": false,
+      "weight": 0.8,
+      "red_flag_level": null
+    },
+    {
+      "id": "dry_skin",
+      "label": "Dry skin",
+      "system": "skin",
+      "synonyms": [
+        "dry skin",
+        "flaky skin",
+        "rough skin",
+        "scaly skin"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "blister",
+      "label": "Blisters",
+      "system": "skin",
+      "synonyms": [
+        "blister",
+        "blisters",
+        "fluid filled bump",
+        "bleb"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "ring_shaped_rash",
+      "label": "Ring-shaped / circular rash",
+      "system": "skin",
+      "synonyms": [
+        "ring shaped rash",
+        "ring rash",
+        "circular rash",
+        "round rash",
+        "annular rash",
+        "ring shaped patch",
+        "ring shaped lesion",
+        "circular patch",
+        "expanding rash",
+        "ringworm"
+      ],
+      "red_flag": false,
+      "red_flag_level": null,
+      "weight": 1.0
+    },
+    {
+      "id": "nasal_congestion",
+      "label": "Blocked / stuffy nose",
+      "system": "resp",
+      "synonyms": [
+        "blocked nose",
+        "stuffy nose",
+        "nasal congestion",
+        "nose blocked",
+        "congested nose"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "postnasal_drip",
+      "label": "Post-nasal drip",
+      "system": "resp",
+      "synonyms": [
+        "post nasal drip",
+        "mucus at back of throat",
+        "dripping in throat",
+        "catarrh"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "itchy_eyes",
+      "label": "Itchy / watery eyes",
+      "system": "eye",
+      "synonyms": [
+        "itchy eyes",
+        "watery eyes",
+        "eyes itching",
+        "red itchy eyes",
+        "eye allergy"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "hoarseness",
+      "label": "Hoarse voice",
+      "system": "resp",
+      "synonyms": [
+        "hoarse",
+        "hoarseness",
+        "voice gone",
+        "lost my voice",
+        "raspy voice"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "dry_cough",
+      "label": "Dry cough",
+      "system": "resp",
+      "synonyms": [
+        "dry cough",
+        "non productive cough",
+        "hacking cough",
+        "tickly cough"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "difficulty_swallowing",
+      "label": "Difficulty swallowing",
+      "system": "gi",
+      "synonyms": [
+        "difficulty swallowing",
+        "cannot swallow",
+        "painful swallowing",
+        "odynophagia",
+        "trouble swallowing"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "morning_headache",
+      "label": "Morning headache",
+      "system": "neuro",
+      "synonyms": [
+        "morning headache",
+        "headache on waking",
+        "headache when i wake up",
+        "headache in the morning",
+        "headache when i wake"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "snoring",
+      "label": "Loud snoring",
+      "system": "resp",
+      "synonyms": [
+        "snoring",
+        "snore",
+        "loud snoring",
+        "stopped breathing in sleep",
+        "stop breathing in sleep",
+        "pauses in breathing in sleep",
+        "loud snoring at night"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "daytime_sleepiness",
+      "label": "Daytime sleepiness",
+      "system": "neuro",
+      "synonyms": [
+        "daytime sleepiness",
+        "sleepy during the day",
+        "always tired in day",
+        "excessive daytime sleepiness",
+        "sleepy all day",
+        "tired all day despite sleeping"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "vertigo",
+      "label": "Vertigo / spinning",
+      "system": "ear",
+      "synonyms": [
+        "vertigo",
+        "spinning sensation",
+        "room spinning",
+        "dizzy on turning",
+        "giddiness on movement",
+        "spinning when turning in bed",
+        "room spins",
+        "giddy on turning the head",
+        "spinning sensation on movement"
+      ],
+      "red_flag": false,
+      "weight": 1.3,
+      "red_flag_level": null
+    },
+    {
+      "id": "loss_of_balance",
+      "label": "Loss of balance",
+      "system": "neuro",
+      "synonyms": [
+        "loss of balance",
+        "unsteady",
+        "off balance",
+        "cannot walk straight",
+        "ataxia"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "tinnitus",
+      "label": "Ringing in the ears",
+      "system": "ear",
+      "synonyms": [
+        "ringing in ears",
+        "tinnitus",
+        "buzzing in ears",
+        "noise in ear"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "tremor",
+      "label": "Tremor / shaking hands",
+      "system": "neuro",
+      "synonyms": [
+        "tremor",
+        "shaking hands",
+        "hand tremor",
+        "trembling hands",
+        "shaky hands",
+        "shaking hands at rest",
+        "hands shake"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "memory_loss",
+      "label": "Memory loss / confusion spells",
+      "system": "neuro",
+      "synonyms": [
+        "memory loss",
+        "forgetfulness",
+        "cannot remember",
+        "memory problems",
+        "getting forgetful"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "calf_pain",
+      "label": "Calf pain / swelling",
+      "system": "cardio",
+      "synonyms": [
+        "calf pain",
+        "calf swelling",
+        "pain in calf",
+        "tender calf",
+        "leg swelling one side",
+        "painful calf",
+        "calf tenderness",
+        "tender calf muscle",
+        "cramp in calf",
+        "swollen calf",
+        "painful swollen calf"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "leg_swelling",
+      "label": "Swelling of legs / ankles",
+      "system": "cardio",
+      "synonyms": [
+        "leg swelling",
+        "swollen ankles",
+        "swollen legs",
+        "pedal edema",
+        "puffy ankles",
+        "heavy legs",
+        "aching legs",
+        "heavy aching legs",
+        "swollen ankle",
+        "puffy legs",
+        "legs feel heavy",
+        "swollen leg"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "tingling_hands_feet",
+      "label": "Tingling / numbness in hands or feet",
+      "system": "neuro",
+      "synonyms": [
+        "tingling in hands",
+        "tingling feet",
+        "pins and needles",
+        "numb feet",
+        "burning feet",
+        "neuropathy",
+        "numb toes",
+        "pins and needles in feet",
+        "tingling in feet",
+        "numb hands"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "abdominal_cramps",
+      "label": "Abdominal cramps",
+      "system": "gi",
+      "synonyms": [
+        "stomach cramps",
+        "abdominal cramps",
+        "cramping pain",
+        "colicky pain",
+        "cramps in stomach"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "excessive_gas",
+      "label": "Excessive gas / flatulence",
+      "system": "gi",
+      "synonyms": [
+        "gas",
+        "flatulence",
+        "bloating and gas",
+        "passing gas",
+        "farting a lot"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "rectal_bleeding",
+      "label": "Bleeding from the back passage",
+      "system": "gi",
+      "synonyms": [
+        "rectal bleeding",
+        "blood when i wipe",
+        "bleeding piles",
+        "fresh blood in stool",
+        "bleeding back passage",
+        "bright red blood in stool",
+        "blood on toilet paper",
+        "bleeding when i wipe",
+        "blood after passing stool"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "anal_pain",
+      "label": "Anal pain / lump",
+      "system": "gi",
+      "synonyms": [
+        "anal pain",
+        "painful bottom",
+        "lump near anus",
+        "piles pain",
+        "haemorrhoid",
+        "painful lump near anus",
+        "painful piles",
+        "pain in the bottom"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "mouth_ulcers",
+      "label": "Mouth ulcers",
+      "system": "gi",
+      "synonyms": [
+        "mouth ulcer",
+        "mouth sores",
+        "canker sore",
+        "ulcer in mouth",
+        "sore in mouth",
+        "white patches in mouth",
+        "white patches on tongue",
+        "white coating on tongue",
+        "oral thrush",
+        "white spots in mouth",
+        "sore in the mouth"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "tooth_pain",
+      "label": "Tooth pain",
+      "system": "gi",
+      "synonyms": [
+        "tooth pain",
+        "toothache",
+        "pain in tooth",
+        "dental pain",
+        "gum pain",
+        "throbbing tooth",
+        "severe tooth pain",
+        "pain in the tooth"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "gum_swelling",
+      "label": "Swollen gums / face",
+      "system": "gi",
+      "synonyms": [
+        "swollen gums",
+        "gum swelling",
+        "swollen face from tooth",
+        "dental abscess",
+        "gum boil",
+        "swollen gum",
+        "swollen face from a tooth",
+        "gum abscess"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "menstrual_pain",
+      "label": "Painful periods",
+      "system": "general",
+      "synonyms": [
+        "painful periods",
+        "period pain",
+        "dysmenorrhoea",
+        "cramps during periods",
+        "menstrual cramps",
+        "irregular painful periods",
+        "painful irregular periods",
+        "period cramps"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "heavy_periods",
+      "label": "Heavy periods",
+      "system": "general",
+      "synonyms": [
+        "heavy periods",
+        "heavy bleeding periods",
+        "menorrhagia",
+        "flooding periods",
+        "clots in period",
+        "heavy bleeding during periods",
+        "very heavy periods"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "vaginal_discharge",
+      "label": "Unusual vaginal discharge",
+      "system": "urinary",
+      "synonyms": [
+        "vaginal discharge",
+        "white discharge",
+        "discharge with smell",
+        "itching down below",
+        "vaginal itching",
+        "thick white discharge",
+        "discharge down below"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "hot_flushes",
+      "label": "Hot flushes / night sweats",
+      "system": "endocrine",
+      "synonyms": [
+        "hot flushes",
+        "hot flashes",
+        "night sweats in menopause",
+        "sweating at night",
+        "temperature swings",
+        "flushes",
+        "sudden heat in the body"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "urinary_urgency",
+      "label": "Urgency to pass urine",
+      "system": "urinary",
+      "synonyms": [
+        "urinary urgency",
+        "urgent need to urinate",
+        "cannot hold urine",
+        "rushing to toilet",
+        "urgency",
+        "urgent need to pass urine",
+        "rushing to the toilet"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "weak_urine_stream",
+      "label": "Weak urine stream",
+      "system": "urinary",
+      "synonyms": [
+        "weak stream",
+        "weak urine flow",
+        "difficulty starting urine",
+        "dribbling urine",
+        "prostate symptoms",
+        "poor stream",
+        "slow urine flow",
+        "straining to pass urine",
+        "hesitancy passing urine",
+        "cannot start urine",
+        "weak urine stream"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "back_stiffness",
+      "label": "Morning back stiffness",
+      "system": "msk",
+      "synonyms": [
+        "back stiffness",
+        "stiff back",
+        "stiff in the morning",
+        "morning stiffness",
+        "stiff joints on waking"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "skin_scaling",
+      "label": "Scaly / flaky skin patches",
+      "system": "skin",
+      "synonyms": [
+        "scaly skin",
+        "flaky skin",
+        "skin scaling",
+        "peeling patches",
+        "silvery scales",
+        "scaly patches",
+        "silvery patches",
+        "scaly silvery patches",
+        "scaly plaques",
+        "thick scaly skin",
+        "silvery scales on elbows",
+        "scaly rash"
+      ],
+      "red_flag": false,
+      "weight": 1.1,
+      "red_flag_level": null
+    },
+    {
+      "id": "itchy_scalp",
+      "label": "Itchy scalp / dandruff",
+      "system": "skin",
+      "synonyms": [
+        "itchy scalp",
+        "dandruff",
+        "flaky scalp",
+        "scalp itching"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "skin_lesion",
+      "label": "New or changing skin lesion",
+      "system": "skin",
+      "synonyms": [
+        "skin lesion",
+        "changing mole",
+        "new growth on skin",
+        "dark spot changing",
+        "non healing ulcer"
+      ],
+      "red_flag": true,
+      "weight": 1.3,
+      "red_flag_level": "urgent"
+    },
+    {
+      "id": "eye_strain",
+      "label": "Eye strain / tired eyes",
+      "system": "eye",
+      "synonyms": [
+        "eye strain",
+        "tired eyes",
+        "eyes hurt after screen",
+        "digital eye strain"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "night_blindness",
+      "label": "Poor vision in dim light",
+      "system": "eye",
+      "synonyms": [
+        "night blindness",
+        "cannot see in dark",
+        "poor night vision",
+        "dim light vision"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "irritability",
+      "label": "Irritability",
+      "system": "psych",
+      "synonyms": [
+        "irritability",
+        "irritable",
+        "short temper",
+        "easily annoyed",
+        "mood swings"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "restlessness",
+      "label": "Restlessness",
+      "system": "psych",
+      "synonyms": [
+        "restlessness",
+        "cannot sit still",
+        "on edge",
+        "feeling restless",
+        "agitated"
+      ],
+      "red_flag": false,
+      "weight": 1.0,
+      "red_flag_level": null
+    },
+    {
+      "id": "panic_attacks",
+      "label": "Panic attacks",
+      "system": "psych",
+      "synonyms": [
+        "panic attack",
+        "panic attacks",
+        "sudden fear",
+        "heart racing with fear",
+        "impending doom",
+        "sudden panic",
+        "panic",
+        "intense fear",
+        "sudden intense fear",
+        "feeling of dying"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "reduced_concentration",
+      "label": "Poor concentration",
+      "system": "psych",
+      "synonyms": [
+        "cannot concentrate",
+        "poor concentration",
+        "difficulty focusing",
+        "mind goes blank"
+      ],
+      "red_flag": false,
+      "weight": 0.9,
+      "red_flag_level": null
+    },
+    {
+      "id": "tingling_lips",
+      "label": "Tingling around mouth",
+      "system": "immune",
+      "synonyms": [
+        "tingling lips",
+        "tingling around mouth",
+        "swelling of lips",
+        "lips swelling"
+      ],
+      "red_flag": true,
+      "weight": 1.4,
+      "red_flag_level": "urgent"
+    }
+  ]
+}

@@ -1,0 +1,3104 @@
+{
+  "diseases": [
+    {
+      "id": "common_cold",
+      "name": "Common Cold",
+      "category": "respiratory",
+      "icd10": "J00",
+      "prevalence": 0.95,
+      "contagious": true,
+      "symptoms": {
+        "runny_nose": 3.0,
+        "sneezing_fits": 2.4,
+        "sore_throat": 2.2,
+        "cough": 1.8,
+        "fatigue": 1.2,
+        "headache": 1.2,
+        "fever": 0.9,
+        "muscle_ache": 0.8,
+        "loss_of_smell": 0.9,
+        "chills": 0.7
+      },
+      "key_symptoms": [
+        "runny_nose",
+        "sore_throat"
+      ],
+      "typical_duration_days": [
+        5,
+        10
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Rest and sleep well",
+        "Drink warm fluids (water, soup, herbal tea)",
+        "Steam inhalation twice daily",
+        "Salt-water gargle for throat pain",
+        "Keep room humidified"
+      ],
+      "medicines": [
+        "paracetamol",
+        "cetirizine",
+        "dextromethorphan",
+        "xylometazoline",
+        "vitamin_c"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "A viral infection of the upper respiratory tract causing nasal congestion, sneezing, sore throat and mild cough. Resolves on its own in about a week.",
+      "when_to_see_doctor": [
+        "Symptoms last more than 10 days",
+        "Fever above 39C",
+        "Breathing difficulty",
+        "Severe throat pain preventing swallowing"
+      ]
+    },
+    {
+      "id": "influenza",
+      "name": "Influenza (Flu)",
+      "category": "respiratory",
+      "icd10": "J11",
+      "prevalence": 0.72,
+      "contagious": true,
+      "symptoms": {
+        "fever": 3.0,
+        "muscle_ache": 2.8,
+        "chills": 2.5,
+        "fatigue": 2.4,
+        "headache": 2.0,
+        "cough": 1.8,
+        "sore_throat": 1.5,
+        "runny_nose": 1.2,
+        "joint_pain": 1.4,
+        "loss_of_appetite": 1.1
+      },
+      "key_symptoms": [
+        "fever",
+        "muscle_ache"
+      ],
+      "typical_duration_days": [
+        5,
+        14
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Bed rest for the first 3-5 days",
+        "High fluid intake (2.5-3 L/day)",
+        "Antipyretic for fever",
+        "Isolate to avoid spreading",
+        "Monitor temperature twice daily"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "oseltamivir",
+        "dextromethorphan",
+        "vitamin_c",
+        "zinc"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "Influenza virus infection with abrupt high fever, severe body aches and marked fatigue. More intense than a common cold.",
+      "when_to_see_doctor": [
+        "Difficulty breathing or chest pain",
+        "Fever above 40C or lasting over 5 days",
+        "Confusion or dizziness",
+        "Symptoms improving then suddenly worsening"
+      ]
+    },
+    {
+      "id": "covid19",
+      "name": "COVID-19",
+      "category": "respiratory",
+      "icd10": "U07.1",
+      "prevalence": 0.55,
+      "contagious": true,
+      "symptoms": {
+        "fever": 2.5,
+        "cough": 2.4,
+        "loss_of_smell": 3.0,
+        "loss_of_taste": 2.8,
+        "fatigue": 2.2,
+        "sore_throat": 1.8,
+        "headache": 1.6,
+        "shortness_of_breath": 2.0,
+        "muscle_ache": 1.5,
+        "runny_nose": 1.2,
+        "diarrhea": 0.9,
+        "chest_tightness": 1.3
+      },
+      "key_symptoms": [
+        "loss_of_smell",
+        "loss_of_taste"
+      ],
+      "typical_duration_days": [
+        7,
+        21
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Isolate and rest",
+        "Monitor oxygen saturation if pulse oximeter available",
+        "Hydrate well",
+        "Prone positioning if breathless",
+        "Seek urgent care if oxygen below 94%"
+      ],
+      "medicines": [
+        "paracetamol",
+        "vitamin_c",
+        "zinc",
+        "vitamin_d"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "SARS-CoV-2 infection with fever, cough, and characteristic loss of smell or taste. Breathlessness signals more serious disease.",
+      "when_to_see_doctor": [
+        "Oxygen saturation below 94%",
+        "Persistent chest pain",
+        "Breathlessness at rest",
+        "Confusion or inability to stay awake"
+      ]
+    },
+    {
+      "id": "acute_bronchitis",
+      "name": "Acute Bronchitis",
+      "category": "respiratory",
+      "icd10": "J20",
+      "prevalence": 0.5,
+      "contagious": true,
+      "symptoms": {
+        "productive_cough": 3.0,
+        "cough": 2.6,
+        "chest_tightness": 1.8,
+        "sore_throat": 1.2,
+        "fever": 1.2,
+        "fatigue": 1.3,
+        "shortness_of_breath": 1.1,
+        "wheezing": 1.6
+      },
+      "key_symptoms": [
+        "productive_cough"
+      ],
+      "typical_duration_days": [
+        10,
+        21
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Warm fluids and steam inhalation",
+        "Avoid smoke and cold air",
+        "Honey with warm water for cough",
+        "Rest the voice"
+      ],
+      "medicines": [
+        "paracetamol",
+        "dextromethorphan",
+        "salbutamol",
+        "guaifenesin"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "Inflammation of the bronchial tubes, usually after a cold, producing a persistent cough with phlegm lasting 2-3 weeks.",
+      "when_to_see_doctor": [
+        "Cough lasting over 3 weeks",
+        "Blood in phlegm",
+        "High fever",
+        "Breathlessness"
+      ]
+    },
+    {
+      "id": "pneumonia",
+      "name": "Pneumonia",
+      "category": "respiratory",
+      "icd10": "J18",
+      "prevalence": 0.3,
+      "contagious": true,
+      "symptoms": {
+        "fever": 2.8,
+        "productive_cough": 2.6,
+        "shortness_of_breath": 2.6,
+        "chest_pain": 2.2,
+        "chills": 2.0,
+        "fatigue": 1.8,
+        "blood_in_sputum": 1.4,
+        "confusion": 1.2,
+        "rapid_breathing": 2.2
+      },
+      "key_symptoms": [
+        "fever",
+        "productive_cough",
+        "shortness_of_breath"
+      ],
+      "typical_duration_days": [
+        14,
+        42
+      ],
+      "severity_profile": "severe",
+      "severity_score": 8,
+      "self_care": [
+        "Urgent medical review required",
+        "Rest and high fluid intake until seen",
+        "Do not delay antibiotics if prescribed"
+      ],
+      "medicines": [
+        "amoxicillin",
+        "azithromycin",
+        "paracetamol"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "Infection of the lung air sacs causing fever, productive cough and breathlessness. Requires medical assessment and usually antibiotics.",
+      "when_to_see_doctor": [
+        "Always — pneumonia needs medical assessment",
+        "Breathing difficulty or bluish lips",
+        "Confusion",
+        "Fever with rigors"
+      ]
+    },
+    {
+      "id": "asthma",
+      "name": "Asthma Exacerbation",
+      "category": "respiratory",
+      "icd10": "J45",
+      "prevalence": 0.45,
+      "contagious": false,
+      "symptoms": {
+        "shortness_of_breath": 3.0,
+        "wheezing": 3.0,
+        "chest_tightness": 2.6,
+        "cough": 2.0,
+        "insomnia": 0.9,
+        "anxiety": 1.0
+      },
+      "key_symptoms": [
+        "wheezing",
+        "shortness_of_breath"
+      ],
+      "typical_duration_days": [
+        1,
+        14
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Use prescribed reliever inhaler as directed",
+        "Sit upright, stay calm, breathe slowly",
+        "Avoid triggers (dust, smoke, cold air)",
+        "Follow a written asthma action plan"
+      ],
+      "medicines": [
+        "salbutamol",
+        "budesonide",
+        "prednisolone"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "Reversible narrowing of the airways causing wheeze, cough and breathlessness, often triggered by allergens, cold or exercise.",
+      "when_to_see_doctor": [
+        "Reliever inhaler not working",
+        "Cannot complete a sentence",
+        "Bluish lips or fingertips",
+        "Peak flow below 50% of normal"
+      ]
+    },
+    {
+      "id": "allergic_rhinitis",
+      "name": "Allergic Rhinitis / Hay Fever",
+      "category": "respiratory",
+      "icd10": "J30",
+      "prevalence": 0.6,
+      "contagious": false,
+      "symptoms": {
+        "runny_nose": 3.0,
+        "sneezing_fits": 3.0,
+        "itching": 1.8,
+        "eye_redness": 1.8,
+        "cough": 1.0,
+        "headache": 1.0,
+        "fatigue": 0.9,
+        "loss_of_smell": 0.8
+      },
+      "key_symptoms": [
+        "runny_nose",
+        "sneezing_fits",
+        "itching"
+      ],
+      "typical_duration_days": [
+        7,
+        120
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Identify and avoid allergens (pollen, dust mites, pet dander)",
+        "Rinse nose with saline",
+        "Keep windows closed during high pollen",
+        "Shower after outdoor exposure"
+      ],
+      "medicines": [
+        "cetirizine",
+        "loratadine",
+        "xylometazoline",
+        "fluticasone_nasal"
+      ],
+      "routine": "allergy_control",
+      "description": "Allergic inflammation of the nose and eyes triggered by airborne allergens, causing sneezing, itching and watery discharge.",
+      "when_to_see_doctor": [
+        "Symptoms interfere with sleep or work",
+        "Wheezing develops",
+        "Symptoms not controlled by antihistamines"
+      ]
+    },
+    {
+      "id": "sinusitis",
+      "name": "Acute Sinusitis",
+      "category": "respiratory",
+      "icd10": "J01",
+      "prevalence": 0.4,
+      "contagious": false,
+      "symptoms": {
+        "headache": 2.4,
+        "runny_nose": 2.2,
+        "facial_pain": 2.6,
+        "fever": 1.5,
+        "cough": 1.3,
+        "fatigue": 1.2,
+        "sore_throat": 1.0,
+        "loss_of_smell": 1.4
+      },
+      "key_symptoms": [
+        "runny_nose",
+        "headache"
+      ],
+      "typical_duration_days": [
+        10,
+        28
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Steam inhalation 2-3 times daily",
+        "Saline nasal irrigation",
+        "Warm compress over the sinuses",
+        "Sleep with head elevated"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "xylometazoline",
+        "amoxicillin"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "Inflammation of the paranasal sinuses with facial pressure, blocked nose and headache, often following a cold.",
+      "when_to_see_doctor": [
+        "Symptoms over 10 days without improvement",
+        "Severe facial pain or swelling around the eye",
+        "High fever",
+        "Vision changes"
+      ]
+    },
+    {
+      "id": "gastroenteritis",
+      "name": "Acute Gastroenteritis",
+      "category": "gastrointestinal",
+      "icd10": "A09",
+      "prevalence": 0.7,
+      "contagious": true,
+      "symptoms": {
+        "diarrhea": 3.0,
+        "vomiting": 2.8,
+        "abdominal_pain": 2.4,
+        "nausea": 2.2,
+        "fever": 1.3,
+        "dehydration": 1.6,
+        "fatigue": 1.4,
+        "loss_of_appetite": 1.2
+      },
+      "key_symptoms": [
+        "diarrhea",
+        "vomiting"
+      ],
+      "typical_duration_days": [
+        2,
+        7
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Oral rehydration solution after every loose stool",
+        "Small frequent sips of fluid",
+        "Bland diet (rice, banana, toast)",
+        "Avoid dairy and oily food until better"
+      ],
+      "medicines": [
+        "ors",
+        "loperamide",
+        "zinc",
+        "probiotics",
+        "paracetamol"
+      ],
+      "routine": "gastro_recovery",
+      "description": "Infection of the gut causing diarrhoea, vomiting and cramps, usually viral or food-borne. Main risk is dehydration.",
+      "when_to_see_doctor": [
+        "Blood in stool",
+        "Signs of dehydration (no urine, sunken eyes)",
+        "Vomiting blood",
+        "Symptoms over 5 days or in infants/elderly"
+      ]
+    },
+    {
+      "id": "gerd",
+      "name": "Gastro-oesophageal Reflux (GERD)",
+      "category": "gastrointestinal",
+      "icd10": "K21",
+      "prevalence": 0.6,
+      "contagious": false,
+      "symptoms": {
+        "heartburn": 3.0,
+        "abdominal_pain": 1.6,
+        "nausea": 1.3,
+        "cough": 1.1,
+        "sore_throat": 0.9,
+        "bloating": 1.2,
+        "chest_pain": 1.0
+      },
+      "key_symptoms": [
+        "heartburn"
+      ],
+      "typical_duration_days": [
+        3,
+        60
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Avoid spicy, oily and acidic food",
+        "Do not lie down for 3 hours after eating",
+        "Elevate the head of the bed",
+        "Eat smaller, more frequent meals",
+        "Reduce caffeine and alcohol"
+      ],
+      "medicines": [
+        "omeprazole",
+        "ranitidine",
+        "antacid",
+        "domperidone"
+      ],
+      "routine": "digestive_care",
+      "description": "Stomach acid flowing back into the oesophagus causing burning chest discomfort, worse after meals or lying down.",
+      "when_to_see_doctor": [
+        "Difficulty swallowing",
+        "Weight loss",
+        "Vomiting blood or black stool",
+        "Chest pain with breathlessness (rule out cardiac cause)"
+      ]
+    },
+    {
+      "id": "peptic_ulcer",
+      "name": "Peptic Ulcer Disease",
+      "category": "gastrointestinal",
+      "icd10": "K27",
+      "prevalence": 0.3,
+      "contagious": false,
+      "symptoms": {
+        "abdominal_pain": 3.0,
+        "nausea": 1.8,
+        "bloating": 1.6,
+        "heartburn": 1.5,
+        "vomiting": 1.3,
+        "bloody_stool": 1.5,
+        "loss_of_appetite": 1.3,
+        "weight_loss": 1.2
+      },
+      "key_symptoms": [
+        "abdominal_pain"
+      ],
+      "typical_duration_days": [
+        14,
+        90
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Avoid NSAIDs and alcohol",
+        "Stop smoking",
+        "Eat regular small meals",
+        "Avoid late-night eating"
+      ],
+      "medicines": [
+        "omeprazole",
+        "amoxicillin",
+        "clarithromycin",
+        "antacid"
+      ],
+      "routine": "digestive_care",
+      "description": "An open sore in the stomach or duodenal lining causing gnawing upper abdominal pain, often related to meals.",
+      "when_to_see_doctor": [
+        "Vomiting blood or black tarry stool",
+        "Sudden severe abdominal pain",
+        "Unexplained weight loss",
+        "Persistent pain needing regular review"
+      ]
+    },
+    {
+      "id": "constipation",
+      "name": "Constipation",
+      "category": "gastrointestinal",
+      "icd10": "K59.0",
+      "prevalence": 0.55,
+      "contagious": false,
+      "symptoms": {
+        "constipation": 3.0,
+        "bloating": 2.0,
+        "abdominal_pain": 1.6,
+        "loss_of_appetite": 0.9,
+        "fatigue": 0.8
+      },
+      "key_symptoms": [
+        "constipation"
+      ],
+      "typical_duration_days": [
+        3,
+        30
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Increase dietary fibre (fruit, vegetables, whole grains)",
+        "Drink 2-3 L water daily",
+        "Daily walking or exercise",
+        "Do not ignore the urge to go",
+        "Establish a regular toilet routine"
+      ],
+      "medicines": [
+        "ispaghula",
+        "lactulose",
+        "bisacodyl"
+      ],
+      "routine": "digestive_care",
+      "description": "Infrequent or difficult bowel movements, usually due to low fibre, low fluid intake or inactivity.",
+      "when_to_see_doctor": [
+        "Blood in stool",
+        "Unexplained weight loss",
+        "Symptoms over 3 weeks",
+        "Severe pain or vomiting"
+      ]
+    },
+    {
+      "id": "migraine",
+      "name": "Migraine",
+      "category": "neurological",
+      "icd10": "G43",
+      "prevalence": 0.5,
+      "contagious": false,
+      "symptoms": {
+        "headache": 2.6,
+        "nausea": 2.4,
+        "vomiting": 1.6,
+        "blurred_vision": 1.6,
+        "dizziness": 1.4,
+        "light_sensitivity": 2.4,
+        "fatigue": 1.2,
+        "neck_stiffness": 0.8
+      },
+      "key_symptoms": [
+        "headache",
+        "nausea",
+        "light_sensitivity"
+      ],
+      "typical_duration_days": [
+        0.25,
+        3
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Rest in a dark, quiet room",
+        "Cold compress on the forehead",
+        "Stay hydrated",
+        "Identify and avoid triggers (sleep loss, certain foods, stress)",
+        "Keep a headache diary"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "sumatriptan",
+        "metoclopramide"
+      ],
+      "routine": "headache_management",
+      "description": "Recurrent throbbing headache, often one-sided, with nausea and sensitivity to light and sound.",
+      "when_to_see_doctor": [
+        "Worst ever sudden headache",
+        "Headache with fever and stiff neck",
+        "New weakness, numbness or speech difficulty",
+        "Headache after head injury"
+      ]
+    },
+    {
+      "id": "tension_headache",
+      "name": "Tension Headache",
+      "category": "neurological",
+      "icd10": "G44.2",
+      "prevalence": 0.7,
+      "contagious": false,
+      "symptoms": {
+        "headache": 3.0,
+        "neck_stiffness": 1.8,
+        "fatigue": 1.4,
+        "insomnia": 1.0,
+        "anxiety": 1.3,
+        "low_mood": 0.9
+      },
+      "key_symptoms": [
+        "headache"
+      ],
+      "typical_duration_days": [
+        0.25,
+        7
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Neck and shoulder stretches",
+        "Regular sleep schedule",
+        "Reduce screen time and take breaks",
+        "Stress management and relaxation",
+        "Hydration"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "amitriptyline"
+      ],
+      "routine": "headache_management",
+      "description": "A band-like pressure headache on both sides, driven by stress, poor posture or muscle tension.",
+      "when_to_see_doctor": [
+        "Headaches more than 15 days a month",
+        "Pain wakes you from sleep",
+        "Neurological symptoms",
+        "Not controlled by simple painkillers"
+      ]
+    },
+    {
+      "id": "meningitis",
+      "name": "Meningitis (suspected)",
+      "category": "neurological",
+      "icd10": "G03",
+      "prevalence": 0.05,
+      "contagious": true,
+      "symptoms": {
+        "neck_stiffness": 3.0,
+        "fever": 2.6,
+        "severe_headache": 2.8,
+        "rash": 1.8,
+        "confusion": 2.0,
+        "vomiting": 1.6,
+        "light_sensitivity": 1.8,
+        "fainting": 1.2
+      },
+      "key_symptoms": [
+        "neck_stiffness",
+        "fever",
+        "severe_headache"
+      ],
+      "typical_duration_days": [
+        7,
+        21
+      ],
+      "severity_profile": "critical",
+      "severity_score": 10,
+      "self_care": [
+        "EMERGENCY — go to the nearest emergency department immediately",
+        "Do not wait for symptoms to settle",
+        "Call emergency services if unable to travel"
+      ],
+      "medicines": [],
+      "routine": "emergency_care",
+      "description": "Life-threatening infection of the membranes around the brain. Fever, severe headache, stiff neck and rash require immediate emergency care.",
+      "when_to_see_doctor": [
+        "Immediately — this is a medical emergency",
+        "Non-blanching rash",
+        "Drowsiness or confusion",
+        "Seizures"
+      ]
+    },
+    {
+      "id": "stroke",
+      "name": "Stroke (suspected)",
+      "category": "neurological",
+      "icd10": "I63",
+      "prevalence": 0.06,
+      "contagious": false,
+      "symptoms": {
+        "slurred_speech": 3.0,
+        "numbness": 2.6,
+        "dizziness": 1.8,
+        "confusion": 2.2,
+        "severe_headache": 1.6,
+        "blurred_vision": 1.8,
+        "fainting": 1.4,
+        "facial_droop": 3.0
+      },
+      "key_symptoms": [
+        "facial_droop",
+        "slurred_speech",
+        "numbness"
+      ],
+      "typical_duration_days": [
+        0.02,
+        0.1
+      ],
+      "severity_profile": "critical",
+      "severity_score": 10,
+      "self_care": [
+        "EMERGENCY — call emergency services immediately",
+        "Note the time symptoms started",
+        "Do not give food or drink",
+        "Do not drive yourself"
+      ],
+      "medicines": [],
+      "routine": "emergency_care",
+      "description": "Sudden loss of blood flow to part of the brain. Face droop, arm weakness and slurred speech need emergency treatment within minutes.",
+      "when_to_see_doctor": [
+        "Immediately — every minute counts",
+        "Facial droop",
+        "Arm or leg weakness on one side",
+        "Sudden speech or vision loss"
+      ]
+    },
+    {
+      "id": "type2_diabetes",
+      "name": "Type 2 Diabetes (uncontrolled)",
+      "category": "endocrine",
+      "icd10": "E11",
+      "prevalence": 0.4,
+      "contagious": false,
+      "symptoms": {
+        "excessive_thirst": 2.8,
+        "frequent_urination": 2.8,
+        "fatigue": 2.0,
+        "weight_loss": 1.8,
+        "blurred_vision": 1.6,
+        "slow_healing": 1.8,
+        "numbness": 1.4,
+        "excessive_hunger": 1.8,
+        "itching": 1.0
+      },
+      "key_symptoms": [
+        "excessive_thirst",
+        "frequent_urination"
+      ],
+      "typical_duration_days": [
+        30,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Structured meal plan, low refined sugar",
+        "30 minutes of activity 5 days a week",
+        "Daily foot checks",
+        "Home glucose monitoring as advised",
+        "Weight management"
+      ],
+      "medicines": [
+        "metformin",
+        "glimepiride",
+        "insulin"
+      ],
+      "routine": "metabolic_care",
+      "description": "Chronic high blood sugar causing thirst, frequent urination, fatigue and slow healing. Needs medical confirmation and long-term management.",
+      "when_to_see_doctor": [
+        "Always — confirm with blood glucose testing",
+        "Very high thirst with drowsiness",
+        "Non-healing foot ulcer",
+        "Sudden vision change"
+      ]
+    },
+    {
+      "id": "hypothyroidism",
+      "name": "Hypothyroidism",
+      "category": "endocrine",
+      "icd10": "E03",
+      "prevalence": 0.35,
+      "contagious": false,
+      "symptoms": {
+        "fatigue": 2.8,
+        "cold_intolerance": 2.6,
+        "weight_loss": 1.2,
+        "constipation": 1.8,
+        "hair_loss": 1.8,
+        "low_mood": 1.8,
+        "muscle_ache": 1.4,
+        "insomnia": 1.0,
+        "brain_fog": 1.8,
+        "dry_skin": 1.6
+      },
+      "key_symptoms": [
+        "fatigue",
+        "cold_intolerance"
+      ],
+      "typical_duration_days": [
+        30,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Take thyroid medication on an empty stomach",
+        "Regular thyroid function blood tests",
+        "Balanced diet with adequate iodine",
+        "Regular gentle exercise",
+        "Adequate sleep"
+      ],
+      "medicines": [
+        "levothyroxine"
+      ],
+      "routine": "metabolic_care",
+      "description": "Underactive thyroid causing fatigue, cold intolerance, weight gain and low mood. Diagnosed by blood tests and treated with replacement hormone.",
+      "when_to_see_doctor": [
+        "Always — requires thyroid function tests",
+        "Severe drowsiness or confusion",
+        "Swelling of face and neck"
+      ]
+    },
+    {
+      "id": "hyperthyroidism",
+      "name": "Hyperthyroidism",
+      "category": "endocrine",
+      "icd10": "E05",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "heat_intolerance": 2.8,
+        "weight_loss": 2.6,
+        "anxiety": 2.4,
+        "insomnia": 2.0,
+        "frequent_urination": 1.4,
+        "fatigue": 1.6,
+        "excessive_hunger": 1.8,
+        "hair_loss": 1.2,
+        "palpitations": 2.0
+      },
+      "key_symptoms": [
+        "heat_intolerance",
+        "weight_loss"
+      ],
+      "typical_duration_days": [
+        30,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Limit caffeine",
+        "Adequate calorie and calcium intake",
+        "Regular thyroid monitoring",
+        "Stress reduction"
+      ],
+      "medicines": [
+        "carbimazole",
+        "propranolol"
+      ],
+      "routine": "metabolic_care",
+      "description": "Overactive thyroid causing heat intolerance, weight loss, anxiety and palpitations. Requires thyroid function testing.",
+      "when_to_see_doctor": [
+        "Always — requires blood tests",
+        "Rapid irregular heartbeat",
+        "Fever with agitation (thyroid storm)"
+      ]
+    },
+    {
+      "id": "anemia",
+      "name": "Iron-Deficiency Anaemia",
+      "category": "hematological",
+      "icd10": "D50",
+      "prevalence": 0.55,
+      "contagious": false,
+      "symptoms": {
+        "fatigue": 3.0,
+        "shortness_of_breath": 2.0,
+        "dizziness": 1.8,
+        "headache": 1.4,
+        "palpitations": 1.6,
+        "hair_loss": 1.2,
+        "cold_intolerance": 1.2,
+        "low_mood": 1.0
+      },
+      "key_symptoms": [
+        "fatigue"
+      ],
+      "typical_duration_days": [
+        14,
+        180
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Iron-rich diet (red meat, lentils, spinach, fortified cereals)",
+        "Take iron with vitamin C to improve absorption",
+        "Avoid tea or coffee with iron-rich meals",
+        "Treat underlying cause of blood loss"
+      ],
+      "medicines": [
+        "ferrous_sulfate",
+        "folic_acid",
+        "vitamin_b12"
+      ],
+      "routine": "metabolic_care",
+      "description": "Low red blood cell count from iron deficiency causing fatigue, breathlessness and pallor. Confirmed with a blood test.",
+      "when_to_see_doctor": [
+        "Always — needs a blood count",
+        "Chest pain or fainting",
+        "Black or bloody stool",
+        "Heavy menstrual bleeding"
+      ]
+    },
+    {
+      "id": "hypertension",
+      "name": "Hypertension",
+      "category": "cardiovascular",
+      "icd10": "I10",
+      "prevalence": 0.6,
+      "contagious": false,
+      "symptoms": {
+        "headache": 2.0,
+        "dizziness": 1.8,
+        "blurred_vision": 1.4,
+        "fatigue": 1.4,
+        "chest_pain": 1.0,
+        "shortness_of_breath": 1.2,
+        "palpitations": 1.0
+      },
+      "key_symptoms": [
+        "headache",
+        "dizziness"
+      ],
+      "typical_duration_days": [
+        30,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Reduce salt to under 5 g/day",
+        "Regular aerobic exercise 30 min/day",
+        "Weight reduction",
+        "Limit alcohol and stop smoking",
+        "Home blood pressure monitoring"
+      ],
+      "medicines": [
+        "amlodipine",
+        "losartan",
+        "hydrochlorothiazide"
+      ],
+      "routine": "cardiac_care",
+      "description": "Persistently raised blood pressure, usually symptomless but damaging to heart, brain and kidneys over time.",
+      "when_to_see_doctor": [
+        "Always — confirm with repeated readings",
+        "Blood pressure above 180/120",
+        "Chest pain, breathlessness or severe headache",
+        "Vision changes"
+      ]
+    },
+    {
+      "id": "angina",
+      "name": "Angina / Cardiac Chest Pain",
+      "category": "cardiovascular",
+      "icd10": "I20",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "chest_pain": 3.0,
+        "shortness_of_breath": 2.4,
+        "dizziness": 1.6,
+        "fatigue": 1.6,
+        "numbness": 1.2,
+        "palpitations": 1.2,
+        "nausea": 1.2
+      },
+      "key_symptoms": [
+        "chest_pain"
+      ],
+      "typical_duration_days": [
+        0.02,
+        1
+      ],
+      "severity_profile": "severe",
+      "severity_score": 9,
+      "self_care": [
+        "EMERGENCY if chest pain lasts over 15 minutes, is crushing, or spreads to arm/jaw — call emergency services",
+        "Stop activity and sit down",
+        "Chew aspirin only if advised by emergency services and not allergic",
+        "Do not drive yourself"
+      ],
+      "medicines": [
+        "aspirin",
+        "nitroglycerin",
+        "atorvastatin"
+      ],
+      "routine": "cardiac_care",
+      "description": "Reduced blood flow to the heart muscle causing chest pressure on exertion. Unstable or prolonged pain is a heart attack emergency.",
+      "when_to_see_doctor": [
+        "Immediately for new, severe or prolonged chest pain",
+        "Pain at rest",
+        "Sweating with nausea and chest pain",
+        "Pain spreading to arm, neck or jaw"
+      ]
+    },
+    {
+      "id": "heart_failure",
+      "name": "Heart Failure (decompensated)",
+      "category": "cardiovascular",
+      "icd10": "I50",
+      "prevalence": 0.12,
+      "contagious": false,
+      "symptoms": {
+        "shortness_of_breath": 3.0,
+        "fatigue": 2.4,
+        "skin_swelling": 2.2,
+        "chest_pain": 1.2,
+        "cough": 1.2,
+        "dizziness": 1.4,
+        "reduced_urine": 1.2,
+        "weight_loss": 0.8
+      },
+      "key_symptoms": [
+        "shortness_of_breath",
+        "skin_swelling"
+      ],
+      "typical_duration_days": [
+        7,
+        90
+      ],
+      "severity_profile": "severe",
+      "severity_score": 8,
+      "self_care": [
+        "Urgent medical review",
+        "Daily weight monitoring",
+        "Fluid and salt restriction as advised",
+        "Sleep propped up",
+        "Report rapid weight gain"
+      ],
+      "medicines": [
+        "furosemide",
+        "ramipril",
+        "bisoprolol",
+        "spironolactone"
+      ],
+      "routine": "cardiac_care",
+      "description": "The heart cannot pump enough blood, causing breathlessness, ankle swelling and fatigue. Needs medical management.",
+      "when_to_see_doctor": [
+        "Breathlessness at rest or lying flat",
+        "Rapid weight gain over days",
+        "Swelling up to the abdomen",
+        "Chest pain"
+      ]
+    },
+    {
+      "id": "uti",
+      "name": "Urinary Tract Infection",
+      "category": "urinary",
+      "icd10": "N39.0",
+      "prevalence": 0.6,
+      "contagious": false,
+      "symptoms": {
+        "painful_urination": 3.0,
+        "frequent_urination": 2.8,
+        "abdominal_pain": 1.6,
+        "blood_in_urine": 1.6,
+        "fever": 1.2,
+        "flank_pain": 1.2,
+        "nausea": 1.0
+      },
+      "key_symptoms": [
+        "painful_urination",
+        "frequent_urination"
+      ],
+      "typical_duration_days": [
+        3,
+        10
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Drink 2-3 L water daily",
+        "Do not hold urine",
+        "Urinate after intercourse",
+        "Warm compress on the lower abdomen"
+      ],
+      "medicines": [
+        "nitrofurantoin",
+        "trimethoprim",
+        "paracetamol",
+        "cranberry"
+      ],
+      "routine": "urinary_care",
+      "description": "Bacterial infection of the bladder causing burning urination, urgency and frequency. Upper tract involvement causes fever and flank pain.",
+      "when_to_see_doctor": [
+        "Fever with flank pain (kidney involvement)",
+        "Blood in urine",
+        "Symptoms over 3 days",
+        "Pregnancy, diabetes or male sex"
+      ]
+    },
+    {
+      "id": "kidney_stones",
+      "name": "Kidney Stones (renal colic)",
+      "category": "urinary",
+      "icd10": "N20",
+      "prevalence": 0.25,
+      "contagious": false,
+      "symptoms": {
+        "flank_pain": 3.0,
+        "blood_in_urine": 2.2,
+        "vomiting": 1.8,
+        "nausea": 1.8,
+        "painful_urination": 1.6,
+        "frequent_urination": 1.4,
+        "reduced_urine": 1.2
+      },
+      "key_symptoms": [
+        "flank_pain"
+      ],
+      "typical_duration_days": [
+        1,
+        21
+      ],
+      "severity_profile": "severe",
+      "severity_score": 8,
+      "self_care": [
+        "Drink 2.5-3 L water daily",
+        "Strain urine to catch the stone",
+        "Pain relief as advised",
+        "Reduce salt and oxalate-rich foods"
+      ],
+      "medicines": [
+        "ibuprofen",
+        "diclofenac",
+        "tamsulosin",
+        "paracetamol"
+      ],
+      "routine": "urinary_care",
+      "description": "A stone in the urinary tract causing severe waves of flank pain radiating to the groin, with blood in urine.",
+      "when_to_see_doctor": [
+        "Severe uncontrolled pain",
+        "Fever with flank pain (infection)",
+        "No urine passed",
+        "Persistent vomiting"
+      ]
+    },
+    {
+      "id": "arthritis_oa",
+      "name": "Osteoarthritis",
+      "category": "musculoskeletal",
+      "icd10": "M19",
+      "prevalence": 0.6,
+      "contagious": false,
+      "symptoms": {
+        "joint_pain": 3.0,
+        "stiffness": 2.4,
+        "joint_swelling": 1.6,
+        "back_pain": 1.2,
+        "muscle_ache": 1.0
+      },
+      "key_symptoms": [
+        "joint_pain",
+        "stiffness"
+      ],
+      "typical_duration_days": [
+        30,
+        365
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Low-impact exercise (swimming, cycling)",
+        "Weight management to reduce joint load",
+        "Hot or cold packs",
+        "Physiotherapy and strengthening",
+        "Assistive devices if needed"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "diclofenac",
+        "glucosamine"
+      ],
+      "routine": "joint_care",
+      "description": "Wear-and-tear of joint cartilage causing pain and stiffness, worse with activity and better with rest.",
+      "when_to_see_doctor": [
+        "Joint locking or giving way",
+        "Severe swelling or redness",
+        "Pain not controlled by simple analgesia",
+        "Night pain"
+      ]
+    },
+    {
+      "id": "rheumatoid_arthritis",
+      "name": "Rheumatoid Arthritis (flare)",
+      "category": "musculoskeletal",
+      "icd10": "M06",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "joint_pain": 3.0,
+        "joint_swelling": 2.8,
+        "stiffness": 2.6,
+        "fatigue": 2.0,
+        "fever": 1.2,
+        "weight_loss": 1.2,
+        "low_mood": 1.0
+      },
+      "key_symptoms": [
+        "joint_pain",
+        "joint_swelling",
+        "stiffness"
+      ],
+      "typical_duration_days": [
+        14,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Gentle range-of-motion exercise",
+        "Joint protection techniques",
+        "Rest during flares",
+        "Regular rheumatology follow-up"
+      ],
+      "medicines": [
+        "ibuprofen",
+        "prednisolone",
+        "methotrexate",
+        "hydroxychloroquine"
+      ],
+      "routine": "joint_care",
+      "description": "Autoimmune inflammation of the joints causing symmetrical swelling and morning stiffness lasting over an hour.",
+      "when_to_see_doctor": [
+        "Always — needs rheumatology assessment",
+        "Morning stiffness over 1 hour",
+        "Persistent swelling of small joints",
+        "New joint deformity"
+      ]
+    },
+    {
+      "id": "gout",
+      "name": "Gout",
+      "category": "musculoskeletal",
+      "icd10": "M10",
+      "prevalence": 0.25,
+      "contagious": false,
+      "symptoms": {
+        "joint_pain": 3.0,
+        "joint_swelling": 2.8,
+        "skin_redness": 2.2,
+        "skin_swelling": 1.8,
+        "fever": 1.0,
+        "stiffness": 1.4
+      },
+      "key_symptoms": [
+        "joint_pain",
+        "joint_swelling",
+        "skin_redness"
+      ],
+      "typical_duration_days": [
+        3,
+        14
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Elevate and rest the joint",
+        "Cold compress",
+        "Avoid alcohol, red meat and shellfish",
+        "Drink 2-3 L water daily"
+      ],
+      "medicines": [
+        "colchicine",
+        "indomethacin",
+        "allopurinol",
+        "prednisolone"
+      ],
+      "routine": "joint_care",
+      "description": "Uric acid crystals in a joint causing sudden severe pain, redness and swelling, classically the big toe.",
+      "when_to_see_doctor": [
+        "First attack needs confirmation",
+        "Fever with hot swollen joint (rule out infection)",
+        "Attacks becoming more frequent"
+      ]
+    },
+    {
+      "id": "fibromyalgia",
+      "name": "Fibromyalgia",
+      "category": "musculoskeletal",
+      "icd10": "M79.7",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "widespread_pain": 3.0,
+        "fatigue": 2.8,
+        "insomnia": 2.4,
+        "brain_fog": 2.2,
+        "tender_points": 2.0,
+        "low_mood": 1.8,
+        "muscle_ache": 1.6,
+        "headache": 1.2
+      },
+      "key_symptoms": [
+        "widespread_pain",
+        "fatigue"
+      ],
+      "typical_duration_days": [
+        90,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Graded exercise programme",
+        "Structured sleep routine",
+        "Relaxation and mindfulness",
+        "Pacing of activities",
+        "Warm baths"
+      ],
+      "medicines": [
+        "duloxetine",
+        "pregabalin",
+        "amitriptyline",
+        "paracetamol"
+      ],
+      "routine": "joint_care",
+      "description": "Chronic widespread pain with fatigue, poor sleep and cognitive fog, without joint inflammation.",
+      "when_to_see_doctor": [
+        "Always — needs assessment to exclude other causes",
+        "New neurological symptoms",
+        "Marked functional decline"
+      ]
+    },
+    {
+      "id": "urticaria",
+      "name": "Urticaria (Hives)",
+      "category": "skin",
+      "icd10": "L50",
+      "prevalence": 0.4,
+      "contagious": false,
+      "symptoms": {
+        "rash": 3.0,
+        "itching": 3.0,
+        "skin_swelling": 2.0,
+        "skin_redness": 1.8,
+        "swollen_face_lips": 1.2
+      },
+      "key_symptoms": [
+        "rash",
+        "itching"
+      ],
+      "typical_duration_days": [
+        1,
+        14
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Identify and avoid triggers (foods, drugs, heat, stress)",
+        "Cool compresses",
+        "Avoid scratching and hot showers",
+        "Loose cotton clothing"
+      ],
+      "medicines": [
+        "cetirizine",
+        "loratadine",
+        "chlorpheniramine",
+        "prednisolone"
+      ],
+      "routine": "skin_care",
+      "description": "Raised itchy welts on the skin from histamine release, often allergic, each lesion lasting under 24 hours.",
+      "when_to_see_doctor": [
+        "Swelling of lips, tongue or throat — emergency",
+        "Breathing difficulty",
+        "Lesions lasting over 24 hours with bruising",
+        "Fever with rash"
+      ]
+    },
+    {
+      "id": "eczema",
+      "name": "Eczema / Atopic Dermatitis",
+      "category": "skin",
+      "icd10": "L20",
+      "prevalence": 0.5,
+      "contagious": false,
+      "symptoms": {
+        "itching": 3.0,
+        "rash": 2.6,
+        "skin_redness": 2.2,
+        "skin_swelling": 1.2,
+        "insomnia": 1.2
+      },
+      "key_symptoms": [
+        "itching",
+        "rash"
+      ],
+      "typical_duration_days": [
+        14,
+        365
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Moisturise at least twice daily",
+        "Lukewarm short baths with gentle soap-free cleanser",
+        "Avoid wool, fragrance and known irritants",
+        "Keep nails short to avoid scratching damage"
+      ],
+      "medicines": [
+        "hydrocortisone",
+        "emollient",
+        "cetirizine",
+        "tacrolimus"
+      ],
+      "routine": "skin_care",
+      "description": "Chronic itchy inflamed skin with dry patches and flares, driven by skin barrier dysfunction and allergy.",
+      "when_to_see_doctor": [
+        "Signs of infection (pus, yellow crust, fever)",
+        "Widespread or rapidly worsening rash",
+        "Sleep severely disturbed",
+        "Not responding to moisturiser and mild steroid"
+      ]
+    },
+    {
+      "id": "fungal_skin",
+      "name": "Fungal Skin Infection (tinea)",
+      "category": "skin",
+      "icd10": "B35",
+      "prevalence": 0.45,
+      "contagious": true,
+      "symptoms": {
+        "itching": 2.6,
+        "rash": 2.6,
+        "skin_redness": 2.4,
+        "skin_swelling": 1.2,
+        "dark_skin_patch": 0.8,
+        "ring_shaped_rash": 3.2
+      },
+      "key_symptoms": [
+        "ring_shaped_rash",
+        "itching",
+        "rash"
+      ],
+      "typical_duration_days": [
+        14,
+        60
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Keep the area clean and dry",
+        "Do not share towels or clothing",
+        "Wash and dry skin folds carefully",
+        "Treat all affected areas and household contacts"
+      ],
+      "medicines": [
+        "clotrimazole",
+        "terbinafine",
+        "fluconazole",
+        "ketoconazole_shampoo"
+      ],
+      "routine": "skin_care",
+      "description": "Fungal infection of the skin causing a ring-shaped itchy scaly rash, commonly in warm moist areas.",
+      "when_to_see_doctor": [
+        "Spreading despite treatment",
+        "Scalp involvement",
+        "Signs of bacterial infection",
+        "Diabetes or immune suppression"
+      ]
+    },
+    {
+      "id": "cellulitis",
+      "name": "Cellulitis / Infected Wound",
+      "category": "skin",
+      "icd10": "L03",
+      "prevalence": 0.3,
+      "contagious": false,
+      "symptoms": {
+        "skin_redness": 3.0,
+        "skin_swelling": 2.8,
+        "wound": 2.2,
+        "pus_discharge": 2.0,
+        "fever": 1.8,
+        "pain": 2.2,
+        "swollen_lymph_nodes": 1.4
+      },
+      "key_symptoms": [
+        "skin_redness",
+        "skin_swelling"
+      ],
+      "typical_duration_days": [
+        7,
+        21
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Keep the area clean and covered",
+        "Elevate the affected limb",
+        "Mark the edge of redness to track spread",
+        "Do not squeeze or puncture"
+      ],
+      "medicines": [
+        "amoxicillin",
+        "cloxacillin",
+        "paracetamol",
+        "ibuprofen"
+      ],
+      "routine": "skin_care",
+      "description": "Bacterial infection of deep skin causing spreading redness, warmth, swelling and pain, sometimes with fever.",
+      "when_to_see_doctor": [
+        "Rapidly spreading redness",
+        "High fever or feeling very unwell",
+        "Dark or blackened skin — emergency",
+        "Diabetes or immune suppression"
+      ]
+    },
+    {
+      "id": "burns",
+      "name": "Minor Burn / Scald",
+      "category": "skin",
+      "icd10": "T30",
+      "prevalence": 0.3,
+      "contagious": false,
+      "symptoms": {
+        "burn": 3.0,
+        "skin_redness": 2.4,
+        "pain": 2.4,
+        "skin_swelling": 1.6,
+        "wound": 1.4,
+        "blister": 2.6
+      },
+      "key_symptoms": [
+        "burn"
+      ],
+      "typical_duration_days": [
+        3,
+        21
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Cool under running lukewarm water for 20 minutes",
+        "Do not apply ice, butter or toothpaste",
+        "Cover with a clean non-stick dressing",
+        "Do not burst blisters",
+        "Keep the burn clean"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "silver_sulfadiazine"
+      ],
+      "routine": "skin_care",
+      "description": "Heat injury to the skin. Small superficial burns heal with cooling and dressings; large or deep burns need emergency care.",
+      "when_to_see_doctor": [
+        "Burn larger than the palm of the hand",
+        "Burn on face, hands, joints or genitals",
+        "Black, white or charred skin — emergency",
+        "Any electrical or chemical burn"
+      ]
+    },
+    {
+      "id": "conjunctivitis",
+      "name": "Conjunctivitis (pink eye)",
+      "category": "eye",
+      "icd10": "H10",
+      "prevalence": 0.5,
+      "contagious": true,
+      "symptoms": {
+        "eye_redness": 3.0,
+        "eye_discharge": 2.6,
+        "itching": 1.8,
+        "eye_pain": 1.4,
+        "blurred_vision": 0.8,
+        "swollen_face_lips": 0.6
+      },
+      "key_symptoms": [
+        "eye_redness",
+        "eye_discharge"
+      ],
+      "typical_duration_days": [
+        4,
+        14
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Cool compress on closed eyes",
+        "Clean discharge with boiled cooled water",
+        "Do not share towels or pillows",
+        "Remove contact lenses",
+        "Wash hands frequently"
+      ],
+      "medicines": [
+        "chloramphenicol_eye",
+        "artificial_tears",
+        "cetirizine"
+      ],
+      "routine": "eye_care",
+      "description": "Inflammation of the eye surface causing redness, discharge and grittiness, usually viral or bacterial.",
+      "when_to_see_doctor": [
+        "Severe eye pain or light sensitivity",
+        "Vision loss",
+        "Contact lens wearer",
+        "No improvement after 5 days"
+      ]
+    },
+    {
+      "id": "otitis_media",
+      "name": "Otitis Media (middle ear infection)",
+      "category": "ear",
+      "icd10": "H66",
+      "prevalence": 0.4,
+      "contagious": false,
+      "symptoms": {
+        "ear_pain": 3.0,
+        "fever": 1.8,
+        "hearing_loss": 1.8,
+        "ear_discharge": 1.6,
+        "headache": 1.2,
+        "insomnia": 1.0
+      },
+      "key_symptoms": [
+        "ear_pain"
+      ],
+      "typical_duration_days": [
+        3,
+        14
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Warm compress over the ear",
+        "Keep the ear dry",
+        "Sleep with the affected ear up",
+        "Pain relief as needed"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "amoxicillin"
+      ],
+      "routine": "eye_care",
+      "description": "Infection behind the eardrum causing earache, reduced hearing and often fever, common in children.",
+      "when_to_see_doctor": [
+        "Severe pain or fever",
+        "Fluid or pus from the ear",
+        "Symptoms over 3 days",
+        "Swelling or redness behind the ear"
+      ]
+    },
+    {
+      "id": "depression",
+      "name": "Depressive Episode",
+      "category": "psychiatric",
+      "icd10": "F32",
+      "prevalence": 0.45,
+      "contagious": false,
+      "symptoms": {
+        "low_mood": 3.0,
+        "fatigue": 2.4,
+        "insomnia": 2.2,
+        "loss_of_appetite": 1.8,
+        "brain_fog": 2.0,
+        "anxiety": 1.8,
+        "weight_loss": 1.2,
+        "headache": 1.0
+      },
+      "key_symptoms": [
+        "low_mood"
+      ],
+      "typical_duration_days": [
+        14,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Keep a regular sleep and activity schedule",
+        "Daily physical activity, even a short walk",
+        "Stay connected with supportive people",
+        "Structure small achievable goals",
+        "Seek professional psychological support"
+      ],
+      "medicines": [
+        "sertraline",
+        "fluoxetine",
+        "mirtazapine"
+      ],
+      "routine": "mental_wellbeing",
+      "description": "Persistent low mood and loss of interest lasting at least two weeks, affecting sleep, appetite and energy.",
+      "when_to_see_doctor": [
+        "Always — assessment and support are available",
+        "Any thoughts of self-harm — seek help immediately",
+        "Unable to work or care for yourself",
+        "Symptoms over 2 weeks"
+      ]
+    },
+    {
+      "id": "anxiety_disorder",
+      "name": "Generalised Anxiety",
+      "category": "psychiatric",
+      "icd10": "F41",
+      "prevalence": 0.5,
+      "contagious": false,
+      "symptoms": {
+        "anxiety": 3.0,
+        "insomnia": 2.2,
+        "fatigue": 1.8,
+        "palpitations": 2.0,
+        "headache": 1.4,
+        "dizziness": 1.2,
+        "abdominal_pain": 1.2,
+        "muscle_ache": 1.2
+      },
+      "key_symptoms": [
+        "anxiety"
+      ],
+      "typical_duration_days": [
+        14,
+        365
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Diaphragmatic breathing and grounding exercises",
+        "Limit caffeine and alcohol",
+        "Regular aerobic exercise",
+        "Structured worry time and journaling",
+        "Consider talking therapy"
+      ],
+      "medicines": [
+        "sertraline",
+        "escitalopram",
+        "propranolol",
+        "hydroxyzine"
+      ],
+      "routine": "mental_wellbeing",
+      "description": "Excessive persistent worry with restlessness, poor sleep and physical tension, present most days for months.",
+      "when_to_see_doctor": [
+        "Always if it affects daily life",
+        "Panic attacks",
+        "Any thoughts of self-harm — immediate help",
+        "Physical symptoms needing exclusion of other causes"
+      ]
+    },
+    {
+      "id": "dengue",
+      "name": "Dengue Fever",
+      "category": "infectious",
+      "icd10": "A90",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "high_fever": 3.0,
+        "severe_headache": 2.4,
+        "muscle_ache": 2.6,
+        "joint_pain": 2.6,
+        "rash": 2.0,
+        "nausea": 1.8,
+        "fatigue": 1.8,
+        "vomiting": 1.6,
+        "easy_bruising": 1.4,
+        "bloody_stool": 0.8
+      },
+      "key_symptoms": [
+        "high_fever",
+        "muscle_ache",
+        "joint_pain"
+      ],
+      "typical_duration_days": [
+        5,
+        14
+      ],
+      "severity_profile": "severe",
+      "severity_score": 8,
+      "self_care": [
+        "Rest and high fluid intake",
+        "Paracetamol only — avoid ibuprofen, aspirin and other NSAIDs",
+        "Monitor for warning signs",
+        "Daily platelet check if advised"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ors"
+      ],
+      "routine": "infectious_fever_care",
+      "description": "Mosquito-borne viral infection causing high fever, severe bone and joint pain and a rash. Can progress to bleeding complications.",
+      "when_to_see_doctor": [
+        "Warning signs: abdominal pain, persistent vomiting, bleeding gums",
+        "Cold clammy skin or restlessness",
+        "Reduced urine",
+        "Fever settling then suddenly worsening"
+      ]
+    },
+    {
+      "id": "malaria",
+      "name": "Malaria",
+      "category": "infectious",
+      "icd10": "B54",
+      "prevalence": 0.15,
+      "contagious": false,
+      "symptoms": {
+        "fever": 3.0,
+        "chills": 3.0,
+        "night_sweats": 2.6,
+        "headache": 2.2,
+        "muscle_ache": 2.0,
+        "fatigue": 2.0,
+        "nausea": 1.6,
+        "vomiting": 1.4,
+        "jaundice": 1.4,
+        "high_fever": 1.8
+      },
+      "key_symptoms": [
+        "fever",
+        "chills"
+      ],
+      "typical_duration_days": [
+        5,
+        30
+      ],
+      "severity_profile": "severe",
+      "severity_score": 8,
+      "self_care": [
+        "Urgent medical assessment and blood test required",
+        "High fluid intake",
+        "Paracetamol for fever",
+        "Do not self-treat with leftover antimalarials"
+      ],
+      "medicines": [
+        "artemether_lumefantrine",
+        "paracetamol"
+      ],
+      "routine": "infectious_fever_care",
+      "description": "Parasitic infection transmitted by mosquitoes causing cyclical fever with rigors and sweating. Needs urgent blood testing and treatment.",
+      "when_to_see_doctor": [
+        "Always and urgently — needs a blood test",
+        "Confusion or seizures",
+        "Yellow eyes or dark urine",
+        "Unable to keep fluids down"
+      ]
+    },
+    {
+      "id": "typhoid",
+      "name": "Typhoid Fever",
+      "category": "infectious",
+      "icd10": "A01",
+      "prevalence": 0.15,
+      "contagious": true,
+      "symptoms": {
+        "fever": 3.0,
+        "abdominal_pain": 2.2,
+        "constipation": 1.6,
+        "diarrhea": 1.4,
+        "headache": 2.0,
+        "fatigue": 2.0,
+        "loss_of_appetite": 1.8,
+        "chills": 1.6,
+        "rash": 1.2
+      },
+      "key_symptoms": [
+        "fever",
+        "abdominal_pain"
+      ],
+      "typical_duration_days": [
+        14,
+        42
+      ],
+      "severity_profile": "severe",
+      "severity_score": 7,
+      "self_care": [
+        "Medical assessment and blood culture required",
+        "High fluid intake",
+        "Soft bland diet",
+        "Strict hand hygiene to avoid spreading"
+      ],
+      "medicines": [
+        "azithromycin",
+        "ciprofloxacin",
+        "paracetamol",
+        "ors"
+      ],
+      "routine": "infectious_fever_care",
+      "description": "Bacterial infection from contaminated food or water causing a stepwise rising fever with abdominal pain and constipation.",
+      "when_to_see_doctor": [
+        "Always — needs blood tests and antibiotics",
+        "Severe abdominal pain or blood in stool",
+        "Confusion",
+        "Fever over 5 days"
+      ]
+    },
+    {
+      "id": "tonsillitis",
+      "name": "Tonsillitis / Strep Throat",
+      "category": "respiratory",
+      "icd10": "J03",
+      "prevalence": 0.5,
+      "contagious": true,
+      "symptoms": {
+        "sore_throat": 3.0,
+        "fever": 2.0,
+        "swollen_lymph_nodes": 2.0,
+        "headache": 1.4,
+        "loss_of_appetite": 1.2,
+        "cough": 0.8,
+        "muscle_ache": 1.0
+      },
+      "key_symptoms": [
+        "sore_throat",
+        "fever"
+      ],
+      "typical_duration_days": [
+        3,
+        10
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Warm salt-water gargles",
+        "Cool drinks and soft foods",
+        "Rest the voice",
+        "Paracetamol or ibuprofen for pain",
+        "Stay hydrated"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "penicillin_v",
+        "amoxicillin"
+      ],
+      "routine": "respiratory_recovery",
+      "description": "Infection of the tonsils causing severe throat pain, difficulty swallowing, fever and tender neck glands.",
+      "when_to_see_doctor": [
+        "Difficulty breathing or swallowing saliva",
+        "Drooling or muffled voice",
+        "Fever over 39C",
+        "Symptoms over 5 days or recurrent episodes"
+      ]
+    },
+    {
+      "id": "anaphylaxis",
+      "name": "Anaphylaxis (severe allergic reaction)",
+      "category": "emergency",
+      "icd10": "T78.2",
+      "prevalence": 0.02,
+      "contagious": false,
+      "symptoms": {
+        "swollen_face_lips": 3.2,
+        "shortness_of_breath": 2.6,
+        "rapid_breathing": 2.0,
+        "rash": 2.2,
+        "skin_swelling": 2.0,
+        "itching": 1.8,
+        "wheezing": 1.6,
+        "fainting": 1.4,
+        "dizziness": 1.2,
+        "vomiting": 1.0
+      },
+      "key_symptoms": [
+        "swollen_face_lips",
+        "shortness_of_breath"
+      ],
+      "typical_duration_days": [
+        0.05,
+        1
+      ],
+      "severity_profile": "critical",
+      "severity_score": 10,
+      "self_care": [],
+      "medicines": [],
+      "routine": "emergency_care",
+      "description": "Life-threatening whole-body allergic reaction with airway swelling, breathing difficulty and falling blood pressure. This is a medical emergency.",
+      "when_to_see_doctor": [
+        "Call emergency services immediately",
+        "Use a prescribed adrenaline auto-injector without delay",
+        "Do not wait to see whether symptoms settle"
+      ]
+    },
+    {
+      "id": "sleep_apnea",
+      "name": "Obstructive Sleep Apnoea",
+      "category": "respiratory",
+      "icd10": "G47.33",
+      "prevalence": 0.12,
+      "contagious": false,
+      "symptoms": {
+        "snoring": 3.0,
+        "daytime_sleepiness": 2.6,
+        "morning_headache": 2.0,
+        "fatigue": 1.6,
+        "insomnia": 1.2,
+        "reduced_concentration": 1.2,
+        "irritability": 0.9,
+        "weight_loss": 0.6
+      },
+      "key_symptoms": [
+        "snoring",
+        "daytime_sleepiness"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Sleep on your side rather than your back",
+        "Avoid alcohol and sedatives before bed",
+        "Keep a regular sleep and wake time",
+        "Lose weight if overweight",
+        "Raise the head of the bed slightly"
+      ],
+      "medicines": [],
+      "routine": "respiratory_recovery",
+      "description": "Repeated collapse of the upper airway during sleep, causing loud snoring, pauses in breathing and unrefreshing sleep. Daytime sleepiness and morning headaches are typical.",
+      "when_to_see_doctor": [
+        "Witnessed pauses in breathing during sleep",
+        "Falling asleep while driving or working",
+        "Uncontrolled high blood pressure",
+        "Morning headaches most days"
+      ]
+    },
+    {
+      "id": "bppv",
+      "name": "Vertigo (BPPV)",
+      "category": "ear",
+      "icd10": "H81.1",
+      "prevalence": 0.25,
+      "contagious": false,
+      "symptoms": {
+        "vertigo": 3.0,
+        "dizziness": 2.4,
+        "nausea": 1.6,
+        "loss_of_balance": 1.6,
+        "vomiting": 1.0,
+        "hearing_loss": 0.5,
+        "tinnitus": 0.8
+      },
+      "key_symptoms": [
+        "vertigo"
+      ],
+      "typical_duration_days": [
+        1,
+        30
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Move your head slowly and deliberately",
+        "Sit down immediately when the spinning starts",
+        "Sleep with your head slightly raised",
+        "Avoid sudden head turns and looking straight up",
+        "Rise slowly from lying to sitting to standing"
+      ],
+      "medicines": [
+        "betahistine",
+        "prochlorperazine"
+      ],
+      "routine": "general_wellness",
+      "description": "Brief intense spinning brought on by changes in head position, caused by displaced crystals in the inner ear. Hearing is not usually affected.",
+      "when_to_see_doctor": [
+        "Vertigo with new hearing loss or ringing",
+        "Double vision, slurred speech or weakness",
+        "Severe headache unlike any before",
+        "Symptoms not settling after a week"
+      ]
+    },
+    {
+      "id": "dvt",
+      "name": "Deep Vein Thrombosis (suspected)",
+      "category": "cardiovascular",
+      "icd10": "I80.2",
+      "prevalence": 0.02,
+      "contagious": false,
+      "symptoms": {
+        "calf_pain": 3.0,
+        "leg_swelling": 2.6,
+        "pain": 1.6,
+        "skin_redness": 1.4,
+        "shortness_of_breath": 1.2,
+        "fever": 0.8
+      },
+      "key_symptoms": [
+        "calf_pain",
+        "leg_swelling"
+      ],
+      "typical_duration_days": [
+        1,
+        21
+      ],
+      "severity_profile": "severe",
+      "severity_score": 8,
+      "self_care": [
+        "Do not massage or rub the leg",
+        "Keep the leg still and elevated slightly",
+        "Do not apply heat to the area",
+        "Seek urgent medical assessment the same day"
+      ],
+      "medicines": [],
+      "routine": "cardiac_care",
+      "description": "A clot in a deep vein, usually of the calf, causing one-sided pain, swelling and warmth. The danger is the clot travelling to the lungs, so this needs same-day assessment.",
+      "when_to_see_doctor": [
+        "Any new one-sided calf pain or swelling",
+        "Sudden breathlessness or chest pain",
+        "Coughing blood",
+        "Recent surgery, immobility or long travel"
+      ]
+    },
+    {
+      "id": "ibs",
+      "name": "Irritable Bowel Syndrome",
+      "category": "gastrointestinal",
+      "icd10": "K58",
+      "prevalence": 0.15,
+      "contagious": false,
+      "symptoms": {
+        "abdominal_cramps": 2.8,
+        "bloating": 2.4,
+        "excessive_gas": 2.0,
+        "diarrhea": 1.6,
+        "constipation": 1.6,
+        "abdominal_pain": 1.8,
+        "nausea": 0.8,
+        "fatigue": 0.8
+      },
+      "key_symptoms": [
+        "abdominal_cramps",
+        "bloating"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Eat regular small meals rather than large ones",
+        "Keep a food and symptom diary to spot triggers",
+        "Reduce caffeine, alcohol and fizzy drinks",
+        "Try soluble fibre such as oats or ispaghula",
+        "Manage stress with relaxation or breathing exercises"
+      ],
+      "medicines": [
+        "mebeverine",
+        "ispaghula",
+        "dicyclomine",
+        "probiotics"
+      ],
+      "routine": "digestive_care",
+      "description": "A functional bowel disorder causing cramping, bloating and a change in bowel habit without structural disease. Symptoms come and go and are often stress-linked.",
+      "when_to_see_doctor": [
+        "Blood in the stool",
+        "Weight loss or night symptoms",
+        "Symptoms starting after age 50",
+        "Fever or anaemia"
+      ]
+    },
+    {
+      "id": "hemorrhoids",
+      "name": "Haemorrhoids (Piles)",
+      "category": "gastrointestinal",
+      "icd10": "K64",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "rectal_bleeding": 2.8,
+        "anal_pain": 2.4,
+        "constipation": 1.8,
+        "itching": 1.2,
+        "pain": 1.0,
+        "abdominal_pain": 0.6
+      },
+      "key_symptoms": [
+        "rectal_bleeding"
+      ],
+      "typical_duration_days": [
+        3,
+        30
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Increase fibre and water to soften stools",
+        "Avoid straining and prolonged sitting on the toilet",
+        "Take warm sitz baths for 10 minutes",
+        "Do not delay the urge to go to the toilet",
+        "Gentle wipe with moist tissue rather than dry paper"
+      ],
+      "medicines": [
+        "ispaghula",
+        "polyethylene_glycol",
+        "ibuprofen",
+        "paracetamol"
+      ],
+      "routine": "digestive_care",
+      "description": "Swollen vascular cushions around the anus causing bright red bleeding and discomfort, usually related to straining or constipation.",
+      "when_to_see_doctor": [
+        "Bleeding that is dark or mixed with stool",
+        "Weight loss or a change in bowel habit",
+        "Prolapse that will not reduce",
+        "Bleeding that continues beyond a week"
+      ]
+    },
+    {
+      "id": "oral_thrush",
+      "name": "Oral Candidiasis (thrush)",
+      "category": "infectious",
+      "icd10": "B37.0",
+      "prevalence": 0.05,
+      "contagious": false,
+      "symptoms": {
+        "mouth_ulcers": 2.0,
+        "sore_throat": 1.4,
+        "loss_of_taste": 1.2,
+        "difficulty_swallowing": 1.2,
+        "excessive_thirst": 0.8,
+        "pain": 1.0
+      },
+      "key_symptoms": [
+        "mouth_ulcers"
+      ],
+      "typical_duration_days": [
+        5,
+        21
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Rinse the mouth with salt water",
+        "Eat plain yoghurt or take probiotics",
+        "Avoid sugary food and drinks",
+        "Stop smoking",
+        "Keep dentures out at night and clean them"
+      ],
+      "medicines": [
+        "fluconazole",
+        "chlorhexidine_mouthwash"
+      ],
+      "routine": "digestive_care",
+      "description": "A fungal infection of the mouth causing white patches that can be scraped off, soreness and a bad taste. Common after antibiotics, inhalers or in diabetes.",
+      "when_to_see_doctor": [
+        "Difficulty swallowing or food sticking",
+        "Spreading down the throat",
+        "Not improving after a week",
+        "Recurrent episodes in an adult"
+      ]
+    },
+    {
+      "id": "dental_abscess",
+      "name": "Dental Abscess",
+      "category": "gastrointestinal",
+      "icd10": "K04.7",
+      "prevalence": 0.1,
+      "contagious": false,
+      "symptoms": {
+        "tooth_pain": 3.0,
+        "gum_swelling": 2.6,
+        "facial_pain": 1.8,
+        "fever": 1.4,
+        "difficulty_swallowing": 1.0,
+        "swollen_lymph_nodes": 1.2,
+        "pain": 1.4
+      },
+      "key_symptoms": [
+        "tooth_pain",
+        "gum_swelling"
+      ],
+      "typical_duration_days": [
+        2,
+        14
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Rinse with warm salt water",
+        "Avoid very hot, cold or sweet food",
+        "Sleep with the head slightly raised",
+        "Do not place aspirin directly on the gum",
+        "See a dentist as soon as possible"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "benzocaine_gel",
+        "chlorhexidine_mouthwash",
+        "metronidazole"
+      ],
+      "routine": "digestive_care",
+      "description": "A collection of pus at the root of a tooth, causing severe throbbing pain, swelling of the gum or face and sometimes fever.",
+      "when_to_see_doctor": [
+        "Swelling spreading to the eye or neck",
+        "Difficulty breathing or swallowing",
+        "High fever with the swelling",
+        "Pain not controlled by regular painkillers"
+      ]
+    },
+    {
+      "id": "otitis_externa",
+      "name": "Otitis Externa (swimmer's ear)",
+      "category": "ear",
+      "icd10": "H60",
+      "prevalence": 0.08,
+      "contagious": false,
+      "symptoms": {
+        "ear_pain": 3.0,
+        "ear_discharge": 2.0,
+        "itching": 1.6,
+        "hearing_loss": 1.2,
+        "skin_redness": 1.0,
+        "fever": 0.6
+      },
+      "key_symptoms": [
+        "ear_pain"
+      ],
+      "typical_duration_days": [
+        3,
+        14
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Keep the ear canal completely dry",
+        "Do not insert cotton buds or fingers",
+        "Avoid swimming until healed",
+        "Use a warm compress for pain",
+        "Use ear plugs when showering"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen"
+      ],
+      "routine": "general_wellness",
+      "description": "Infection of the ear canal causing pain that is worse when the outer ear is pulled, with itching and discharge. Often follows swimming or water exposure.",
+      "when_to_see_doctor": [
+        "Severe pain or swelling around the ear",
+        "Discharge of pus or blood",
+        "Hearing loss that persists",
+        "Diabetes or a weakened immune system"
+      ]
+    },
+    {
+      "id": "peripheral_neuropathy",
+      "name": "Peripheral Neuropathy",
+      "category": "neurological",
+      "icd10": "G62.9",
+      "prevalence": 0.08,
+      "contagious": false,
+      "symptoms": {
+        "tingling_hands_feet": 3.0,
+        "numbness": 2.4,
+        "pain": 1.8,
+        "fatigue": 1.0,
+        "loss_of_balance": 1.0,
+        "muscle_ache": 0.8
+      },
+      "key_symptoms": [
+        "tingling_hands_feet",
+        "numbness"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Inspect your feet daily for cuts or blisters",
+        "Wear well-fitting protective footwear",
+        "Keep blood sugar well controlled if diabetic",
+        "Avoid alcohol",
+        "Take care with hot water bottles and heaters"
+      ],
+      "medicines": [
+        "pregabalin",
+        "amitriptyline",
+        "vitamin_b12"
+      ],
+      "routine": "metabolic_care",
+      "description": "Damage to the peripheral nerves causing tingling, numbness or burning in the hands and feet, most often from diabetes or vitamin B12 deficiency.",
+      "when_to_see_doctor": [
+        "Weakness or difficulty walking",
+        "Rapidly worsening numbness",
+        "A foot wound or ulcer",
+        "Symptoms affecting only one side suddenly"
+      ]
+    },
+    {
+      "id": "parkinsons",
+      "name": "Parkinson's Disease (suspected)",
+      "category": "neurological",
+      "icd10": "G20",
+      "prevalence": 0.01,
+      "contagious": false,
+      "symptoms": {
+        "tremor": 2.8,
+        "stiffness": 2.4,
+        "loss_of_balance": 1.8,
+        "fatigue": 1.4,
+        "constipation": 1.2,
+        "low_mood": 1.2,
+        "insomnia": 1.0,
+        "brain_fog": 0.8
+      },
+      "key_symptoms": [
+        "tremor",
+        "stiffness"
+      ],
+      "typical_duration_days": [
+        90,
+        3650
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Keep physically active with walking and stretching",
+        "Do balance and coordination exercises",
+        "Use aids around the home to prevent falls",
+        "Keep a regular routine and sleep schedule",
+        "Ask about speech and physiotherapy referral"
+      ],
+      "medicines": [],
+      "routine": "general_wellness",
+      "description": "A progressive neurological condition causing a rest tremor, slowness of movement and stiffness. Diagnosis is clinical and needs specialist assessment.",
+      "when_to_see_doctor": [
+        "Any new tremor at rest",
+        "Slowness or stiffness affecting daily tasks",
+        "Falls or unsteadiness",
+        "Reduced facial expression or small handwriting"
+      ]
+    },
+    {
+      "id": "pcos",
+      "name": "Polycystic Ovary Syndrome",
+      "category": "endocrine",
+      "icd10": "E28.2",
+      "prevalence": 0.1,
+      "contagious": false,
+      "symptoms": {
+        "heavy_periods": 1.4,
+        "menstrual_pain": 1.8,
+        "hair_loss": 1.4,
+        "rash": 1.2,
+        "fatigue": 1.0,
+        "anxiety": 0.8,
+        "low_mood": 0.8
+      },
+      "key_symptoms": [
+        "menstrual_pain"
+      ],
+      "typical_duration_days": [
+        90,
+        3650
+      ],
+      "severity_profile": "mild",
+      "severity_score": 4,
+      "self_care": [
+        "Aim for regular exercise most days",
+        "Choose lower-glycaemic, high-fibre foods",
+        "Lose 5-10% of body weight if overweight",
+        "Track your cycles to spot patterns",
+        "Discuss screening for diabetes and blood pressure"
+      ],
+      "medicines": [
+        "metformin"
+      ],
+      "routine": "metabolic_care",
+      "description": "A hormonal condition with irregular or painful periods, excess androgens and often metabolic features such as insulin resistance. Needs clinical assessment and blood tests.",
+      "when_to_see_doctor": [
+        "Periods more than 35 days apart or absent",
+        "Difficulty conceiving",
+        "Rapid hair growth on the face or body",
+        "Symptoms of high blood sugar"
+      ]
+    },
+    {
+      "id": "bph",
+      "name": "Benign Prostatic Hyperplasia",
+      "category": "urinary",
+      "icd10": "N40",
+      "prevalence": 0.3,
+      "contagious": false,
+      "symptoms": {
+        "weak_urine_stream": 3.0,
+        "urinary_urgency": 2.4,
+        "frequent_urination": 2.4,
+        "reduced_urine": 1.6,
+        "painful_urination": 1.0,
+        "insomnia": 1.0
+      },
+      "key_symptoms": [
+        "weak_urine_stream",
+        "frequent_urination"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "mild",
+      "severity_score": 4,
+      "self_care": [
+        "Reduce fluid intake in the evening",
+        "Cut down caffeine and alcohol",
+        "Empty the bladder fully by taking your time",
+        "Avoid decongestant and antihistamine medicines",
+        "Keep active and maintain a healthy weight"
+      ],
+      "medicines": [
+        "tamsulosin"
+      ],
+      "routine": "urinary_care",
+      "description": "Non-cancerous enlargement of the prostate causing a weak stream, hesitancy, urgency and needing to pass urine at night.",
+      "when_to_see_doctor": [
+        "Cannot pass urine at all",
+        "Blood in the urine",
+        "Fever with pain in the back or groin",
+        "Dribbling or incontinence"
+      ]
+    },
+    {
+      "id": "varicose_veins",
+      "name": "Varicose Veins",
+      "category": "cardiovascular",
+      "icd10": "I83",
+      "prevalence": 0.2,
+      "contagious": false,
+      "symptoms": {
+        "leg_swelling": 2.4,
+        "calf_pain": 1.4,
+        "pain": 1.6,
+        "itching": 1.0,
+        "skin_redness": 0.8,
+        "fatigue": 0.6
+      },
+      "key_symptoms": [
+        "leg_swelling"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Elevate the legs above heart level when resting",
+        "Avoid standing still for long periods",
+        "Use compression stockings if advised",
+        "Keep active with walking",
+        "Moisturise the skin over the veins"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen"
+      ],
+      "routine": "cardiac_care",
+      "description": "Enlarged twisted veins, usually in the legs, causing aching, heaviness and swelling that is worse at the end of the day.",
+      "when_to_see_doctor": [
+        "Skin ulcer or bleeding from a vein",
+        "Sudden one-sided swelling and pain",
+        "Redness, warmth and tenderness in the leg",
+        "Severe pain not relieved by elevation"
+      ]
+    },
+    {
+      "id": "scabies",
+      "name": "Scabies",
+      "category": "skin",
+      "icd10": "B86",
+      "prevalence": 0.03,
+      "contagious": true,
+      "symptoms": {
+        "itching": 3.0,
+        "rash": 2.4,
+        "skin_redness": 1.6,
+        "wound": 1.0,
+        "skin_scaling": 1.0,
+        "insomnia": 1.2
+      },
+      "key_symptoms": [
+        "itching",
+        "rash"
+      ],
+      "typical_duration_days": [
+        7,
+        42
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Treat all household members on the same day",
+        "Wash bedding, towels and clothing in hot water",
+        "Apply treatment to the whole body, not just itchy areas",
+        "Avoid close skin contact until treated",
+        "Trim nails to avoid skin damage from scratching"
+      ],
+      "medicines": [
+        "permethrin",
+        "cetirizine",
+        "hydrocortisone"
+      ],
+      "routine": "skin_care",
+      "description": "Infestation by the scabies mite causing intense itching that is worse at night, with a pimple-like rash often between the fingers and on the wrists.",
+      "when_to_see_doctor": [
+        "Signs of skin infection such as pus or spreading redness",
+        "No improvement 2 weeks after treatment",
+        "Widespread crusted rash",
+        "Itching in a baby or elderly person"
+      ]
+    },
+    {
+      "id": "shingles",
+      "name": "Shingles (Herpes Zoster)",
+      "category": "skin",
+      "icd10": "B02",
+      "prevalence": 0.04,
+      "contagious": false,
+      "symptoms": {
+        "rash": 2.6,
+        "pain": 2.8,
+        "blister": 2.4,
+        "itching": 1.6,
+        "fever": 1.0,
+        "headache": 1.0,
+        "fatigue": 1.0,
+        "tingling_hands_feet": 1.2
+      },
+      "key_symptoms": [
+        "blister",
+        "pain"
+      ],
+      "typical_duration_days": [
+        14,
+        42
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Keep the rash clean and dry",
+        "Do not burst the blisters",
+        "Wear loose cotton clothing over the area",
+        "Use a cool compress for pain",
+        "Avoid contact with pregnant women and newborns until crusted"
+      ],
+      "medicines": [
+        "acyclovir",
+        "paracetamol",
+        "calamine"
+      ],
+      "routine": "skin_care",
+      "description": "Reactivation of chickenpox virus along a nerve, causing a painful band of blisters on one side of the body, often preceded by burning or tingling.",
+      "when_to_see_doctor": [
+        "Rash near the eye or nose",
+        "Severe pain not controlled by painkillers",
+        "Weakness or difficulty moving a limb",
+        "Rash in someone immunosuppressed"
+      ]
+    },
+    {
+      "id": "acne",
+      "name": "Acne Vulgaris",
+      "category": "skin",
+      "icd10": "L70.0",
+      "prevalence": 0.35,
+      "contagious": false,
+      "symptoms": {
+        "rash": 2.2,
+        "pus_discharge": 1.6,
+        "skin_redness": 1.6,
+        "dark_skin_patch": 1.0,
+        "itching": 0.6
+      },
+      "key_symptoms": [
+        "rash"
+      ],
+      "typical_duration_days": [
+        30,
+        1825
+      ],
+      "severity_profile": "mild",
+      "severity_score": 2,
+      "self_care": [
+        "Wash the face twice daily with a gentle cleanser",
+        "Do not squeeze or pick at spots",
+        "Use a non-comedogenic moisturiser and sunscreen",
+        "Avoid heavy oil-based cosmetics",
+        "Be patient - treatments take 6-8 weeks"
+      ],
+      "medicines": [
+        "benzoyl_peroxide"
+      ],
+      "routine": "skin_care",
+      "description": "Blocked and inflamed hair follicles on the face, chest and back producing blackheads, whiteheads and red spots. Common in adolescence and young adulthood.",
+      "when_to_see_doctor": [
+        "Deep painful nodules or cysts",
+        "Scarring or dark marks developing",
+        "No improvement after 8 weeks of treatment",
+        "Significant impact on mood or confidence"
+      ]
+    },
+    {
+      "id": "psoriasis",
+      "name": "Psoriasis",
+      "category": "skin",
+      "icd10": "L40",
+      "prevalence": 0.02,
+      "contagious": false,
+      "symptoms": {
+        "skin_scaling": 3.0,
+        "rash": 2.2,
+        "itching": 1.8,
+        "skin_redness": 1.6,
+        "joint_pain": 1.2,
+        "dry_skin": 1.4
+      },
+      "key_symptoms": [
+        "skin_scaling"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Moisturise the skin generously every day",
+        "Get sensible sunlight exposure",
+        "Avoid scratching and picking at plaques",
+        "Reduce stress and alcohol",
+        "Stop smoking"
+      ],
+      "medicines": [
+        "hydrocortisone",
+        "emollient"
+      ],
+      "routine": "skin_care",
+      "description": "A chronic immune condition producing well-defined red plaques with silvery scale, typically on the elbows, knees and scalp.",
+      "when_to_see_doctor": [
+        "Joint pain and swelling with the rash",
+        "Widespread redness or pustules",
+        "Skin cracking and bleeding",
+        "Significant impact on daily life"
+      ]
+    },
+    {
+      "id": "heat_exhaustion",
+      "name": "Heat Exhaustion",
+      "category": "emergency",
+      "icd10": "T67.3",
+      "prevalence": 0.05,
+      "contagious": false,
+      "symptoms": {
+        "fatigue": 2.4,
+        "dizziness": 2.4,
+        "headache": 2.0,
+        "nausea": 2.0,
+        "dehydration": 2.6,
+        "muscle_ache": 1.4,
+        "vomiting": 1.4,
+        "fainting": 1.6
+      },
+      "key_symptoms": [
+        "dehydration",
+        "dizziness"
+      ],
+      "typical_duration_days": [
+        1,
+        3
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 6,
+      "self_care": [
+        "Move to a cool shaded place immediately",
+        "Lie down and raise the legs",
+        "Sip cool water or an oral rehydration solution",
+        "Loosen or remove excess clothing",
+        "Cool the skin with wet cloths and fanning"
+      ],
+      "medicines": [
+        "ors"
+      ],
+      "routine": "emergency_care",
+      "description": "Overheating from prolonged heat exposure causing heavy sweating, weakness, dizziness and nausea. Body temperature is usually below 40C and the person remains conscious.",
+      "when_to_see_doctor": [
+        "Confusion, slurred speech or drowsiness",
+        "Hot dry skin with no sweating",
+        "Temperature above 40C",
+        "Collapse or seizure"
+      ]
+    },
+    {
+      "id": "insomnia_disorder",
+      "name": "Insomnia",
+      "category": "psychiatric",
+      "icd10": "G47.0",
+      "prevalence": 0.3,
+      "contagious": false,
+      "symptoms": {
+        "insomnia": 3.0,
+        "fatigue": 2.2,
+        "irritability": 1.8,
+        "reduced_concentration": 1.6,
+        "anxiety": 1.4,
+        "low_mood": 1.2,
+        "headache": 1.0
+      },
+      "key_symptoms": [
+        "insomnia"
+      ],
+      "typical_duration_days": [
+        14,
+        365
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Keep the same sleep and wake time every day",
+        "Get out of bed if awake for more than 20 minutes",
+        "Avoid screens and bright light for an hour before bed",
+        "No caffeine after midday and no alcohol at night",
+        "Keep the bedroom cool, dark and quiet"
+      ],
+      "medicines": [
+        "diphenhydramine"
+      ],
+      "routine": "mental_wellbeing",
+      "description": "Difficulty falling or staying asleep with daytime consequences such as fatigue and poor concentration, on most nights for at least two weeks.",
+      "when_to_see_doctor": [
+        "Loud snoring or witnessed breathing pauses",
+        "Sleep problems lasting more than a month",
+        "Low mood or hopelessness",
+        "Falling asleep while driving"
+      ]
+    },
+    {
+      "id": "panic_disorder",
+      "name": "Panic Disorder",
+      "category": "psychiatric",
+      "icd10": "F41.0",
+      "prevalence": 0.05,
+      "contagious": false,
+      "symptoms": {
+        "panic_attacks": 3.0,
+        "anxiety": 2.6,
+        "palpitations": 2.2,
+        "restlessness": 1.8,
+        "shortness_of_breath": 1.8,
+        "dizziness": 1.4,
+        "chest_tightness": 1.4,
+        "insomnia": 1.0
+      },
+      "key_symptoms": [
+        "panic_attacks"
+      ],
+      "typical_duration_days": [
+        30,
+        3650
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Learn slow breathing: in for 4, hold 4, out for 6",
+        "Stay where you are until the surge passes",
+        "Reduce caffeine and alcohol",
+        "Keep a diary of attacks and what preceded them",
+        "Get regular exercise and sleep"
+      ],
+      "medicines": [
+        "escitalopram",
+        "sertraline"
+      ],
+      "routine": "mental_wellbeing",
+      "description": "Recurrent unexpected surges of intense fear with a racing heart, breathlessness and a sense of doom, plus worry about the next attack.",
+      "when_to_see_doctor": [
+        "Chest pain with sweating or pain spreading to the arm",
+        "Attacks becoming more frequent",
+        "Avoiding normal activities for fear of attacks",
+        "Thoughts of self-harm"
+      ]
+    },
+    {
+      "id": "lower_back_pain",
+      "name": "Mechanical Low Back Pain",
+      "category": "musculoskeletal",
+      "icd10": "M54.5",
+      "prevalence": 0.6,
+      "contagious": false,
+      "symptoms": {
+        "back_pain": 3.0,
+        "back_stiffness": 2.0,
+        "muscle_ache": 1.8,
+        "stiffness": 1.4,
+        "pain": 1.6,
+        "tingling_hands_feet": 0.8
+      },
+      "key_symptoms": [
+        "back_pain"
+      ],
+      "typical_duration_days": [
+        3,
+        42
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Keep moving - avoid prolonged bed rest",
+        "Return to normal activity gradually",
+        "Use heat packs for muscle spasm",
+        "Set up your chair and screen properly",
+        "Lift with the knees, not the back"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "diclofenac"
+      ],
+      "routine": "joint_care",
+      "description": "Pain in the lower back from muscles, ligaments or joints, often after strain or poor posture, without nerve involvement.",
+      "when_to_see_doctor": [
+        "Numbness around the groin or buttocks",
+        "Difficulty passing urine or loss of control",
+        "Progressive weakness in the legs",
+        "Pain after a fall or with fever or weight loss"
+      ]
+    },
+    {
+      "id": "sciatica",
+      "name": "Sciatica",
+      "category": "musculoskeletal",
+      "icd10": "M54.3",
+      "prevalence": 0.1,
+      "contagious": false,
+      "symptoms": {
+        "back_pain": 2.4,
+        "tingling_hands_feet": 2.6,
+        "numbness": 2.2,
+        "pain": 2.4,
+        "muscle_ache": 1.2,
+        "stiffness": 1.0
+      },
+      "key_symptoms": [
+        "tingling_hands_feet",
+        "back_pain"
+      ],
+      "typical_duration_days": [
+        14,
+        90
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 5,
+      "self_care": [
+        "Keep active within the limits of the pain",
+        "Avoid heavy lifting and twisting",
+        "Use heat for muscle spasm",
+        "Try gentle stretching as pain settles",
+        "Set up a supportive chair and mattress"
+      ],
+      "medicines": [
+        "paracetamol",
+        "ibuprofen",
+        "pregabalin"
+      ],
+      "routine": "joint_care",
+      "description": "Pain radiating from the lower back down the leg along the path of the sciatic nerve, often with tingling or numbness, from nerve compression.",
+      "when_to_see_doctor": [
+        "Numbness in the saddle area",
+        "Difficulty passing urine",
+        "Rapidly worsening leg weakness",
+        "Pain in both legs"
+      ]
+    },
+    {
+      "id": "menopause",
+      "name": "Menopausal Symptoms",
+      "category": "endocrine",
+      "icd10": "N95.1",
+      "prevalence": 0.5,
+      "contagious": false,
+      "symptoms": {
+        "hot_flushes": 3.0,
+        "night_sweats": 2.4,
+        "insomnia": 1.8,
+        "irritability": 1.6,
+        "low_mood": 1.4,
+        "fatigue": 1.4,
+        "vaginal_discharge": 1.2,
+        "hair_loss": 1.0
+      },
+      "key_symptoms": [
+        "hot_flushes"
+      ],
+      "typical_duration_days": [
+        180,
+        3650
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Dress in layers and keep rooms cool",
+        "Reduce caffeine, alcohol and spicy food",
+        "Do regular weight-bearing exercise",
+        "Ensure adequate calcium and vitamin D",
+        "Use a water-based lubricant if needed"
+      ],
+      "medicines": [
+        "vitamin_d"
+      ],
+      "routine": "metabolic_care",
+      "description": "Symptoms around the menopause including hot flushes, night sweats, sleep disturbance and mood change, caused by falling oestrogen levels.",
+      "when_to_see_doctor": [
+        "Any bleeding after 12 months without periods",
+        "Hot flushes severely disrupting life",
+        "Symptoms of low mood that persist",
+        "Bone pain or new fractures"
+      ]
+    },
+    {
+      "id": "vaginal_candidiasis",
+      "name": "Vaginal Candidiasis (thrush)",
+      "category": "urinary",
+      "icd10": "B37.3",
+      "prevalence": 0.15,
+      "contagious": false,
+      "symptoms": {
+        "vaginal_discharge": 3.0,
+        "itching": 2.6,
+        "painful_urination": 1.8,
+        "skin_redness": 1.4,
+        "pain": 1.2
+      },
+      "key_symptoms": [
+        "vaginal_discharge",
+        "itching"
+      ],
+      "typical_duration_days": [
+        3,
+        14
+      ],
+      "severity_profile": "mild",
+      "severity_score": 3,
+      "self_care": [
+        "Wear loose cotton underwear",
+        "Avoid perfumed soaps and douching",
+        "Keep the area clean and dry",
+        "Avoid tight synthetic clothing",
+        "Reduce sugary foods"
+      ],
+      "medicines": [
+        "fluconazole",
+        "clotrimazole"
+      ],
+      "routine": "urinary_care",
+      "description": "A fungal infection causing thick white discharge, intense itching and soreness. Common after antibiotics or in diabetes.",
+      "when_to_see_doctor": [
+        "First episode of discharge",
+        "Discharge with an unpleasant smell",
+        "Fever or pelvic pain",
+        "Symptoms not settling after treatment"
+      ]
+    }
+  ]
+}

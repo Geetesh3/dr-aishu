@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% block title %}Dr. Aishu API — Free API Keys &amp; Developer Docs{% endblock %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/developers.css">
+{% endblock %}
+{% block content %}
+  <section class="hero">
+    <p class="eyebrow">Developer API</p>
+    <h1>Build with Dr. Aishu.<br>Free keys, no card.</h1>
+    <p class="lede">
+      Add medical symptom triage to your own app. Send a sentence or a photo of a
+      report and get back a differential diagnosis, a severity level, safe medicine
+      suggestions with a daily timetable, and a personalised routine.
+    </p>
+    <div class="tier-row" id="tier-row"></div>
+  </section>
+
+  <section id="keys" class="card">
+    <h2>Your API key</h2>
+    <p class="muted">
+      Keys are shown once and stored only as a hash, so nobody — including us — can
+      read yours back. Keep it in an environment variable, never in client-side code.
+    </p>
+
+    <div class="signup-grid">
+      <label class="field">
+        <span class="field-label">Email <em>(optional, for the free tier)</em></span>
+        <input type="email" id="signup-email" placeholder="you@example.com" autocomplete="email">
+      </label>
+      <label class="field">
+        <span class="field-label">Label <em>(optional)</em></span>
+        <input type="text" id="signup-label" placeholder="my side project">
+      </label>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn-primary" id="signup-btn">Create free API key</button>
+    </div>
+
+    <div class="key-reveal" id="key-reveal" hidden>
+      <div class="key-reveal-head">
+        <strong>Copy your key now</strong>
+        <span class="pill pill-warn">shown once</span>
+      </div>
+      <div class="key-line">
+        <code id="key-secret"></code>
+        <button type="button" class="btn-ghost" id="copy-key">Copy</button>
+      </div>
+      <p class="muted" id="key-meta"></p>
+    </div>
+
+    <div class="usage-panel" id="usage-panel" hidden>
+      <h3>Current usage</h3>
+      <div class="usage-grid">
+        <div class="usage-stat"><strong id="u-tier">—</strong><span>tier</span></div>
+        <div class="usage-stat"><strong id="u-minute">—</strong><span>requests this minute</span></div>
+        <div class="usage-stat"><strong id="u-day">—</strong><span>requests today</span></div>
+        <div class="usage-stat"><strong id="u-total">—</strong><span>lifetime calls</span></div>
+      </div>
+      <div class="actions">
+        <button type="button" class="btn-ghost" id="refresh-usage">Refresh usage</button>
+        <button type="button" class="btn-ghost" id="revoke-btn">Revoke this key</button>
+      </div>
+    </div>
+
+    <div class="lookup">
+      <h3>Find keys by email</h3>
+      <p class="muted">Enter the email you signed up with, then use that key to list the rest.</p>
+      <div class="lookup-row">
+        <input type="email" id="lookup-email" placeholder="you@example.com">
+        <button type="button" class="btn-ghost" id="lookup-btn">List keys</button>
+      </div>
+      <div id="lookup-result"></div>
+    </div>
+  </section>
+
+  <div id="dev-status" class="status" hidden></div>
+
+  <section id="quickstart" class="card">
+    <h2>Quickstart</h2>
+    <p class="muted">Send your key in the <code>X-API-Key</code> header. Every language works; here are the short versions.</p>
+
+    <div class="code-block">
+      <div class="code-head"><span>cURL</span><button class="copy-btn" data-copy="code-curl">Copy</button></div>
+      <pre id="code-curl"><code>curl -s https://YOUR-HOST/api/analyze \
+  -H "X-API-Key: $DR_AISHU_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"text":"high fever, body aches and chills for 3 days with a dry cough"}'</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-head"><span>Python</span><button class="copy-btn" data-copy="code-python">Copy</button></div>
+      <pre id="code-python"><code>import os, requests
+
+API = os.environ["DR_AISHU_URL"]        # e.g. https://dr-aishu.onrender.com
+KEY = os.environ["DR_AISHU_API_KEY"]
+
+def diagnose(text, **ctx):
+    r = requests.post(
+        f"{API}/api/analyze",
+        headers={"X-API-Key": KEY},
+        json={"text": text, **ctx},
+        timeout=30,
+    )
+    r.raise_for_status()
+    return r.json()
+
+out = diagnose("burning when I pee and going very often, lower abdominal pain")
+
+print(out["severity"]["triage"])            # 'self_care'
+print(out["diagnoses"][0]["name"])          # 'Urinary Tract Infection'
+for m in out["medicines"]["recommended"]:
+    print(m["name"], m.get("frequency"))
+for block in out["routine"]["blocks"]:
+    print(block["time"], block["title"])</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-head"><span>Image upload (Python)</span><button class="copy-btn" data-copy="code-image">Copy</button></div>
+      <pre id="code-image"><code>with open("lab_report.png", "rb") as fh:
+    r = requests.post(
+        f"{API}/api/analyze-image",
+        headers={"X-API-Key": KEY},          # do not set Content-Type; requests adds the boundary
+        files={"image": fh},
+        data={"text": "reports fever for four days"},
+        timeout=60,
+    )
+print(r.json()["image_analysis"]["ocr"]["text"])</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-head"><span>JavaScript</span><button class="copy-btn" data-copy="code-js">Copy</button></div>
+      <pre id="code-js"><code>const res = await fetch(`${API}/api/analyze`, {
+  method: "POST",
+  headers: {
+    "X-API-Key": process.env.DR_AISHU_API_KEY,
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ text: "sore throat and fever for 2 days" }),
+});
+const { severity, diagnoses, medicines, routine } = await res.json();</code></pre>
+    </div>
+  </section>
+
+  <section id="reference" class="card">
+    <h2>Endpoint reference</h2>
+    <div class="table-scroll">
+      <table class="ref-table">
+        <thead>
+          <tr><th>Endpoint</th><th>Method</th><th>Scope</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>/api/analyze</code></td><td><span class="method post">POST</span></td><td><code>analyze</code></td><td>Analyse free-text symptoms.</td></tr>
+          <tr><td><code>/api/analyze-image</code></td><td><span class="method post">POST</span></td><td><code>analyze</code></td><td>Analyse an image, with optional text.</td></tr>
+          <tr><td><code>/api/symptoms</code></td><td><span class="method get">GET</span></td><td>—</td><td>Symptom catalogue.</td></tr>
+          <tr><td><code>/api/diseases</code></td><td><span class="method get">GET</span></td><td>—</td><td>Condition catalogue.</td></tr>
+          <tr><td><code>/api/medicines</code></td><td><span class="method get">GET</span></td><td>—</td><td>Formulary.</td></tr>
+          <tr><td><code>/api/health</code></td><td><span class="method get">GET</span></td><td>—</td><td>Status and model metrics.</td></tr>
+          <tr><td><code>/api/feedback</code></td><td><span class="method post">POST</span></td><td><code>feedback</code></td><td>Report a correction so the model learns.</td></tr>
+          <tr><td><code>/api/model/status</code></td><td><span class="method get">GET</span></td><td><code>read</code></td><td>Model metadata and stored-case counts.</td></tr>
+          <tr><td><code>/api/data/stats</code></td><td><span class="method get">GET</span></td><td><code>read</code></td><td>Stored case and feedback totals.</td></tr>
+          <tr><td><code>/api/export/training-data</code></td><td><span class="method get">GET</span></td><td><code>export</code></td><td>Export consented, scrubbed training rows.</td></tr>
+          <tr><td><code>/api/model/train</code></td><td><span class="method post">POST</span></td><td><code>train</code></td><td>Retrain in the background. Pro only.</td></tr>
+          <tr><td><code>/api/keys/me</code></td><td><span class="method get">GET</span></td><td><code>keys</code></td><td>This key's identity and usage.</td></tr>
+          <tr><td><code>/api/keys/list</code></td><td><span class="method get">GET</span></td><td><code>keys</code></td><td>List your own keys by email.</td></tr>
+          <tr><td><code>/api/keys/revoke</code></td><td><span class="method post">POST</span></td><td><code>keys</code></td><td>Revoke a key.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Rate limits</h3>
+    <p class="muted">
+      Every response carries <code>X-RateLimit-Limit-Minute</code>,
+      <code>X-RateLimit-Remaining-Minute</code>, <code>X-RateLimit-Limit-Day</code>,
+      <code>X-RateLimit-Remaining-Day</code> and <code>X-RateLimit-Tier</code>. A refused
+      request returns <code>429</code> with a <code>Retry-After</code> header.
+    </p>
+
+    <h3>Response shape</h3>
+    <p class="muted">Analysis results are top-level keys, not nested under an <code>analysis</code> object.</p>
+    <div class="code-block">
+      <div class="code-head"><span>200 OK</span><button class="copy-btn" data-copy="code-shape">Copy</button></div>
+      <pre id="code-shape"><code>{
+  "disclaimer": "...",
+  "extracted":  { "symptoms": [...], "duration": {...}, "vitals": {...} },
+  "diagnoses":  [ { "id": "...", "name": "...", "confidence": 64.0 } ],
+  "severity":   { "score": 5, "triage": "see_doctor", "reasons": [...] },
+  "medicines":  { "recommended": [...], "prescription_only": [...], "timetable": [...] },
+  "routine":    { "name": "...", "blocks": [...] },
+  "solutions":  { "problems": [ { "label": "...", "steps": [...], "covered_by": [...] } ],
+                  "condition": { "name": "..." }, "notes": [...] },
+  "case":       { "case_id": "...", "stored_for_training": false }
+}</code></pre>
+    </div>
+
+    <h3>Status codes</h3>
+    <ul class="limits">
+      <li><code>401</code> — missing or invalid key.</li>
+      <li><code>403</code> — the key's tier lacks the required scope.</li>
+      <li><code>404</code> — unknown case or key.</li>
+      <li><code>413</code> — image over 12&nbsp;MB.</li>
+      <li><code>415</code> — unsupported image type.</li>
+      <li><code>422</code> — request failed validation.</li>
+      <li><code>429</code> — rate limit reached; respect <code>Retry-After</code>.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Safety and privacy</h2>
+    <div class="about-grid">
+      <div>
+        <h3>What you may and may not do</h3>
+        <ul class="limits">
+          <li>Dr. Aishu is an educational triage aid. Do not present its output as a diagnosis or prescription.</li>
+          <li>Emergency cases deliberately return no medicines. Surface that guidance prominently in your UI.</li>
+          <li>Show the <code>disclaimer</code> field to your users.</li>
+          <li>Do not send real patient data unless you have a lawful basis and consent.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we store</h3>
+        <ul class="limits">
+          <li>Your key is stored only as a SHA-256 hash; the plaintext is shown once.</li>
+          <li>Free text is saved only when the request sets <code>consent_share: true</code>, and direct identifiers are stripped first.</li>
+          <li><code>DELETE /api/data/case/{case_id}</code> erases a case and its feedback.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/developers.js"></script>
+{% endblock %}

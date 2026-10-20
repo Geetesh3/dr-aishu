@@ -1,0 +1,180 @@
+/* Dr. Aishu — operator dataset browser.
+ *
+ * Self-contained: this page loads style.css plus this file only, so every
+ * component it uses (stat tiles, tables, form controls) is defined here rather
+ * than assumed from another page's stylesheet.
+ */
+
+/* ---- key gate ---- */
+.gate {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* An author `display` rule outranks the UA rule for [hidden], so the gate would
+ * stay on screen after a successful unlock without this. */
+.gate[hidden] { display: none; }
+
+.gate h2 { margin-top: 0; }
+
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.gate-form .btn-primary,
+.gate-form .btn-ghost { align-self: flex-start; }
+
+.gate-note,
+.small { font-size: .82rem; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 .5rem;
+}
+
+.status.is-error { color: var(--red); }
+
+/* ---- unlocked toolbar ---- */
+.ds-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .75rem;
+  margin: .5rem 0 -.5rem;
+}
+
+/* ---- controls ---- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: .75rem;
+  margin-bottom: .75rem;
+}
+
+.field.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: .45rem;
+  font-size: .85rem;
+  color: var(--ink-soft);
+  padding-bottom: .55rem;
+}
+
+.field.checkbox input { width: 15px; height: 15px; accent-color: var(--accent); }
+
+/* ---- stat tiles ---- */
+.stat-grid {
+  display: grid;
+  gap: .85rem;
+  margin: 1.25rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .9rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* The dataset has more tiles than a public page, so the grid runs tighter. */
+.stat-grid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .75rem;
+}
+
+.stat-grid.compact .stat { padding: .85rem 1rem; }
+
+#ds-image-labels .stat .muted {
+  font-size: .74rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ---- tables ---- */
+.table-wrap { overflow-x: auto; margin-top: .5rem; }
+
+/* The conditions and index tables run to thousands of rows. Left unconstrained
+ * they make the page tens of screens tall, so the body scrolls inside a fixed
+ * frame and the header stays put. */
+.table-wrap.scroll {
+  max-height: 26rem;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.table-wrap.scroll .data-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface);
+}
+
+/* ---- section summary line ---- */
+.summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.25rem;
+  align-items: baseline;
+  margin: 0 0 .9rem;
+  padding: .7rem .9rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: .82rem;
+  color: var(--ink-soft);
+}
+
+.summary-bar strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+
+.data-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  padding: .5rem .6rem;
+}
+
+.data-table td { padding: .45rem .6rem; border-bottom: 1px solid #eef2ef; }
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+
+.data-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* The conditions table holds long treatment strings; keep the rows readable
+ * rather than letting one cell set the column width. */
+#ds-diseases td { vertical-align: top; }
+
+@media (max-width: 720px) {
+  .gate { grid-template-columns: 1fr; gap: 1.25rem; }
+  .controls { align-items: stretch; }
+}

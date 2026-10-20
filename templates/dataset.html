@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %}Dr. Aishu — Dataset{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/dataset.css">
+{% endblock %}
+{% block content %}
+  <section class="hero">
+    <p class="eyebrow">Operator view</p>
+    <h1>The data behind Dr. Aishu</h1>
+    <p class="lede">
+      Every external source is downloaded once, hashed and merged into a single
+      Excel workbook. This page is for whoever runs the instance: it shows what
+      the build produced, where each source came from and under what licence.
+      The workbook is a build artefact, so a row can always be traced back to the
+      exact bytes it came from.
+    </p>
+    <p class="status" id="ds-status" role="status"></p>
+  </section>
+
+  <section class="card gate" id="ds-gate">
+    <div class="gate-copy">
+      <h2>Operator key required</h2>
+      <p class="muted">
+        This view exposes build internals — file paths, archive hashes and exact
+        class counts — so it is limited to the operator. Sign in with a Pro key
+        to continue. Free keys work everywhere else in the app.
+      </p>
+    </div>
+    <div class="gate-form">
+      <label class="field">
+        <span class="field-label">API key</span>
+        <input type="password" id="ds-key" placeholder="dr_live_…" autocomplete="off">
+      </label>
+      <button type="button" class="btn-primary" id="ds-connect">Unlock</button>
+      <p class="muted small" id="ds-gate-note"></p>
+    </div>
+  </section>
+
+  <div id="ds-content" hidden>
+    <div class="ds-toolbar">
+      <span class="muted small">Signed in as operator</span>
+      <button type="button" class="btn-ghost" id="ds-forget">Sign out</button>
+    </div>
+    <section class="stat-grid" id="ds-stats"></section>
+
+    <section class="card">
+      <h2>Sources and licences</h2>
+      <p class="muted">
+        Read the licence column before reusing anything. Three of these sources
+        declare no licence at all, which means all rights are reserved by default.
+      </p>
+      <div class="table-wrap">
+        <table class="data-table" id="ds-sources">
+          <thead>
+            <tr><th>Source</th><th>Licence</th><th>Status</th><th>Size</th><th>SHA-256</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Trained image model</h2>
+      <p class="muted">
+        A classifier trained on the labelled images above. Eye photographs are
+        recognised well; skin photographs are much harder because the six
+        conditions look alike, so the score is shown honestly and the model never
+        names a class it is not confident about.
+      </p>
+      <div class="table-wrap">
+        <table class="data-table" id="ds-model">
+          <thead>
+            <tr><th>Modality</th><th>Classes</th><th>Held-out accuracy</th><th>Group-CV</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted" id="ds-model-note"></p>
+    </section>
+
+    <section class="card">
+      <h2>Images</h2>
+      <p class="muted" id="ds-image-note">
+        Labelled clinical images used for the vision path, by modality and class.
+      </p>
+      <div class="stat-grid compact" id="ds-image-labels"></div>
+      <p class="muted">
+        SkinDisNet is licensed CC BY-NC 4.0 — non-commercial use only. The Mendeley
+        eye set declares no licence.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Conditions</h2>
+      <p class="muted">
+        Conditions the knowledge base already reasons about are marked
+        <strong>in KB</strong>; the rest are coverage the external sets add.
+      </p>
+      <div class="controls">
+        <label class="field checkbox">
+          <input type="checkbox" id="ds-in-kb">
+          <span>Only knowledge-base conditions</span>
+        </label>
+        <label class="field">
+          <span class="field-label">Search</span>
+          <input type="search" id="ds-search" placeholder="e.g. malaria, eczema…" autocomplete="off">
+        </label>
+      </div>
+      <div class="table-wrap scroll">
+        <table class="data-table" id="ds-diseases">
+          <thead>
+            <tr><th>Condition</th><th>In KB</th><th>Category</th><th>Treatments</th><th>Sources</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="summary-bar" id="ds-disease-count"></p>
+    </section>
+
+    <section class="card">
+      <h2>MedicineNet condition index</h2>
+      <p class="muted">
+        MedicineNet is copyright WebMD and its robots.txt disallows the AI crawlers,
+        so only the public condition index is stored — the name, slug and link. No
+        article text or image is copied in. Follow a link to read the article at the
+        source.
+      </p>
+      <div class="table-wrap scroll">
+        <table class="data-table" id="ds-medicinenet">
+          <thead>
+            <tr><th>Condition</th><th>Letter</th><th>Link</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="summary-bar" id="ds-mn-count"></p>
+    </section>
+
+    <section class="card">
+      <h2>DeepLesion CT annotations</h2>
+      <p class="muted">
+        Radiology ground truth from the NIH Clinical Center: one row per annotated
+        lesion, with its bounding box, RECIST size, coarse lesion type and patient
+        demographics. This is imaging research data, not symptom text, so it is kept
+        in its own sheet and never mixed into the symptom classifier's training. The
+        readme states no redistribution licence; the ~238 GB image archive is not
+        downloaded.
+      </p>
+      <div class="controls">
+        <label class="field">
+          <span class="field-label">Lesion type</span>
+          <select id="ds-lesion-type"><option value="">All types</option></select>
+        </label>
+      </div>
+      <div class="table-wrap scroll">
+        <table class="data-table" id="ds-deeplesion">
+          <thead>
+            <tr><th>File</th><th>Type</th><th>Sex</th><th>Age</th><th>Split</th><th>Bounding box</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="summary-bar" id="ds-dl-count"></p>
+    </section>
+
+    <section class="card">
+      <h2>Public dataset catalogue</h2>
+      <p class="muted">
+        Public disease datasets named in the open-access review
+        <em>Machine-Learning-Based Disease Diagnosis: A Comprehensive Review</em>
+        (PMC8950225, CC BY 4.0). Only the review's factual dataset table is stored —
+        the dataset name, what it covers and where to get it — not the article prose.
+      </p>
+      <div class="table-wrap">
+        <table class="data-table" id="ds-catalogue">
+          <thead>
+            <tr><th>Disease</th><th>Dataset</th><th>Link</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="summary-bar" id="ds-cat-count"></p>
+    </section>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/dataset.js"></script>
+{% endblock %}

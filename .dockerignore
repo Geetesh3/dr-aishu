@@ -1,0 +1,27 @@
+# Keep the build context small and never bake local data or secrets into an image.
+.git/
+.gitignore
+.github/
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.agent_tmp/
+*.db
+*.db-journal
+*.sqlite*
+.env
+.env.*
+data/dr_aishu.db
+data/uploads/
+data/training/
+notebooks/*.ipynb_checkpoints
+README.md
+AGENTS.md
+DEPLOY.md
+tests/

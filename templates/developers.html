@@ -3,7 +3,7 @@
 {% block head %}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/developers.css">
+<link rel="stylesheet" href="/static/developers.css?v={{ asset_version }}">
 {% endblock %}
 {% block content %}
   <section class="hero">
@@ -231,5 +231,5 @@ const { severity, diagnoses, medicines, routine } = await res.json();</code></pr
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/developers.js"></script>
+<script src="/static/developers.js?v={{ asset_version }}"></script>
 {% endblock %}

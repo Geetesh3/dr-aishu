@@ -3,7 +3,7 @@
 {% block head %}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/insights.css">
+<link rel="stylesheet" href="/static/insights.css?v={{ asset_version }}">
 {% endblock %}
 {% block content %}
   <section class="hero">
@@ -91,5 +91,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/insights.js"></script>
+<script src="/static/insights.js?v={{ asset_version }}"></script>
 {% endblock %}

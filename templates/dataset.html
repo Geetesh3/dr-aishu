@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Dr. Aishu — Dataset{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="/static/dataset.css">
+<link rel="stylesheet" href="/static/dataset.css?v={{ asset_version }}">
 {% endblock %}
 {% block content %}
   <section class="hero">
@@ -185,5 +185,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/dataset.js"></script>
+<script src="/static/dataset.js?v={{ asset_version }}"></script>
 {% endblock %}

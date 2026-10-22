@@ -4,15 +4,23 @@
 # See docs/deploy-domcloud.md for the walkthrough and the free-plan caveats.
 #
 # Design notes:
-#   * Passenger is told to run uvicorn directly (app_start_command) instead of
-#     loading a WSGI startup file. FastAPI is ASGI, so this avoids a translation
-#     layer entirely -- it is the same command the Dockerfile runs.
-#   * PORT is injected by Passenger; uvicorn must bind 127.0.0.1, not 0.0.0.0.
-#   * Tesseract cannot be installed: the free plan has no sudo and no apt.
-#     Printed-text OCR degrades gracefully (app/vision.py reports the missing
-#     binary); structured analysis, medicines and routines are unaffected.
+#   * Passenger runs uvicorn directly (app_start_command) rather than loading a
+#     WSGI startup file. FastAPI is ASGI, so this skips a translation layer and
+#     matches what the Dockerfile does. This is DomCloud's "Uvicorn (ASGI)" path.
+#   * PORT is injected by Passenger, and the app must bind 127.0.0.1: Passenger
+#     proxies from loopback, not from a public interface.
+#   * The NGINX root is public_html/public, not public_html, so the Python
+#     source tree is never served over HTTP. /static is symlinked in so NGINX
+#     serves assets directly.
+#   * The case database lives in $HOME, outside public_html: `source` wipes
+#     public_html on every deploy, and patient data must survive that.
+#   * Tesseract cannot be installed (no sudo, no apt on the free plan). Printed
+#     text OCR degrades gracefully; see docs/deploy-domcloud.md.
 
-source: https://github.com/Geetesh3/dr-aishu.git
+source:
+  url: https://github.com/Geetesh3/dr-aishu.git
+  type: clone
+  branch: feat/external-dataset-sources
 
 features:
   - python stable
@@ -25,12 +33,18 @@ nginx:
     app_start_command: env PORT=$PORT python -m uvicorn app.main:app --host 127.0.0.1 --port $PORT
     env_var_list:
       - PYTHONDONTWRITEBYTECODE=1
-      - DR_AISHU_REQUIRE_KEY=0
+      - DR_AISHU_DATA_DIR=$HOME/dr_aishu_data
 
 commands:
-  # public/ is the document root Passenger serves from; the app lives beside it.
+  # Dependencies. requirements-domcloud.txt omits the notebook/build-only
+  # packages (pandas, matplotlib, openpyxl), which the server never imports and
+  # which would cost hundreds of MB against the 1.5 GB free-plan storage limit.
+  - python -m pip install --user -r requirements-domcloud.txt
+
+  # Document root: static assets only, nothing importable.
   - mkdir -p public
-  - cp -r app scripts static templates data requirements.txt passenger_wsgi.py public/
-  - python -m pip install --user -r public/requirements.txt
-  # Runtime state, kept outside the served tree.
-  - mkdir -p data/uploads data/models
+  - ln -sfn ../static public/static
+
+  # Writable runtime state, outside the served tree and outside public_html so
+  # it survives the wipe that every deploy performs.
+  - mkdir -p $HOME/dr_aishu_data/uploads $HOME/dr_aishu_data/models

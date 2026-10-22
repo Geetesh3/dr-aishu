@@ -1,0 +1,29 @@
+# Runtime dependencies for Dr. Aishu on DOM Cloud's free plan (1.5 GB storage).
+#
+# This is requirements.txt minus the notebook and build-only packages (pandas,
+# matplotlib, openpyxl) and minus the test packages (pytest, httpx), none of
+# which the server imports. Those cost hundreds of megabytes together, which
+# matters against the free plan's storage cap. Use requirements.txt for
+# notebooks, local development and Docker.
+
+# Core runtime
+fastapi>=0.110
+uvicorn[standard]>=0.27
+jinja2>=3.1
+python-multipart>=0.0.9
+pydantic>=2.6
+
+# ASGI->WSGI adapter, used only if you deploy with a WSGI preset
+# (passenger_wsgi.py) instead of the Uvicorn (ASGI) preset.
+a2wsgi>=1.10
+
+# Clinical NLP, vision and the on-device learning loop
+scikit-learn>=1.4
+numpy>=1.26
+joblib>=1.3
+pillow>=10.0
+
+# Optional image decoders for HEIC/HEIF and PDF. The server degrades
+# gracefully when they are absent, so drop these lines if storage is tight.
+pillow-heif>=0.16
+pypdfium2>=4.30

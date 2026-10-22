@@ -442,6 +442,19 @@ def test_declared_condition_is_flagged():
     assert any("Hypertension" in n for n in declared)
 
 
+def test_declared_condition_survives_the_result_cap():
+    """A stated condition must not be pushed off the list by the top_n cut.
+
+    Hypothyroidism sits well below the acute complaints, so with the default
+    six-result cap it disappeared -- and its medicine with it.
+    """
+    result = pipeline.analyse(text=MULTI_PROBLEM)  # default top_n == 6
+    names = {d["name"] for d in result["diagnoses"]}
+    assert any("Hypothyroid" in n for n in names)
+    rx = {m["name"] for m in result["medicines"]["prescription_only"]}
+    assert "Levothyroxine" in rx
+
+
 def test_medicines_cover_every_declared_problem():
     """The acute complaint must not crowd the chronic ones out of the plan.
 

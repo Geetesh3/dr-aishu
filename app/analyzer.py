@@ -240,6 +240,19 @@ def diagnose(
 
     ranked = sorted(blended.items(), key=lambda kv: -kv[1])[: max(top_n, 1)]
 
+    # A condition the patient named must survive the top_n cut. Dropping it also
+    # drops its medicines, which is how a stated thyroid problem lost its
+    # treatment to a busy acute differential that outranked it.
+    declared_ids = {
+        DECLARED_PRIMARY[c] for c in facts.chronic_conditions if c in DECLARED_PRIMARY
+    }
+    listed = {did for did, _ in ranked}
+    ranked += [
+        (did, score)
+        for did, score in sorted(blended.items(), key=lambda kv: -kv[1])
+        if did in declared_ids and did not in listed
+    ]
+
     # Convert blend scores into an interpretable distribution. Softmax with a
     # low temperature sharpens the gap between the leader and the rest, so a
     # clearly separated diagnosis reads high while an ambiguous one reads low.

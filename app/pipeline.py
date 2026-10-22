@@ -329,6 +329,7 @@ def _assess_core(
             "severity_profile": c.severity_profile,
             "self_care": c.self_care,
             "when_to_see_doctor": c.when_to_see_doctor,
+            "declared_condition": c.declared_condition,
         }
         for c in candidates
     ]

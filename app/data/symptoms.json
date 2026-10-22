@@ -329,7 +329,6 @@
         "stuffy nose",
         "nasal congestion",
         "congestion",
-        "sneezing",
         "rhinorrhea",
         "sniffles"
       ],
@@ -395,7 +394,10 @@
       "synonyms": [
         "sneezing a lot",
         "sneezing fits",
-        "frequent sneezing"
+        "frequent sneezing",
+        "sneezing",
+        "sneeze",
+        "sneezing repeatedly"
       ],
       "red_flag": false,
       "weight": 0.9,
@@ -705,7 +707,14 @@
         "bumps on skin",
         "spots on face",
         "bumpy rash",
-        "rash on the body"
+        "rash on the body",
+        "skin allergic",
+        "skin allergy",
+        "allergic skin",
+        "skin allergic reaction",
+        "allergic rash",
+        "allergy rash",
+        "allergic on skin"
       ],
       "red_flag": false,
       "weight": 1.0,
@@ -723,7 +732,11 @@
         "scratching",
         "itchy all over",
         "intense itching at night",
-        "itching worse at night"
+        "itching worse at night",
+        "skin allergic",
+        "skin allergy",
+        "allergic itching",
+        "allergy itching"
       ],
       "red_flag": false,
       "weight": 0.9,
@@ -2166,6 +2179,44 @@
       "red_flag": true,
       "weight": 1.4,
       "red_flag_level": "urgent"
+    },
+    {
+      "id": "obesity",
+      "label": "Overweight / obesity",
+      "system": "endocrine",
+      "synonyms": [
+        "overweight",
+        "obese",
+        "obesity",
+        "excess weight",
+        "weight problem",
+        "high bmi",
+        "raised bmi",
+        "high body mass index",
+        "overweight for height",
+        "carrying extra weight",
+        "central obesity",
+        "belly fat"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
+    },
+    {
+      "id": "weight_gain",
+      "label": "Weight gain",
+      "system": "endocrine",
+      "synonyms": [
+        "weight gain",
+        "gaining weight",
+        "gained weight",
+        "put on weight",
+        "putting on weight",
+        "increasing weight"
+      ],
+      "red_flag": false,
+      "weight": 1.2,
+      "red_flag_level": null
     }
   ]
 }

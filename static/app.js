@@ -137,7 +137,7 @@
         fd.append("text", text);
         fd.append("top_n", "6");
         fd.append("include_rx", String($("#ctx-rx").checked));
-        fd.append("consent_share", String($("#ctx-consent").checked));
+        fd.append("consent_share", "true");
         const age = $("#ctx-age").value;
         const weight = $("#ctx-weight").value;
         if (age) fd.append("age", age);
@@ -158,7 +158,7 @@
             text,
             top_n: 6,
             include_rx: $("#ctx-rx").checked,
-            consent_share: $("#ctx-consent").checked,
+            consent_share: true,
             age: $("#ctx-age").value ? Number($("#ctx-age").value) : null,
             weight_kg: $("#ctx-weight").value ? Number($("#ctx-weight").value) : null,
             pregnant: $("#ctx-pregnant").checked,
@@ -214,6 +214,7 @@
     parts.push(`<div class="notice">${esc(data.disclaimer || "")}</div>`);
 
     els.results.innerHTML = parts.join("");
+    wireDiagnosesSlider();
     wireFeedback(data);
   }
 
@@ -265,7 +266,7 @@
     const stored = data.case && data.case.stored_for_training;
     $("#fb-store-state").textContent = stored
       ? "This case was stored anonymously and will be used for training."
-      : "This case was not stored for training (no consent given).";
+      : "This case could not be stored for training.";
     $("#fb-store-state").className = stored ? "notice" : "notice warn";
   }
 
@@ -434,36 +435,120 @@
         <div class="notice warn">No condition matched with confidence. Add more detail about your symptoms.</div>
         ${feedbackBox([], data)}</section>`;
     }
-    const items = dx.map((d, i) => {
+    // One slide per condition, so the whole differential occupies the height of
+    // a single card. Detail that is not needed at a glance stays behind the
+    // Read more control.
+    const slides = dx.map((d, i) => {
       const matched = (d.matched_symptoms || []).map((s) => `<span class="tag matched">${esc(s)}</span>`).join("");
       const missing = (d.missing_key_symptoms || []).map((s) => `<span class="tag">${esc(s)}</span>`).join("");
       const care = (d.self_care || []).map((s) => `<li>${esc(s)}</li>`).join("");
       const doctor = (d.when_to_see_doctor || []).map((s) => `<li>${esc(s)}</li>`).join("");
-      const dur = d.typical_duration_days ? `${Math.round(d.typical_duration_days[0])}–${Math.round(d.typical_duration_days[1])} days` : "—";
+      const dur = d.typical_duration_days
+        ? `${Math.round(d.typical_duration_days[0])}–${Math.round(d.typical_duration_days[1])} days`
+        : "—";
+      const declared = d.declared_condition
+        ? `<span class="tag declared" title="You told us you already have this">your condition</span>`
+        : "";
+      const hasDetail = matched || missing || care || doctor;
       return `
-        <article class="dx">
+        <article class="dx-slide" data-index="${i}">
           <div class="dx-top">
-            <span class="dx-name">${i + 1}. ${esc(d.name)}</span>
+            <span class="dx-rank">${i + 1}</span>
+            <span class="dx-name">${esc(d.name)}</span>
             <span class="dx-conf">${esc(d.confidence)}%</span>
           </div>
           <div class="dx-bar"><span style="width:${Math.max(3, Math.min(100, d.confidence))}%"></span></div>
-          <p class="dx-desc">${esc(d.description)}</p>
           <div class="dx-meta">
+            ${declared}
             <span class="tag">${esc(d.category)}</span>
             ${d.icd10 ? `<span class="tag">ICD-10 ${esc(d.icd10)}</span>` : ""}
             <span class="tag">typical ${esc(dur)}</span>
             ${d.contagious ? '<span class="tag">contagious</span>' : ""}
           </div>
-          ${matched ? `<div class="dx-sub">Matching symptoms</div><div class="dx-meta">${matched}</div>` : ""}
-          ${missing ? `<div class="dx-sub">Key symptoms not reported</div><div class="dx-meta">${missing}</div>` : ""}
-          ${care ? `<div class="dx-sub">Self-care</div><ul>${care}</ul>` : ""}
-          ${doctor ? `<div class="dx-sub">See a doctor if</div><ul>${doctor}</ul>` : ""}
+          <p class="dx-desc">${esc(d.description)}</p>
+          ${hasDetail ? `
+            <div class="dx-detail" hidden>
+              ${matched ? `<div class="dx-sub">Matching symptoms</div><div class="dx-meta">${matched}</div>` : ""}
+              ${missing ? `<div class="dx-sub">Key symptoms not reported</div><div class="dx-meta">${missing}</div>` : ""}
+              ${care ? `<div class="dx-sub">Self-care</div><ul>${care}</ul>` : ""}
+              ${doctor ? `<div class="dx-sub">See a doctor if</div><ul>${doctor}</ul>` : ""}
+            </div>
+            <button type="button" class="dx-more" aria-expanded="false">Read more</button>
+          ` : ""}
         </article>`;
     }).join("");
-    return `<section class="card"><h2>Likely conditions (ranked)</h2>
-      <p class="muted">Confidence is relative between the listed conditions, not a probability of having the disease.</p>
-      ${items}
+
+    const dots = dx.map((_, i) =>
+      `<button type="button" class="dx-dot${i === 0 ? " active" : ""}" data-goto="${i}" aria-label="Condition ${i + 1}"></button>`
+    ).join("");
+
+    return `<section class="card">
+      <div class="dx-head">
+        <h2>Likely conditions (ranked)</h2>
+        <div class="dx-nav">
+          <button type="button" class="dx-arrow" id="dx-prev" aria-label="Previous condition">‹</button>
+          <span class="dx-counter" id="dx-counter">1 / ${dx.length}</span>
+          <button type="button" class="dx-arrow" id="dx-next" aria-label="Next condition">›</button>
+        </div>
+      </div>
+      <p class="muted dx-hint">Confidence is relative between the listed conditions, not a probability of having the disease.</p>
+      <div class="dx-slider" id="dx-slider">
+        <div class="dx-track" id="dx-track">${slides}</div>
+      </div>
+      <div class="dx-dots" id="dx-dots">${dots}</div>
       ${feedbackBox(dx, data)}</section>`;
+  }
+
+  function wireDiagnosesSlider() {
+    const track = $("#dx-track");
+    if (!track) return;
+    const slides = Array.from(track.querySelectorAll(".dx-slide"));
+    const dots = Array.from(document.querySelectorAll("#dx-dots .dx-dot"));
+    const counter = $("#dx-counter");
+    let index = 0;
+
+    const show = (i) => {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      track.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach((d, n) => d.classList.toggle("active", n === index));
+      if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
+      const prev = $("#dx-prev");
+      const next = $("#dx-next");
+      if (prev) prev.disabled = index === 0;
+      if (next) next.disabled = index === slides.length - 1;
+    };
+
+    const prev = $("#dx-prev");
+    const next = $("#dx-next");
+    if (prev) prev.addEventListener("click", () => show(index - 1));
+    if (next) next.addEventListener("click", () => show(index + 1));
+    dots.forEach((d, n) => d.addEventListener("click", () => show(n)));
+
+    // "Read more" expands only its own slide, so the compact height is kept for
+    // every condition the reader has not opened.
+    slides.forEach((slide) => {
+      const btn = slide.querySelector(".dx-more");
+      const detail = slide.querySelector(".dx-detail");
+      if (!btn || !detail) return;
+      btn.addEventListener("click", () => {
+        const open = detail.hidden;
+        detail.hidden = !open;
+        btn.textContent = open ? "Read less" : "Read more";
+        btn.setAttribute("aria-expanded", String(open));
+      });
+    });
+
+    // Trackpad and touch swipes move between conditions.
+    let startX = null;
+    track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener("touchend", (e) => {
+      if (startX === null) return;
+      const delta = e.changedTouches[0].clientX - startX;
+      if (Math.abs(delta) > 40) show(index + (delta < 0 ? 1 : -1));
+      startX = null;
+    });
+
+    show(0);
   }
 
   function feedbackBox(dx, data) {
@@ -640,15 +725,19 @@
       </article>`).join("");
   }
 
-  els.librarySearch.addEventListener("input", (e) => {
-    const q = e.target.value.trim().toLowerCase();
-    if (!q) return renderLibrary(libraryCache);
-    renderLibrary(libraryCache.filter((d) =>
-      d.name.toLowerCase().includes(q) ||
-      d.category.toLowerCase().includes(q) ||
-      d.description.toLowerCase().includes(q) ||
-      (d.symptoms || []).join(" ").toLowerCase().includes(q)));
-  });
+  // The library markup only exists on /library, but app.js is loaded on every
+  // page that shares the assessment shell, so this must not assume the nodes.
+  if (els.librarySearch && els.libraryList) {
+    els.librarySearch.addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) return renderLibrary(libraryCache);
+      renderLibrary(libraryCache.filter((d) =>
+        d.name.toLowerCase().includes(q) ||
+        d.category.toLowerCase().includes(q) ||
+        d.description.toLowerCase().includes(q) ||
+        (d.symptoms || []).join(" ").toLowerCase().includes(q)));
+    });
 
-  loadLibrary();
+    loadLibrary();
+  }
 })();

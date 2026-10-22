@@ -22,6 +22,37 @@ MODIFIER_MULTIPLIERS = {
     "recurrent": 1.05,
 }
 
+# A condition the patient states they already have is evidence for that
+# diagnosis even when they report no symptom of it. High blood pressure and
+# hypothyroidism are usually symptomless, so without this they never appeared in
+# the ranked list no matter how plainly the patient named them. The value is a
+# multiplier applied to the knowledge-base score, deliberately below what a real
+# symptom match earns, so a declared condition is acknowledged without
+# displacing a diagnosis the current symptoms actually support.
+DECLARED_CONDITION_BOOST = {
+    "hypertension": {"hypertension": 2.6},
+    "thyroid disease": {"hypothyroidism": 2.2, "hyperthyroidism": 1.4},
+    "diabetes": {"type2_diabetes": 2.6},
+    "asthma": {"asthma": 2.4},
+    "heart failure": {"heart_failure": 2.4},
+    "heart disease": {"angina": 1.8, "heart_failure": 1.5},
+    "kidney disease": {"uti": 1.3},
+    "copd": {"acute_bronchitis": 1.6, "asthma": 1.3},
+    "tuberculosis": {"pneumonia": 1.3},
+    "epilepsy": {},
+}
+
+# When one declared condition maps to several diseases, only the single most
+# likely one is treated as "declared". "Thyroid problem" is the reason this
+# exists: mapping it to both hypothyroidism and hyperthyroidism would put
+# levothyroxine and carbimazole -- drugs that do opposite things -- in the same
+# plan. The others stay in the ranked differential for the clinician to see.
+DECLARED_PRIMARY = {
+    condition: max(mapping, key=mapping.get)
+    for condition, mapping in DECLARED_CONDITION_BOOST.items()
+    if mapping
+}
+
 TRIAGE_LEVELS = ["self_care", "see_doctor", "urgent", "emergency"]
 
 TRIAGE_META = {
@@ -76,6 +107,12 @@ class Candidate:
     when_to_see_doctor: list[str] = field(default_factory=list)
     medicine_ids: list[str] = field(default_factory=list)
     routine: str = ""
+    # True when the patient named this condition as something they already have,
+    # rather than it being inferred from today's symptoms. Chronic conditions
+    # like high blood pressure produce no symptoms of their own, so they must be
+    # carried through to the medicine plan even though the acute differential
+    # outranks them.
+    declared_condition: bool = False
 
 
 @dataclass
@@ -154,6 +191,13 @@ def diagnose(
     if not present_ids and not ml_predictions and not boosts:
         return []
 
+    # Fold the patient's own declared conditions into the boost table. These are
+    # merged rather than added so a condition the patient names cannot stack with
+    # a lab boost into an unjustified ranking.
+    for condition in facts.chronic_conditions:
+        for did, mult in DECLARED_CONDITION_BOOST.get(condition, {}).items():
+            boosts[did] = max(boosts.get(did, 1.0), mult)
+
     scored: dict[str, tuple[float, Any, list[str], list[str]]] = {}
     for disease in KB.diseases.values():
         score, matched, missing_key = _disease_score(disease, present_ids, facts.modifiers, negated)
@@ -161,6 +205,8 @@ def diagnose(
         if matched:
             scored[disease.id] = (score * boost, disease, matched, missing_key)
         elif boost > 1.0:
+            # A declared condition with no reported symptom enters at a floor
+            # score: it is real and worth listing, but it is not an acute finding.
             scored[disease.id] = (0.18 * boost, disease, [], list(disease.key_symptoms))
 
     # Fold in model predictions, including conditions the lexicon missed entirely.
@@ -230,6 +276,10 @@ def diagnose(
                 when_to_see_doctor=disease.when_to_see_doctor,
                 medicine_ids=disease.medicines,
                 routine=disease.routine,
+                declared_condition=any(
+                    disease.id == DECLARED_PRIMARY.get(c)
+                    for c in facts.chronic_conditions
+                ),
             )
         )
     return candidates

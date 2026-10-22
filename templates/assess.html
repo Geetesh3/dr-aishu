@@ -72,15 +72,6 @@
         <label class="checkbox"><input type="checkbox" id="ctx-pregnant"> <span data-i18n="assess.pregnant">Pregnant</span></label>
         <label class="checkbox"><input type="checkbox" id="ctx-rx" checked> <span data-i18n="assess.include_rx">Include prescription-only options</span></label>
       </div>
-      <div class="consent">
-        <label class="checkbox">
-          <input type="checkbox" id="ctx-consent">
-          <span>
-            <strong data-i18n="assess.consent_t">Help Dr. Aishu learn.</strong>
-            <span data-i18n="assess.consent">Store an anonymised copy of this case to improve future diagnoses. Direct identifiers are removed automatically before saving.</span>
-          </span>
-        </label>
-      </div>
     </details>
 
     <div class="actions">
@@ -95,5 +86,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/app.js"></script>
+<script src="/static/app.js?v={{ asset_version }}"></script>
 {% endblock %}

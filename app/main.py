@@ -6,6 +6,7 @@ assistant improve from consented real cases.
 """
 from __future__ import annotations
 
+import hashlib
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -79,6 +80,26 @@ class CachedStaticFiles(StaticFiles):
 app.mount("/static", CachedStaticFiles(directory=STATIC_DIR), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
+
+def _asset_version() -> str:
+    """A short token that changes whenever any static asset changes.
+
+    Assets are served with a 30-day max-age, so without this a browser keeps
+    running the previous app.js after a deploy. Hashing the file mtimes is
+    cheap (a stat per file, done once at import) and makes /static/app.js?v=…
+    a new URL, which is what actually forces the refresh.
+    """
+    stamps = []
+    for path in sorted(STATIC_DIR.rglob("*")):
+        if path.is_file():
+            stamps.append(f"{path.name}:{path.stat().st_mtime_ns}")
+    digest = hashlib.sha1("|".join(stamps).encode("utf-8")).hexdigest()
+    return digest[:10]
+
+
+ASSET_VERSION = _asset_version()
+templates.env.globals["asset_version"] = ASSET_VERSION
+
 # Compress every response over 1 kB. The templates, the CSS/JS bundles and the
 # 254k-row product search payloads all shrink by 70-85%, which is most of the
 # perceived load time on a slow mobile connection.
@@ -136,7 +157,7 @@ class AnalyzeRequest(BaseModel):
     allergies: str | None = None
     current_medicines: str | None = None
     sex: str | None = None
-    consent_share: bool = False
+    consent_share: bool = True
     lang: str = "auto"
 
 
@@ -681,7 +702,7 @@ def _run(
     pregnant: bool,
     chronic_conditions: list[str],
     allergies: list[str],
-    consent_share: bool = False,
+    consent_share: bool = True,
     sex: str | None = None,
     source: str = "web",
     lang: str = "auto",
@@ -751,7 +772,7 @@ async def analyze_image_endpoint(
     chronic_conditions: str = Form(""),
     allergies: str = Form(""),
     sex: str | None = Form(None),
-    consent_share: bool = Form(False),
+    consent_share: bool = Form(True),
     lang: str = Form("auto"),
     current_medicines: str = Form(""),
     image_modality: str | None = Form(None),

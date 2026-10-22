@@ -117,6 +117,28 @@ def test_history_extraction():
     assert facts.current_medicines
 
 
+def test_skin_allergic_is_not_a_drug_allergy():
+    """"skin allergic" describes a symptom, not an allergen.
+
+    Treating it as an allergy used to capture the rest of the sentence, so
+    "thyroid problem, high bp, overweight" were recorded as allergens and were
+    then used to filter medicines.
+    """
+    facts = extract("Headache, sneezing, skin allergic, thyroid problem, high bp, overweight")
+    assert facts.allergies == []
+    assert "hypertension" in facts.chronic_conditions
+    assert "thyroid disease" in facts.chronic_conditions
+
+
+def test_allergy_stops_at_the_next_clause():
+    facts = extract("I am diabetic and allergic to penicillin, taking metformin")
+    assert facts.allergies == ["penicillin"]
+
+
+def test_bp_abbreviation_is_a_chronic_condition():
+    assert "hypertension" in extract("high bp since 2019").chronic_conditions
+
+
 def test_overlapping_symptom_matches_prefer_the_specific_term():
     facts = extract("I have a high grade fever of 103F")
     assert "high_fever" in facts.symptoms
@@ -401,3 +423,46 @@ def test_empty_input_is_handled():
     result = pipeline.analyse(text="")
     assert result["diagnoses"] == []
     assert result["routine"]["blocks"]
+
+
+# ---- multi-problem cases -----------------------------------------------------
+MULTI_PROBLEM = "Headache, sneezing, skin allergic, thyroid problem, high bp, overweight"
+
+
+def test_chronic_conditions_reach_the_differential():
+    result = pipeline.analyse(text=MULTI_PROBLEM)
+    names = {d["name"] for d in result["diagnoses"]}
+    assert any("Hypertension" in n for n in names)
+    assert any("Hypothyroid" in n for n in names)
+
+
+def test_declared_condition_is_flagged():
+    result = pipeline.analyse(text=MULTI_PROBLEM)
+    declared = {d["name"] for d in result["diagnoses"] if d["declared_condition"]}
+    assert any("Hypertension" in n for n in declared)
+
+
+def test_medicines_cover_every_declared_problem():
+    """The acute complaint must not crowd the chronic ones out of the plan.
+
+    "Headache, sneezing, ... high bp, ... thyroid problem" used to return
+    antihistamines only, because the ranked differential put allergic rhinitis
+    first and the medicine step looked at the leading diagnoses alone.
+    """
+    result = pipeline.analyse(text=MULTI_PROBLEM)
+    plan = result["medicines"]
+    for_conditions = {
+        c
+        for med in plan["recommended"] + plan["prescription_only"]
+        for c in med.get("for_conditions", [])
+    }
+    assert any("Hypertension" in c for c in for_conditions)
+    assert any("Hypothyroid" in c for c in for_conditions)
+
+
+def test_unspecified_thyroid_does_not_mix_opposite_drugs():
+    result = pipeline.analyse(text=MULTI_PROBLEM)
+    names = {m["name"] for m in result["medicines"]["recommended"] + result["medicines"]["prescription_only"]}
+    # Levothyroxine treats hypothyroidism, carbimazole the opposite. Both in one
+    # plan would be a serious contradiction, so only the more likely is treated.
+    assert not ({"Levothyroxine", "Carbimazole"} <= names)

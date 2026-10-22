@@ -829,11 +829,13 @@
         "muscle_ache": 1.4,
         "insomnia": 1.0,
         "brain_fog": 1.8,
-        "dry_skin": 1.6
+        "dry_skin": 1.6,
+        "weight_gain": 2.4
       },
       "key_symptoms": [
         "fatigue",
-        "cold_intolerance"
+        "cold_intolerance",
+        "weight_gain"
       ],
       "typical_duration_days": [
         30,
@@ -965,7 +967,8 @@
         "fatigue": 1.4,
         "chest_pain": 1.0,
         "shortness_of_breath": 1.2,
-        "palpitations": 1.0
+        "palpitations": 1.0,
+        "obesity": 1.6
       },
       "key_symptoms": [
         "headache",
@@ -3098,6 +3101,48 @@
         "Discharge with an unpleasant smell",
         "Fever or pelvic pain",
         "Symptoms not settling after treatment"
+      ]
+    },
+    {
+      "id": "obesity",
+      "name": "Obesity / Overweight",
+      "category": "metabolic",
+      "icd10": "E66",
+      "prevalence": 0.5,
+      "contagious": false,
+      "symptoms": {
+        "obesity": 3.0,
+        "weight_gain": 1.4,
+        "fatigue": 1.0,
+        "shortness_of_breath": 0.8,
+        "joint_pain": 1.0,
+        "snoring": 0.9,
+        "daytime_sleepiness": 0.7
+      },
+      "key_symptoms": [
+        "obesity"
+      ],
+      "typical_duration_days": [
+        90,
+        3650
+      ],
+      "severity_profile": "moderate",
+      "severity_score": 4,
+      "self_care": [
+        "Aim for 150 minutes of moderate activity a week",
+        "Reduce portion sizes and sugary drinks",
+        "Weigh yourself once a week at the same time",
+        "Target 5-10% body weight loss first - it already improves blood pressure and sugar",
+        "Keep a simple food and activity diary"
+      ],
+      "medicines": [],
+      "routine": "metabolic_care",
+      "description": "Excess body fat that raises the risk of diabetes, high blood pressure, joint disease and sleep apnoea.",
+      "when_to_see_doctor": [
+        "BMI 30 or above, or 27 with a related condition",
+        "Weight rising despite diet and exercise changes",
+        "Snoring with daytime sleepiness",
+        "Knee or hip pain limiting activity"
       ]
     }
   ]

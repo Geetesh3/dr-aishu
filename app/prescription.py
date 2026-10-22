@@ -224,7 +224,15 @@ def _existing_medication_conflicts(
 
 
 def _severity_permits_rx(candidate: Candidate, triage: str) -> bool:
-    """Only surface prescription-only medicines when a clinician is already involved."""
+    """Only surface prescription-only medicines when a clinician is already involved.
+
+    A condition the patient states they already have is the exception. Their
+    ongoing treatment is decided by their clinician, not by the severity of
+    today's unrelated complaint, so those options are listed for discussion
+    rather than suppressed because the current triage reads as self-care.
+    """
+    if candidate.declared_condition:
+        return True
     return triage in ("see_doctor", "urgent", "emergency")
 
 
@@ -232,16 +240,20 @@ def select_medicines(
     candidates: list[Candidate],
     facts: ExtractedFacts,
     triage: str,
-    max_conditions: int = 3,
+    max_conditions: int = 6,
     include_rx: bool = True,
     min_relative_confidence: float = 0.55,
 ) -> PrescriptionPlan:
-    """Select medicines for the leading diagnoses only.
+    """Select medicines for the leading diagnoses, and for every condition the
+    patient declared they already have.
 
-    Only diagnoses whose confidence is within `min_relative_confidence` of the
-    top candidate contribute medicines. This prevents treatments from a weak
-    alternative differential (for example an antimalarial when influenza is far
-    more likely) leaking into the plan.
+    Diagnoses within `min_relative_confidence` of the top candidate contribute
+    medicines. This prevents treatments from a weak alternative differential (for
+    example an antimalarial when influenza is far more likely) leaking into the
+    plan. Declared chronic conditions are exempt from that cutoff, because the
+    patient named them outright and they are the reason many consultations
+    happen; they are ranked first so a long-term condition is never crowded out
+    by a self-limiting acute one.
     """
     plan = PrescriptionPlan()
     seen: set[str] = set()
@@ -268,6 +280,20 @@ def select_medicines(
     if candidates:
         cutoff = candidates[0].confidence * min_relative_confidence
         selected = [c for c in candidates if c.confidence >= cutoff][:max_conditions]
+        # A condition the patient named as their own (high blood pressure, thyroid
+        # disease, diabetes) must contribute its medicines even when today's
+        # symptoms outrank it. Otherwise the plan treats only the acute complaint
+        # and silently drops the long-term problem the patient actually asked about.
+        declared = [c for c in candidates if c.declared_condition and c.medicine_ids]
+        selected_ids = {c.id for c in selected}
+        for c in declared:
+            if c.id not in selected_ids:
+                selected.append(c)
+                selected_ids.add(c.id)
+        # Chronic conditions take priority when the cap bites, because an acute
+        # complaint like a cold is expected to resolve on its own.
+        selected.sort(key=lambda c: (not c.declared_condition, -c.confidence))
+        selected = selected[:max_conditions]
     else:
         selected = []
 

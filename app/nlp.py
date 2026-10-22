@@ -304,13 +304,16 @@ def extract_labs(text: str) -> dict[str, Any]:
 
 CHRONIC_TERMS = {
     "diabetes": "diabetes", "diabetic": "diabetes", "sugar problem": "diabetes",
-    "hypertension": "hypertension", "high blood pressure": "hypertension", "bp problem": "hypertension",
+    "high sugar": "diabetes", "blood sugar problem": "diabetes",
+    "hypertension": "hypertension", "high blood pressure": "hypertension",
+    "bp problem": "hypertension", "high bp": "hypertension", "bp high": "hypertension",
+    "raised bp": "hypertension", "raised blood pressure": "hypertension",
     "asthma": "asthma", "copd": "copd", "heart disease": "heart disease",
     "heart failure": "heart failure", "kidney disease": "kidney disease",
     "renal failure": "kidney disease", "liver disease": "liver disease",
     "cancer": "cancer", "hiv": "hiv", "tb": "tuberculosis", "tuberculosis": "tuberculosis",
-    "epilepsy": "epilepsy", "thyroid": "thyroid disease", "pregnant": "pregnancy",
-    "pregnancy": "pregnancy", "immunocompromised": "immunocompromised",
+    "epilepsy": "epilepsy", "thyroid": "thyroid disease", "thyroid problem": "thyroid disease",
+    "pregnant": "pregnancy", "pregnancy": "pregnancy", "immunocompromised": "immunocompromised",
 }
 
 
@@ -506,11 +509,21 @@ def extract_history(text: str) -> dict[str, list[str]]:
             if canon not in conditions:
                 conditions.append(canon)
     allergies: list[str] = []
-    for m in re.finditer(r"allerg\w*\s*(?:to|:)?\s*([a-z0-9 ,\-]{2,60})", text):
-        chunk = m.group(1)
-        chunk = re.split(r"\b(?:and|but|however|,)\b", chunk)[0].strip()
-        if chunk:
-            allergies.append(chunk.strip())
+    # An allergy needs an explicit trigger: "allergic to penicillin", "allergy:
+    # shellfish". Matching bare "allergic" treats "skin allergic" as an allergy
+    # and then swallows the rest of the sentence, turning unrelated conditions
+    # into allergens.
+    for m in re.finditer(r"allerg\w*\s*(?:to|:|from)\s*([a-z0-9 ,\-]{2,60})", text):
+        # The text is normalised before it reaches here, so punctuation is gone:
+        # the next clause has to be recognised by its opening word.
+        chunk = re.split(
+            r"\s*,\s*|\b(?:and|but|however|taking|prescribed|using|on)\b",
+            m.group(1),
+            maxsplit=1,
+        )[0].strip()
+        # A declared condition is not an allergen, even when it follows the cue.
+        if chunk and not any(_word_re(t).search(chunk) for t in CHRONIC_TERMS):
+            allergies.append(chunk)
     medicines: list[str] = []
     for m in re.finditer(r"\b(?:taking|on|using|prescribed)\s+([a-z][a-z0-9 ,\-]{2,60})", text):
         chunk = m.group(1)

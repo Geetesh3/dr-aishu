@@ -206,18 +206,60 @@ textarea:focus, input:focus { outline: none; border-color: var(--accent); box-sh
 
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
-.dx { border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: .9rem; background: var(--surface); }
-.dx:first-of-type { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.dx-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-.dx-name { font-weight: 600; font-size: 1.02rem; }
+/* ---- likely conditions: one compact slider ---- */
+.dx-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.dx-head h2 { margin: 0; }
+.dx-nav { display: flex; align-items: center; gap: .4rem; }
+.dx-arrow {
+  width: 30px; height: 30px; line-height: 1; font-size: 1.1rem;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  color: var(--ink); cursor: pointer; transition: background .15s, border-color .15s;
+}
+.dx-arrow:hover:not(:disabled) { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.dx-arrow:disabled { opacity: .35; cursor: default; }
+.dx-counter { font-size: .82rem; font-variant-numeric: tabular-nums; color: var(--muted); min-width: 3.2rem; text-align: center; }
+.dx-hint { font-size: .8rem; margin: .35rem 0 .7rem; }
+
+.dx-slider { overflow: hidden; border-radius: 12px; }
+.dx-track { display: flex; transition: transform .3s ease; }
+.dx-slide {
+  flex: 0 0 100%; min-width: 100%; box-sizing: border-box;
+  border: 1px solid var(--line); border-radius: 12px;
+  padding: .9rem 1.05rem; background: var(--surface);
+}
+.dx-top { display: flex; align-items: baseline; gap: .55rem; }
+.dx-rank {
+  flex: none; width: 20px; height: 20px; border-radius: 6px;
+  background: var(--bg); color: var(--muted); font-size: .74rem; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.dx-name { font-weight: 600; font-size: 1rem; flex: 1; }
 .dx-conf { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); }
-.dx-bar { height: 5px; background: var(--bg); border-radius: 3px; overflow: hidden; margin: .6rem 0 .75rem; }
+.dx-bar { height: 4px; background: var(--bg); border-radius: 3px; overflow: hidden; margin: .5rem 0 .55rem; }
 .dx-bar span { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
-.dx-desc { font-size: .88rem; color: var(--ink-soft); margin: 0 0 .75rem; }
-.dx-meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .6rem; }
+.dx-desc { font-size: .85rem; color: var(--ink-soft); margin: 0 0 .5rem; }
+.dx-meta { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .4rem; }
 .tag { font-size: .76rem; padding: .2rem .6rem; border-radius: 6px; background: var(--bg); color: var(--ink-soft); border: 1px solid var(--line); }
 .tag.matched { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
-.dx-sub { font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: .75rem 0 .35rem; }
+.tag.declared { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 600; }
+.dx-sub { font-size: .74rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: .6rem 0 .3rem; }
+.dx-slide ul { margin: 0; padding-left: 1.15rem; font-size: .85rem; color: var(--ink-soft); }
+.dx-slide ul li { margin-bottom: .15rem; }
+.dx-more {
+  margin-top: .55rem; padding: .3rem .75rem; font-size: .8rem; font-weight: 600;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  color: var(--accent); cursor: pointer; transition: background .15s;
+}
+.dx-more:hover { background: var(--accent-soft); }
+.dx-detail { margin-top: .3rem; }
+
+.dx-dots { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; margin-top: .7rem; }
+.dx-dot {
+  width: 7px; height: 7px; padding: 0; border: none; border-radius: 999px;
+  background: var(--line); cursor: pointer; transition: background .15s, width .2s;
+}
+.dx-dot.active { background: var(--accent); width: 18px; }
+.dx { border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: .9rem; background: var(--surface); }
 .dx ul { margin: 0; padding-left: 1.15rem; font-size: .87rem; color: var(--ink-soft); }
 .dx ul li { margin-bottom: .2rem; }
 

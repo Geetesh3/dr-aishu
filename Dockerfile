@@ -23,6 +23,10 @@ COPY scripts ./scripts
 COPY static ./static
 COPY templates ./templates
 COPY notebooks ./notebooks
+
+# data/models holds the trained model. The directory is tracked (via .gitkeep)
+# but the model binaries inside it are not, so a fresh clone copies an empty
+# directory and the app falls back to the knowledge base until retrained.
 COPY data/models ./data/models
 
 # Writable location for the SQLite case database and API keys. Mount a volume

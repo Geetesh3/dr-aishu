@@ -18,7 +18,11 @@ data/*.db-journal
 data/*.sqlite*
 # Consented image uploads kept for training: patient data, never commit it.
 data/uploads/
-data/models/
+# Trained model artefacts are large binaries and are retrained per host, so they
+# stay out of git. The directory itself must exist in a fresh clone or the
+# Dockerfile's COPY fails, hence the tracked .gitkeep.
+data/models/*
+!data/models/.gitkeep
 
 # External datasets (hundreds of MB) and anything derived from them. Fetch with
 # scripts/import_symptom_dataset.py rather than committing the raw file.

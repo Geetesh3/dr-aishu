@@ -1,0 +1,36 @@
+# DOM Cloud deployment script for Dr. Aishu.
+#
+# Paste into Setup -> Deploy -> "Add a deployment task" for your website.
+# See docs/deploy-domcloud.md for the walkthrough and the free-plan caveats.
+#
+# Design notes:
+#   * Passenger is told to run uvicorn directly (app_start_command) instead of
+#     loading a WSGI startup file. FastAPI is ASGI, so this avoids a translation
+#     layer entirely -- it is the same command the Dockerfile runs.
+#   * PORT is injected by Passenger; uvicorn must bind 127.0.0.1, not 0.0.0.0.
+#   * Tesseract cannot be installed: the free plan has no sudo and no apt.
+#     Printed-text OCR degrades gracefully (app/vision.py reports the missing
+#     binary); structured analysis, medicines and routines are unaffected.
+
+source: https://github.com/Geetesh3/dr-aishu.git
+
+features:
+  - python stable
+
+nginx:
+  root: public_html/public
+  passenger:
+    enabled: "on"
+    app_root: public_html
+    app_start_command: env PORT=$PORT python -m uvicorn app.main:app --host 127.0.0.1 --port $PORT
+    env_var_list:
+      - PYTHONDONTWRITEBYTECODE=1
+      - DR_AISHU_REQUIRE_KEY=0
+
+commands:
+  # public/ is the document root Passenger serves from; the app lives beside it.
+  - mkdir -p public
+  - cp -r app scripts static templates data requirements.txt passenger_wsgi.py public/
+  - python -m pip install --user -r public/requirements.txt
+  # Runtime state, kept outside the served tree.
+  - mkdir -p data/uploads data/models

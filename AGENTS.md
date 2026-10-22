@@ -158,6 +158,30 @@ When adding a condition, set `severity_score` (1-10), a `routine`, `self_care`,
   clinical form. `scripts/extend_symptom_terms.py` adds the common variants; a
   single phrasing misses the everyday description a patient actually types, and
   for chest pain or breathlessness that means the emergency is never raised.
+- **A patient's stated conditions are not symptoms, and are not allergies.**
+  Hypertension and hypothyroidism produce no symptoms of their own, so
+  `diagnose()` in `app/analyzer.py` folds `facts.chronic_conditions` into the
+  boost table (`DECLARED_CONDITION_BOOST`) and flags the result
+  (`Candidate.declared_condition`). `select_medicines()` in `app/prescription.py`
+  then treats declared conditions as covered, exempting them from the relative
+  confidence cutoff so an acute complaint cannot crowd a chronic one out of the
+  plan. When one declared condition maps to opposite diseases ("thyroid problem"
+  -> hypo- *and* hyperthyroidism), only `DECLARED_PRIMARY` is treated as
+  declared, or the plan would pair levothyroxine with carbimazole.
+- `extract_history()` in `app/nlp.py` needs an explicit trigger for an allergy
+  (`allergic to X`, `allergy: X`). Matching a bare "allerg" turned the symptom
+  "skin allergic" into an allergen and swallowed the rest of the sentence, so
+  every later condition was recorded as an allergy and filtered medicines
+  against it. Note the text arrives already normalised, so commas are gone —
+  clause splitting has to use the opening word (`taking`, `prescribed`, ...).
+- Static assets are served with a 30-day max-age (`CachedStaticFiles` in
+  `app/main.py`), so a changed `app.js` keeps running from the browser cache.
+  Every `templates/*.html` asset tag carries `?v={{ asset_version }}`, a token
+  derived from the asset mtimes at import. Add the token to new asset tags.
+- `static/app.js` is loaded on the assessment page, and its trailing library
+  block must tolerate `#library-search`/`#library-list` being absent. It threw
+  on a null `addEventListener` and the whole bundle stopped before wiring the
+  form, which looked exactly like a backend failure.
 
 ## Performance notes
 

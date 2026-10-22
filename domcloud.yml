@@ -9,6 +9,10 @@
 #     matches what the Dockerfile does. This is DomCloud's "Uvicorn (ASGI)" path.
 #   * PORT is injected by Passenger, and the app must bind 127.0.0.1: Passenger
 #     proxies from loopback, not from a public interface.
+#   * `python -m uvicorn` rather than a bare `uvicorn`: pip --user installs the
+#     console script into ~/.local/bin, which is not always on Passenger's PATH.
+#     `app.main:app` is the real module path; the root-level main.py shim also
+#     makes a wizard-generated `main:app` work.
 #   * The NGINX root is public_html/public, not public_html, so the Python
 #     source tree is never served over HTTP. /static is symlinked in so NGINX
 #     serves assets directly.

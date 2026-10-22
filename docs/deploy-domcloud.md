@@ -34,6 +34,31 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port $PORT
 Bind `127.0.0.1`, not `0.0.0.0`. Passenger proxies from loopback and expects the
 app to listen there.
 
+## If the wizard generates the start command itself
+
+DOM Cloud's Uvicorn preset writes `uvicorn main:app --port $PORT`. That fails
+against this repository for two reasons, both of which the repository now works
+around, but it is worth knowing why:
+
+1. **`main:app` only resolves from the checkout root.** The app lives in
+   `app/main.py`, so the correct target is `app.main:app`. A root-level
+   `main.py` shim re-exports the app, so `main:app` works too, but only when the
+   process starts in the repository root (`app_root: public_html` ensures that).
+2. **Bare `uvicorn` may not be on PATH.** `pip install --user` puts the console
+   script in `~/.local/bin`, which Passenger does not always include. Prefer
+   `python -m uvicorn`.
+
+The correct command is:
+
+```
+env PORT=$PORT python -m uvicorn app.main:app --host 127.0.0.1 --port $PORT
+```
+
+If you keep the wizard's generated config, edit the last line to match. Symptom
+of getting this wrong: the deploy log ends with "Execution Finished" but the
+site returns 503, and the error log contains
+`Error loading ASGI app. Could not import module "main"`.
+
 ## Point the deploy at the right branch
 
 The repository's default branch (`main`) is empty. The application lives on

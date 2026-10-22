@@ -59,6 +59,58 @@ of getting this wrong: the deploy log ends with "Execution Finished" but the
 site returns 503, and the error log contains
 `Error loading ASGI app. Could not import module "main"`.
 
+## When the deploy log says "requirements.txt: No such file or directory"
+
+This happens when the wizard's generated script uses `extract` instead of
+`clone`. The log looks like:
+
+```
+$> unzip -q -o _.zip ; rm _.zip
+$> pip install -r requirements.txt || pip install uvicorn
+ERROR: Could not open requirements file: ... No such file or directory: 'requirements.txt'
+```
+
+GitHub's ZIP archives contain a single top-level folder named after the
+repository and branch (`dr-aishu-feat-external-dataset-sources/`). `unzip` keeps
+that folder, so the script — which runs at the `public_html` root — finds no
+`requirements.txt` there. The file is one level deeper.
+
+Two things then go wrong at once:
+
+1. The `|| pip install uvicorn` fallback runs because the first command failed.
+   That installs **only** uvicorn, h11, click and typing-extensions. FastAPI,
+   pydantic, jinja2, numpy and scikit-learn are all still missing, so
+   `import app.main` raises `ModuleNotFoundError: No module named 'fastapi'`.
+2. The start command points at the wrong module path (see the section above).
+
+**Fix — name the folder to move out of the archive:**
+
+```yaml
+source:
+  url: https://github.com/Geetesh3/dr-aishu/archive/refs/heads/feat/external-dataset-sources.zip
+  directory: dr-aishu-feat-external-dataset-sources
+```
+
+`source.directory` moves the contents of that folder up to the deploy root.
+
+**Better fix — use `clone` and skip the archive entirely:**
+
+```yaml
+source:
+  url: https://github.com/Geetesh3/dr-aishu.git
+  type: clone
+  branch: feat/external-dataset-sources
+```
+
+`git clone` lays the files out at the repository root, so `requirements.txt`,
+`main.py` and `app/` are all where the commands expect them. It also avoids the
+`chmod -R 0750 *` that `extract` applies, which can strip the read bits off
+static assets.
+
+Never leave a bare `|| pip install uvicorn` as the install step. It turns a
+dependency failure into a silent half-install that fails later, at startup,
+where the error is harder to read.
+
 ## Point the deploy at the right branch
 
 The repository's default branch (`main`) is empty. The application lives on

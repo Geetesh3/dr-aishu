@@ -43,7 +43,15 @@ commands:
   # Dependencies. requirements-domcloud.txt omits the notebook/build-only
   # packages (pandas, matplotlib, openpyxl), which the server never imports and
   # which would cost hundreds of MB against the 1.5 GB free-plan storage limit.
+  #
+  # If this file is missing the command fails loudly instead of falling back to a
+  # bare uvicorn install. A missing requirements file means the source extraction
+  # nested the checkout one level too deep -- see source.directory above.
+  - test -f requirements-domcloud.txt || { echo "requirements-domcloud.txt not found in $(pwd) - the checkout is nested or empty; check source.directory / source.branch"; exit 1; }
   - python -m pip install --user -r requirements-domcloud.txt
+
+  # Fail now, at deploy time, rather than with a 503 at startup.
+  - python -c "import fastapi, uvicorn, jinja2, sklearn, numpy, PIL; print('runtime imports OK')"
 
   # Document root: static assets only, nothing importable.
   - mkdir -p public

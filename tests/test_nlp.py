@@ -125,3 +125,80 @@ def test_duration_parsing(text, days):
 
 def test_duration_absent_returns_none():
     assert extract_duration("I have a headache")[0] is None
+
+
+# ---- spelling repair ---------------------------------------------------------
+# Patients type "headach", "diabeties", "thyriod". The lexicon matches whole
+# words, so an unrepaired misspelling is dropped entirely and the medicine for
+# that complaint is never offered.
+@pytest.mark.parametrize(
+    "text,symptom_id",
+    [
+        ("headach", "headache"),
+        ("headac", "headache"),
+        ("sneesing", "sneezing_fits"),
+        ("vomitting", "vomiting"),
+        ("diahrea", "diarrhea"),
+        ("constipaton", "constipation"),
+        ("breathlesness", "shortness_of_breath"),
+        ("giddiness", "dizziness"),
+        ("toothach", "tooth_pain"),
+        ("earach", "ear_pain"),
+        ("backach", "back_pain"),
+        ("stomache", "abdominal_pain"),
+        ("obesety", "obesity"),
+        ("arthiritis", "joint_pain"),
+    ],
+)
+def test_misspelled_symptoms_are_repaired(text, symptom_id):
+    assert symptom_id in extract(text).symptoms
+
+
+@pytest.mark.parametrize(
+    "text,condition",
+    [
+        ("diabeties", "diabetes"),
+        ("diabetis", "diabetes"),
+        ("suger problem", "diabetes"),
+        ("thyriod", "thyroid disease"),
+        ("hypertensoin", "hypertension"),
+        ("asthama", "asthma"),
+        ("tubercolosis", "tuberculosis"),
+    ],
+)
+def test_misspelled_conditions_are_repaired(text, condition):
+    assert condition in extract(text).chronic_conditions
+
+
+def test_reported_case_resolves_every_complaint():
+    """The exact text a user reported: every complaint must survive extraction."""
+    facts = extract("fever, headach, thyroid, diabeties")
+    assert {"fever", "headache"} <= set(facts.symptoms)
+    assert {"diabetes", "thyroid disease"} <= set(facts.chronic_conditions)
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("i found a wound on my leg and my vision is blurring", {"wound"}),
+        ("never had this before and would like advice", set()),
+        ("my score on the pain scale is 8 out of 10", {"pain"}),
+        ("i have a sore throat and my joints are aching", {"sore_throat", "pain"}),
+        ("rehydration is important, i drink water with electrolytes", set()),
+        ("the rash is scaly and itches, i scraped my scalp", {"rash"}),
+    ],
+)
+def test_real_words_are_not_rewritten(text, expected):
+    """A guard stops real English being "corrected" into clinical terms.
+
+    Edit-distance matching would turn score->sore, sound->wound and
+    rehydration->dehydration, which are different complaints with different
+    triage. Each sentence here must yield exactly the symptoms it really has.
+    """
+    assert set(extract(text).symptoms) == expected
+
+
+def test_negation_still_works_after_spelling_repair():
+    facts = extract("no fever and no headach")
+    assert "fever" not in facts.symptoms
+    assert "headache" not in facts.symptoms

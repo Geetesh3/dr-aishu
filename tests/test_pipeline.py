@@ -168,6 +168,36 @@ def test_no_symptoms_yields_no_diagnosis():
     assert result["diagnoses"] == []
 
 
+def test_misspelled_multi_disease_case_gets_every_medicine():
+    """The text a user actually reported, typos included.
+
+    Every complaint has to survive extraction, or the medicine for it is never
+    offered: unrepaired, "headach" and "diabeties" vanish and the case looks
+    like fever plus thyroid only.
+    """
+    result = pipeline.analyse(text="fever, headach, thyroid, diabeties")
+    symptom_labels = {s["label"] for s in result["extracted"]["symptoms"]}
+    assert {"Fever", "Headache"} <= symptom_labels
+    assert {"diabetes", "thyroid disease"} <= set(result["extracted"]["history"]["chronic_conditions"])
+
+    names = {m["name"] for m in result["medicines"]["recommended"] + result["medicines"]["prescription_only"]}
+    # one medicine per declared disease, plus fever cover
+    assert "Metformin" in names       # diabetes
+    assert "Levothyroxine" in names   # thyroid
+    assert any("Paracetamol" in n for n in names)  # fever
+
+
+def test_spelling_repairs_are_reported_to_the_user():
+    result = pipeline.analyse(text="fever, headach, diabeties")
+    repairs = {r["typed"]: r["interpreted_as"] for r in result["spelling_repairs"]}
+    assert repairs == {"headach": "headache", "diabeties": "diabetes"}
+
+
+def test_clean_text_reports_no_spelling_repairs():
+    result = pipeline.analyse(text="high fever and headache for 3 days")
+    assert "spelling_repairs" not in result
+
+
 def test_confidences_are_ordered_and_bounded():
     result = pipeline.analyse(text="high fever and severe body ache and chills for 3 days with dry cough")
     confs = [d["confidence"] for d in result["diagnoses"]]

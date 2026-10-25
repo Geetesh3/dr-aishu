@@ -206,7 +206,7 @@
 
     parts.push(sectionTriage(sev, dx));
     if (data.image_analysis) parts.push(sectionImage(data.image_analysis));
-    parts.push(sectionExtracted(data.extracted));
+    parts.push(sectionExtracted(data.extracted, data.spelling_repairs));
     parts.push(sectionSolutions(data.solutions));
     parts.push(sectionDiagnoses(dx, data));
     parts.push(sectionMedicines(meds, sev));
@@ -350,7 +350,7 @@
       <p class="muted">A visual match is not a diagnosis. It only says which of the conditions the model has seen looks most like this photo.</p>`;
   }
 
-  function sectionExtracted(ex) {
+  function sectionExtracted(ex, repairs) {
     if (!ex) return "";
     const chips = (arr, cls = "tag") =>
       (arr || []).map((x) => `<span class="${cls}">${esc(x.label || x)}</span>`).join("");
@@ -384,6 +384,13 @@
         ${vitals ? `<h3>Measurements and context</h3><div class="dx-meta">${vitals}</div>` : ""}
         ${(hist.chronic_conditions || []).length ? `<h3>Chronic conditions</h3><div class="dx-meta">${chips(hist.chronic_conditions)}</div>` : ""}
         ${(hist.allergies || []).length ? `<h3>Allergies</h3><div class="dx-meta">${chips(hist.allergies)}</div>` : ""}
+        ${
+          (repairs || []).length
+            ? `<h3>Spelling interpreted</h3><div class="dx-meta">${repairs
+                .map((r) => `<span class="tag">${esc(r.typed)} &rarr; <strong>${esc(r.interpreted_as)}</strong></span>`)
+                .join("")}</div>`
+            : ""
+        }
       </section>`;
   }
 

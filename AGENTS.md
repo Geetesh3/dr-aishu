@@ -123,6 +123,23 @@ When adding a condition, set `severity_score` (1-10), a `routine`, `self_care`,
 
 ## Gotchas
 
+- **Misspellings are repaired from a whitelist, never by edit distance**
+  (`app/aliases.py`). The symptom and chronic-condition lexicons match whole
+  words, so an unrepaired "diabeties" or "headach" is dropped silently and the
+  medicine for that complaint is never offered. Measured against the terms the
+  matcher can reach, a one-edit rule also rewrites real English into unrelated
+  clinical words — `score -> sore`, `sound -> wound`, `rehydration ->
+  dehydration`, `acting -> aching` — which are different complaints with
+  different triage. Add new pairs to `SPELLING_FIXES` only with a hand-checked
+  target that the lexicon already matches. `scripts/build_dataset_workbook.py`
+  keeps a whitelist for the same reason.
+- `apply_spelling_fixes` runs inside `extract()`, so every consumer
+  (`analyzer`, `prescription`, `routines`) sees repaired text. Do not call the
+  matchers (`extract_symptoms`, `extract_history`) directly on raw input; go
+  through `extract()` or the repair is skipped.
+- Repairs are surfaced to the user as `spelling_repairs` in the API result and
+  in the "Spelling interpreted" block in `static/app.js`. Keep it visible: a
+  silent rewrite hides that the system guessed.
 - Jinja2 `TemplateResponse` needs the request first:
   `templates.TemplateResponse(request, "index.html")`.
 - Pillow: use `get_flattened_data()` (with fallback), not the removed `getdata()`.

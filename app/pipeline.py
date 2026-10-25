@@ -4,6 +4,7 @@ from __future__ import annotations
 from typing import Any
 
 from . import i18n, learning, store
+from .aliases import repairs_in
 from .analyzer import TRIAGE_META, assess_severity, diagnose
 from .kb import KB
 from .labs import lab_evidence
@@ -300,6 +301,15 @@ def _assess_core(
             result["image_error"] = image_result.get("error")
 
     result["extracted"] = _facts_to_dict(facts)
+
+    # Tell the user which of their words were interpreted as a clinical term.
+    # Rewriting a patient's spelling silently would hide that we guessed, and a
+    # wrong guess changes which medicine is offered.
+    repairs = repairs_in(combined_text.lower())
+    if repairs:
+        result["spelling_repairs"] = [
+            {"typed": typed, "interpreted_as": fixed} for typed, fixed in sorted(repairs.items())
+        ]
 
     # Ask Dr. Aishu's trained model for its opinion, if one is loaded.
     symptom_ids = list(facts.symptoms.keys())

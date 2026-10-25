@@ -10,6 +10,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any
 
+from .aliases import apply_spelling_fixes
 from .kb import KB
 
 # ---- negation / uncertainty ---------------------------------------------------
@@ -602,6 +603,10 @@ def extract_symptoms(text: str) -> tuple[dict[str, dict[str, Any]], list[str], l
 def extract(text: str) -> ExtractedFacts:
     """Full extraction pass over a free-text clinical description."""
     normalised = KB.normalise(text)
+    # Repair known clinical misspellings before anything reads the text. The
+    # lexicon matches whole words, so "diabeties" would otherwise be dropped
+    # entirely and the diabetes medicine never offered.
+    normalised = apply_spelling_fixes(normalised)
     symptoms, modifiers, negated = extract_symptoms(normalised)
     duration_days, duration_text = extract_duration(normalised)
     severity, severity_text = extract_severity(normalised)

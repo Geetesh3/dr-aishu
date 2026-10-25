@@ -257,6 +257,91 @@
     });
   }
 
+  /* ---------- real-world health data ---------- */
+
+  // Sparkline for one indicator's series. Drawn as an SVG path; the axis is the
+  // value range of the series itself, so the shape shows direction of travel.
+  function sparkline(host, points) {
+    if (!points || points.length < 2) return;
+    var w = 240, h = 34, pad = 3;
+    var values = points.map(function (p) { return p.value; });
+    var min = Math.min.apply(null, values), max = Math.max.apply(null, values);
+    var span = (max - min) || 1;
+    var step = (w - pad * 2) / (points.length - 1);
+    var d = points.map(function (p, i) {
+      var x = pad + i * step;
+      var y = h - pad - ((p.value - min) / span) * (h - pad * 2);
+      return (i ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1);
+    }).join(" ");
+    var svg = document.createElementNS(SVG, "svg");
+    svg.setAttribute("class", "spark");
+    svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+    svg.setAttribute("preserveAspectRatio", "none");
+    var path = document.createElementNS(SVG, "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-width", "1.5");
+    svg.appendChild(path);
+    host.appendChild(svg);
+  }
+
+  function formatValue(value) {
+    if (value === null || value === undefined) return "—";
+    if (Math.abs(value) >= 1e6) return (value / 1e6).toFixed(1) + "M";
+    if (Math.abs(value) >= 1000) return Math.round(value).toLocaleString();
+    return (Math.abs(value) < 10 ? value.toFixed(1) : String(Math.round(value * 10) / 10));
+  }
+
+  function renderWorld(data) {
+    var grid = $("world-grid"), status = $("world-status"), src = $("world-sources");
+    if (!grid) return;
+    grid.innerHTML = "";
+    if (!data || !data.available) {
+      if (status) status.textContent = "No cached statistics for this country. "
+        + "Run scripts/refresh_world_data.py on the host to fetch them.";
+      if (src) src.textContent = "";
+      return;
+    }
+    var shown = (data.indicators || []).filter(function (i) { return i.latest_value !== null && i.latest_value !== undefined; });
+    if (status) {
+      status.textContent = shown.length
+        ? "Fetched " + (data.fetched_at || "").slice(0, 10) + " from the publishers' APIs. Year shown is the year the figure refers to."
+        : "The publishers returned no values for this country.";
+    }
+    shown.forEach(function (ind) {
+      var card = document.createElement("div");
+      card.className = "world-card";
+      var h = document.createElement("h4");
+      h.textContent = ind.label;
+      var v = document.createElement("div");
+      v.className = "world-value";
+      v.textContent = formatValue(ind.latest_value);
+      var unit = document.createElement("small");
+      unit.textContent = ind.unit;
+      v.appendChild(unit);
+      var meta = document.createElement("p");
+      meta.textContent = ind.latest_year + " · " + ind.source;
+      card.appendChild(h); card.appendChild(v); card.appendChild(meta);
+      sparkline(card, ind.points);
+      grid.appendChild(card);
+    });
+    if (src) {
+      src.textContent = "Sources: " + (data.sources || []).map(function (s) {
+        return s.name + " (" + s.license + ")";
+      }).join(" · ");
+    }
+  }
+
+  function loadWorld() {
+    var sel = $("world-country");
+    var country = sel ? sel.value : "IND";
+    return fetch("/api/world-health?country=" + encodeURIComponent(country))
+      .then(function (r) { return r.json(); })
+      .then(renderWorld)
+      .catch(function () { renderWorld(null); });
+  }
+
   function withBusy(button, label, fn) {
     return async function () {
       var original = button.textContent;
@@ -309,9 +394,20 @@
       });
     });
 
+    var worldSel = $("world-country");
+    if (worldSel) {
+      worldSel.addEventListener("change", function () {
+        loadWorld().catch(function () { renderWorld(null); });
+      });
+    }
+
     loadSummary()
       .then(loadBrands)
       .then(function () { setStatus(""); })
       .catch(function (err) { setStatus(err.message, "error"); });
+
+    // Independent of the API key: these are public publisher statistics, so the
+    // section still fills in for a visitor who has not signed in.
+    loadWorld();
   });
 })();

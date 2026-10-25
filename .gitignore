@@ -15,6 +15,10 @@ venv/
 data/dr_aishu.db
 data/*.db
 data/*.db-journal
+# SQLite write-ahead sidecars. These carry the same patient data as the database
+# and are recreated on open, so they must never be committed either.
+data/*.db-shm
+data/*.db-wal
 data/*.sqlite*
 # Consented image uploads kept for training: patient data, never commit it.
 data/uploads/

@@ -22,8 +22,8 @@ from pydantic import BaseModel, Field
 from starlette.requests import Request
 
 from . import (
-    analytics, auth, dataset, demo_data, i18n, image_model, learning, pipeline,
-    security, store, vision,
+    analytics, auth, conditions, dataset, demo_data, drugref, i18n, image_model,
+    learning, pipeline, security, store, vision, worlddata,
 )
 from .kb import KB
 from .translations import bundle as translation_bundle, catalogue as translation_catalogue
@@ -611,6 +611,78 @@ async def diseases() -> dict[str, Any]:
 @app.get("/api/medicines")
 async def medicines() -> dict[str, Any]:
     return {"medicines": list(KB.medicines.values())}
+
+
+# ---- condition library ------------------------------------------------------
+# Built from open ontologies by scripts/build_condition_library.py. The DB is
+# ~80 MB and gitignored, so these endpoints degrade to an empty result on a host
+# that has not built it rather than failing. `conditions.available()` says which.
+@app.get("/api/conditions/stats")
+async def conditions_stats() -> dict[str, Any]:
+    """Totals, per-source counts and the licence each source carries."""
+    return conditions.stats()
+
+
+@app.get("/api/conditions/search")
+async def conditions_search(
+    q: str = "",
+    limit: int = 25,
+    offset: int = 0,
+    source: str | None = None,
+    rare: bool = False,
+    assessable: bool = False,
+) -> dict[str, Any]:
+    """Search the library by name, synonym or definition."""
+    return conditions.search(
+        query=q,
+        limit=max(1, min(limit, 100)),
+        offset=max(0, offset),
+        source=source,
+        rare_only=rare,
+        detailed_only=assessable,
+    )
+
+
+@app.get("/api/conditions/{condition_id:path}")
+async def condition_detail(condition_id: str) -> JSONResponse:
+    """One condition with its synonyms and cross-references."""
+    record = conditions.get(condition_id)
+    if record is None:
+        raise HTTPException(status_code=404, detail=f"no condition with id {condition_id!r}")
+    return JSONResponse(record)
+
+
+@app.get("/api/world-health")
+async def world_health(country: str = "IND") -> dict[str, Any]:
+    """Real WHO and World Bank indicators, served from the local cache."""
+    if not country.isalpha() or len(country) != 3:
+        raise HTTPException(status_code=400, detail="country must be a 3-letter ISO code")
+    return worlddata.summary(country.upper())
+
+
+# ---- medicine reference -----------------------------------------------------
+# Built from RxNorm by scripts/build_medicine_reference.py. Names and molecule
+# links only: no dosing or indication data, so this can confirm a medicine is
+# real and what it contains, but never changes which medicine is suggested.
+@app.get("/api/drugs/stats")
+async def drugs_stats() -> dict[str, Any]:
+    return drugref.stats()
+
+
+@app.get("/api/drugs/search")
+async def drugs_search(q: str = "", limit: int = 20, kind: str | None = None) -> dict[str, Any]:
+    """Search RxNorm names. `kind` narrows to ingredient, brand or product."""
+    if kind and kind not in {"ingredient", "brand", "product", "synonym"}:
+        raise HTTPException(status_code=400, detail="unknown kind")
+    return drugref.search(q, limit=max(1, min(limit, 100)), kind=kind)
+
+
+@app.get("/api/drugs/ingredients")
+async def drugs_ingredients(name: str) -> dict[str, Any]:
+    """Which molecules a medicine name contains, per RxNorm's own relations."""
+    if not name.strip():
+        raise HTTPException(status_code=400, detail="name is required")
+    return {"name": name, "ingredients": drugref.ingredients_for(name)}
 
 
 @app.get("/api/products/search")

@@ -3,11 +3,36 @@
 {% block content %}
 <section class="card library-card">
   <h2 data-i18n="library.title">Condition library</h2>
-  <p class="muted" data-i18n="library.note">Browse every condition in the knowledge base, with its symptoms, self-care and red flags.</p>
+  <p class="muted" data-i18n="library.note">
+    Every condition is imported from a published medical ontology, with its
+    identifier, source and licence shown, so any name here can be checked
+    against the organisation that published it.
+  </p>
+  <p class="muted" id="library-stats">Loading library…</p>
+
   <input type="search" id="library-search" class="library-search"
-         data-i18n-placeholder="library.search" placeholder="Search conditions, symptoms or categories…">
+         data-i18n-placeholder="library.search"
+         placeholder="Search conditions, synonyms or definitions…">
+
+  <div class="library-filters" id="library-filters">
+    <button type="button" class="lib-filter is-active" data-filter="all">All</button>
+    <button type="button" class="lib-filter" data-filter="assessable">Full assessment</button>
+    <button type="button" class="lib-filter" data-filter="rare">Rare disease</button>
+  </div>
+
   <p class="muted" id="library-count"></p>
   <div id="library-list" class="library-list"></div>
+  <button type="button" id="library-more" class="btn-secondary" hidden>Load more</button>
+</section>
+
+<section class="card">
+  <h3 data-i18n="library.sources.title">Where this data comes from</h3>
+  <p class="muted" data-i18n="library.sources.note">
+    Only sources that publish an explicit reuse licence are imported. MeSH and
+    ICD-10-CM are US government works in the public domain; DOID is CC0; Mondo,
+    HPO and Orphanet are CC BY.
+  </p>
+  <div id="library-sources" class="source-grid"></div>
 </section>
 {% endblock %}
 

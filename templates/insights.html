@@ -88,6 +88,26 @@
       </table>
     </div>
   </section>
+
+  <section class="card" id="world-section">
+    <h2>Real-world health data</h2>
+    <p class="muted">
+      Published national statistics for
+      <select id="world-country" class="inline-select">
+        <option value="IND" selected>India</option>
+        <option value="USA">United States</option>
+        <option value="GBR">United Kingdom</option>
+        <option value="NGA">Nigeria</option>
+        <option value="BRA">Brazil</option>
+      </select>
+      from the WHO Global Health Observatory and World Bank Open Data. These are
+      the sources' own figures, shown with the indicator and the year it refers
+      to, so every number can be checked at the publisher.
+    </p>
+    <p class="muted" id="world-status"></p>
+    <div class="world-grid" id="world-grid"></div>
+    <p class="muted" id="world-sources"></p>
+  </section>
 {% endblock %}
 
 {% block scripts %}

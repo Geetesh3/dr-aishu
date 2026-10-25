@@ -393,3 +393,57 @@ changes a result fails the suite.
 - **Google Research Health AI is a reference URL only.** It publishes no dataset
   and states no licence; it is recorded with `kind: "note"` and has no file.
 
+## Open condition and medicine libraries (built, not committed)
+
+Both libraries are built from published releases by scripts and read through
+modules that degrade instead of raising, because `data/` is gitignored: a fresh
+clone or a deploy host that never ran the scripts must still serve the site.
+
+- **Condition library** - `data/conditions.db`, built by
+  `scripts/fetch_condition_sources.py` then `scripts/build_condition_library.py`,
+  read by `app/conditions.py`, served at `/api/conditions/*` and rendered by
+  `templates/library.html` + `static/library.js`. Sources: Mondo (CC-BY-4.0),
+  Disease Ontology (CC0-1.0), Orphanet (CC-BY-4.0), ICD-10-CM and MeSH (US
+  government, public domain). Built size ~71,600 conditions, 128,000 synonyms,
+  267,000 cross-references. 28,000 are flagged rare.
+- **Every row keeps its source, licence and identifier.** The library's value is
+  that a name can be traced to the organisation that published it, so never strip
+  those fields to make a card look tidier.
+- **Medicine reference** - `data/medicines_reference.db`, built by
+  `scripts/fetch_medicine_sources.py` then `scripts/build_medicine_reference.py`,
+  read by `app/drugref.py`, served at `/api/drugs/*`. Source: RxNorm (US NLM).
+- **Only `SAB=RXNORM` rows are imported.** RxNorm's Terms of Service state that
+  NLM-created names and codes are public domain, but the full release also
+  bundles proprietary terminologies with per-source restrictions. The builder
+  filters on `sab == "RXNORM"`; do not relax that filter.
+- **The medicine reference carries no clinical data.** RxNorm publishes names,
+  codes and molecule relations, not dosing or indications. `drugref` therefore
+  only confirms that a medicine is real and what molecule it contains. Dosing,
+  contraindications and interactions stay hand-reviewed in
+  `app/data/medicines.json` and are what the analyzer uses. Never let an RxNorm
+  lookup influence which medicine is suggested.
+- **Brand-to-ingredient links come from RxNorm's relation table**, not from
+  parsing the name. `_ingredients_from_product_name` is only a fallback for the
+  few products with no relation on record, and it matches ingredient names on
+  word boundaries so "24 HR metformin hydrochloride 500 MG ..." still resolves.
+- **Rebuild after changing a builder, then re-check the counts.** Both builders
+  print per-source totals and a SHA-256; a sudden drop means a source changed
+  format.
+
+## Real-world statistics on the Insights page
+
+- **`app/worlddata.py` reads only from cached publisher data.** WHO Global Health
+  Observatory and World Bank Open Data are fetched by
+  `scripts/refresh_world_data.py` into `data/external/world/world_health.json`.
+  No request path calls the network, so an upstream outage cannot slow a page and
+  a host with no egress still serves the site; the section says the data is not
+  cached rather than inventing numbers.
+- **Every figure carries its indicator code, source and reference year.** A
+  statistic without its year is misleading, so the year is rendered next to the
+  value, not hidden in a tooltip.
+- **The WHO filter parameter must be URL-encoded.** `$filter=SpatialDim eq 'IND'`
+  contains spaces; passing it raw raises `InvalidURL` from `http.client`.
+- **World Bank returns a 5xx page, not JSON, when its API is unwell.** That is why
+  `_wb_series` guards the response shape and records the error per indicator
+  instead of failing the whole refresh.
+

@@ -289,6 +289,45 @@ def test_severity_factors_are_explained():
     assert any("age" in f["factor"].lower() for f in result["severity"]["factors"])
 
 
+def test_many_chronic_conditions_alone_do_not_reach_emergency():
+    """Listing a long history is not an acute emergency.
+
+    Regression: the per-condition bonuses added up. Diabetes (+1.5) plus three
+    moderate conditions (+0.75 each) reached 9/10 with no red flags and no acute
+    symptom, so a stable outpatient who had only listed their history was told
+    to call an ambulance and had every medicine withheld.
+    """
+    result = pipeline.analyse(text="diabetes, hypertension, asthma, thyroid problem, obesity")
+    assert result["severity"]["red_flags"] == []
+    assert result["severity"]["triage"] != "emergency"
+    assert result["medicines"]["recommended"] or result["medicines"]["prescription_only"]
+
+
+def test_chronic_conditions_still_raise_severity():
+    """The cap must not flatten comorbidity to no risk at all."""
+    none = pipeline.analyse(text="fever and headache")
+    many = pipeline.analyse(text="fever and headache, diabetes, hypertension, asthma")
+    assert many["severity"]["score"] > none["severity"]["score"]
+
+
+def test_red_flags_still_escalate_past_the_chronic_cap():
+    """Acute findings must still override a capped comorbidity burden."""
+    result = pipeline.analyse(text="diabetes and hypertension with crushing chest pain and breathlessness")
+    assert result["severity"]["triage"] == "emergency"
+    assert result["medicines"]["recommended"] == []
+
+
+def test_reported_typo_case_offers_medicine_for_every_disease():
+    """The full typo'd multi-disease case must still produce a usable plan."""
+    result = pipeline.analyse(text="fever, headach, thyriod, diabeties, hypertensoin, asthama, obesety")
+    assert {"diabetes", "hypertension", "asthma", "thyroid disease"} <= set(
+        result["extracted"]["history"]["chronic_conditions"]
+    )
+    names = {m["name"] for m in result["medicines"]["recommended"] + result["medicines"]["prescription_only"]}
+    assert "Metformin" in names and "Levothyroxine" in names
+    assert result["routine"]["name"] != "Emergency Response"
+
+
 def test_infant_raises_severity():
     young = pipeline.analyse(text="3 month old baby with fever and diarrhoea")
     adult = pipeline.analyse(text="30 year old with fever and diarrhoea")

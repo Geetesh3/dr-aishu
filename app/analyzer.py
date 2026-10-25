@@ -87,6 +87,16 @@ TRIAGE_META = {
 _NEUTRAL_SEVERITY = 5.0
 _SEVERITY_SUPPORT_SYMPTOMS = 4.0
 
+# Ceiling on the total risk added by declared chronic conditions. Comorbidity
+# burden is a real escalation and stacks, but it is *background* risk, not an
+# acute event, so it must never be sufficient on its own to reach the emergency
+# band. Without a cap the per-condition bonuses simply add up: diabetes (1.5)
+# plus three moderate conditions (0.75 each) landed on 9 with no red flags and
+# no acute symptom, which suppressed all medicine advice for a stable
+# outpatient who had only listed their history. The cap leaves room for acute
+# findings, age and the red-flag floors to escalate past it.
+_CHRONIC_RISK_CAP = 2.5
+
 
 @dataclass
 class Candidate:
@@ -425,13 +435,20 @@ def assess_severity(facts: ExtractedFacts, candidates: list[Candidate]) -> Sever
 
     high_risk_conditions = {"diabetes", "heart failure", "kidney disease", "cancer",
                             "immunocompromised", "hiv", "copd", "liver disease"}
+    chronic_risk = 0.0
     for condition in facts.chronic_conditions:
         if condition in high_risk_conditions:
-            score += 1.5
+            chronic_risk += 1.5
             factors.append({"factor": f"Chronic condition: {condition}", "impact": "+high risk"})
         elif condition != "pregnancy":
-            score += 0.75
+            chronic_risk += 0.75
             factors.append({"factor": f"Chronic condition: {condition}", "impact": "+moderate risk"})
+    score += min(chronic_risk, _CHRONIC_RISK_CAP)
+    if chronic_risk > _CHRONIC_RISK_CAP:
+        factors.append(
+            {"factor": "Combined chronic conditions",
+             "impact": f"capped at +{_CHRONIC_RISK_CAP:g} (would be +{chronic_risk:g})"}
+        )
 
     if facts.is_pregnant:
         score += 1.5

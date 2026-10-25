@@ -140,6 +140,16 @@ When adding a condition, set `severity_score` (1-10), a `routine`, `self_care`,
 - Repairs are surfaced to the user as `spelling_repairs` in the API result and
   in the "Spelling interpreted" block in `static/app.js`. Keep it visible: a
   silent rewrite hides that the system guessed.
+- **Chronic-condition risk is capped at `_CHRONIC_RISK_CAP` (2.5) in
+  `assess_severity`.** The per-condition bonuses stack, and before the cap
+  diabetes (+1.5) plus three moderate conditions (+0.75 each) summed to 9/10 —
+  emergency, with no red flags and no acute symptom. That told a stable
+  outpatient who had only listed their history to call an ambulance, and the
+  emergency band withholds every medicine, so the whole plan disappeared.
+  Comorbidity is background risk; the cap leaves room for acute findings, age
+  and the red-flag floors to escalate past it.
+- A chronic-condition string is only read as history if it is not negated or
+  denied. "no fever and no headach" must not register either complaint.
 - Jinja2 `TemplateResponse` needs the request first:
   `templates.TemplateResponse(request, "index.html")`.
 - Pillow: use `get_flattened_data()` (with fallback), not the removed `getdata()`.
